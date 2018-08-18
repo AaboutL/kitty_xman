@@ -37,13 +37,14 @@ class Preprocess(object):
 
     def get_shape_gt(self):
         print(self.points)
-        points = [np.array(point) for point in self.points]
-        points =np.array(points)
+        points = [np.asarray(point, np.float32) for point in self.points]
+        points =np.asarray(points)
         print(points)
         print(type(points))
         self.ori_bbox = cv2.boundingRect(points)
-        self.ori_face = self.image[self.ori_bbox.y: self.ori_bbox.y + self.ori_bbox.height, self.ori_bbox.x: self.ori_bbox.x + self.ori_bbox.width]
-        self.shape_gt = self.points - [self.ori_bbox.x, self.ori_bbox.y]
+        print(self.ori_bbox)
+        self.ori_face = self.image[self.ori_bbox[1]: self.ori_bbox[1] + self.ori_bbox[3], self.ori_bbox[0]: self.ori_bbox[0] + self.ori_bbox[2]]
+        self.shape_gt = self.points - [self.ori_bbox[0], self.ori_bbox[1]]
 
     def normalize_data(self):
         normalized_gts = np.multiply(np.divide(self.shape_gt, [self.ori_bbox.width, self.ori_bbox.height]), self.target_size)
