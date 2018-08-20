@@ -9,6 +9,8 @@ import random
 import numpy as np
 import h5py
 
+from utilities import visualize
+
 class Preprocess(object):
     def __init__(self, image, points, target_size, scale=[1.0, 1.2]):
         '''
@@ -36,18 +38,14 @@ class Preprocess(object):
         self.scale = scale
 
     def get_shape_gt(self):
-        print(self.points)
-        points = [np.asarray(point, np.float32) for point in self.points]
-        points =np.asarray(points)
-        print(points)
-        print(type(points))
+        # points = [np.asarray(point, np.float32) for point in self.points]
+        points = np.asarray(self.points, np.float32)
         self.ori_bbox = cv2.boundingRect(points)
-        print(self.ori_bbox)
         self.ori_face = self.image[self.ori_bbox[1]: self.ori_bbox[1] + self.ori_bbox[3], self.ori_bbox[0]: self.ori_bbox[0] + self.ori_bbox[2]]
-        self.shape_gt = self.points - [self.ori_bbox[0], self.ori_bbox[1]]
+        self.shape_gt = np.subtract(self.points, [self.ori_bbox[0], self.ori_bbox[1]])
 
     def normalize_data(self):
-        normalized_gts = np.multiply(np.divide(self.shape_gt, [self.ori_bbox.width, self.ori_bbox.height]), self.target_size)
+        normalized_gts = np.multiply(np.divide(self.shape_gt, [self.ori_bbox[2], self.ori_bbox[3]]), self.target_size)
         normalized_img = cv2.resize(self.ori_face, (self.target_size[0], self.target_size[1]))
         return normalized_img, normalized_gts
 
@@ -56,7 +54,7 @@ class Preprocess(object):
         ori_bbox = cv2.boundingRect(self.points)
         ori_bbox_w = ori_bbox.width
         ori_bbox_h = ori_bbox.height
-        ori_head = self.image[ori_bbox.y: ori_bbox.y + ori_bbox.height, ori_bbox.x: ori_bbox.x + ori_bbox.width]
+        ori_head = self.image[ori_bbox[1]: ori_bbox[1] + ori_bbox[3], ori_bbox[0]: ori_bbox[0] + ori_bbox[2]]
 
         new_width = self.rand_scale.uniform(self.scale[0], self.scale[1]) * ori_bbox_w
         new_height = self.rand_scale.uniform(self.scale[0], self.scale[1]) * ori_bbox_h

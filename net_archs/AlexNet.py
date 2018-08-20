@@ -8,7 +8,7 @@ import tensorflow.contrib.slim as slim
 trunc_normal = lambda stddev: tf.truncated_normal_initializer(0.0, stddev)
 
 def alexnet_v2(inputs,
-               num_classes=68,
+               num_classes=136,
                is_training=True,
                dropout_keep_prob=0.5,
                spatial_squeeze=True,
@@ -39,8 +39,7 @@ def alexnet_v2(inputs,
                                    scope='dropout6')
                 net = slim.conv2d(net, 4096, [1, 1], scope='fc7')
                 # Convert end_points_collection into a end_point dict.
-                end_points = slim.utils.convert_collection_to_dict(
-                    end_points_collection)
+                end_points = slim.utils.convert_collection_to_dict(end_points_collection)
                 if global_pool:
                     net = tf.reduce_mean(net, [1, 2], keep_dims=True, name='global_pool')
                     end_points['global_pool'] = net
