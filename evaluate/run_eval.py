@@ -5,7 +5,7 @@ from __future__ import print_function
 import os
 import sys
 import argparse
-from evaluate.facial_landmark import landmark_eval
+from evaluate import landmark_eval
 
 def main(args):
     with open(args.gtlandmarkfile, 'r') as gt_f:
