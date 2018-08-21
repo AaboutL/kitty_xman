@@ -6,9 +6,12 @@ import os
 import cv2
 import numpy as np
 import h5py
+import tensorflow as tf
+import random
 
 from utilities import preprocess
 from utilities import visualize
+from utilities import tfrecords_util
 
 show = False
 
@@ -72,21 +75,56 @@ class Dataset(object):
                 visualize.show_rect(norm_img, norm_bbox)
                 visualize.show_image(norm_img, 'norm', 0)
             total_image.append(norm_img)
+            norm_pts = sum(norm_pts.tolist(), [])
             total_pts.append(norm_pts)
         return total_image, total_pts
 
-    def save(self, output_file):
+    def save(self, output_file, format):
+        if format=='hdf5':
+            self.save_hdf5(output_file)
+        if format=='tfrecords':
+            self.save_tfrecords(output_file)
+
+    def read(self, input_file, format):
+        if format=='hdf5':
+            self.read_hdf5(input_file)
+        if format=='tfrecords':
+            self.read_tfrecords(input_file)
+
+    def save_hdf5(self, output_file):
         with h5py.File(output_file, 'w') as output_f:
             total_image, total_pts = self.gether_data()
             img_set = output_f.create_dataset('image_dset', np.shape(total_image), dtype='i8', data=total_image)
             pts_set = output_f.create_dataset('points_dset', np.shape(total_pts), dtype='f', data=total_pts)
 
-    def read(self, input_file):
+    def read_hdf5(self, input_file):
         with h5py.File(input_file, 'r') as input_f:
             image_set = input_f['/image_dset'].value
             points_set = input_f['/points_dset'].value
 
             return image_set, points_set
+
+    def save_tfrecords(self, output_file):
+        print('generating %s' %output_file)
+        total_image, total_pts = self.gether_data()
+        print('total sampes:', len(total_image))
+        exit(0)
+        indices = np.arange(0, len(total_image))
+        random.shuffle(indices)
+        print('indices:', indices)
+        with tf.python_io.TFRecordWriter(output_file) as record_writer:
+            for i in indices:
+                image = total_image[i]
+                print
+                image_raw = image.tostring()
+                pts = total_pts[i]
+                example = tf.train.Example(features=tf.train.Features(
+                    feature={
+                        'image': tfrecords_util.bytes_feature(image_raw),
+                        'label': tfrecords_util.float_list_feature(pts)
+                    }
+                ))
+                record_writer.write(example.SerializeToString())
 
 
 

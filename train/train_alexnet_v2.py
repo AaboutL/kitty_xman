@@ -47,7 +47,7 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
-    config = tf.ConfigProto()
+    # config = tf.ConfigProto()
 
     dset = dataset.Dataset()
     image_set, points_set= dset.read(args.input_file)
@@ -66,23 +66,22 @@ if __name__ == '__main__':
 
         # construct loss
         inference, _ = AlexNet.alexnet_v2(images, args.num_landmarks*2, is_training, args.dropout_keep_prob)
-        loss = tf.reduce_mean(NormRmse(GroudTruth=points_gt, Prediction=inference, num_points=args.num_landmarks*2))
+        loss = tf.reduce_mean(NormRmse(GroudTruth=points_gt, Prediction=inference, num_points=args.num_landmarks))
         # tf.summary.scalar('landmark_loss', loss)
-        with tf.control_dependencies(tf.get_collection(tf.GraphKeys.UPDATE_OPS,'alexnet_v2')):
-            optimizer = tf.train.AdamOptimizer(0.001).minimize(loss,
-                                                               var_list=tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES,'alexnet_v2'))
+        # with tf.control_dependencies(tf.get_collection(tf.GraphKeys.UPDATE_OPS,'alexnet_v2')):
+        optimizer = tf.train.AdamOptimizer(0.001).minimize(loss,var_list=tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES,'alexnet_v2'))
 
         Saver = tf.train.Saver(tf.trainable_variables(), max_to_keep=10)
         # merged = tf.summary.merge_all()
-        with tf.Session(config=config) as sess:
-            Writer = tf.summary.FileWriter(args.log_dir, sess.graph)
-
+        Writer = tf.summary.FileWriter(args.log_dir, tf.get_default_graph())
+        # with tf.Session(config=config) as sess:
+        with tf.Session() as sess:
             sess.run(tf.global_variables_initializer())
             batch_num = len(image_set) // args.batch_size
+            step = 0
             for epoch in range(args.epoches):
-                # tf.get_default_graph().finalize()
-                step = 0
-                while step < args.epoch_size:
+                batch_id = 0
+                while batch_id < args.epoch_size:
                     RandomIdx = np.random.choice(image_set.shape[0], args.batch_size, False)
                     start_time = time.time()
                     # summary, _, lm_loss = sess.run([merged, optimizer, loss],
@@ -90,13 +89,14 @@ if __name__ == '__main__':
                     #                                           points_gt : points_set[RandomIdx],
                     #                                           is_training : args.is_training})
                     _, lm_loss = sess.run([optimizer, loss],
-                                                   feed_dict={images : image_set[RandomIdx],
-                                                              points_gt : points_set[RandomIdx],
-                                                              is_training : args.is_training})
+                                          feed_dict={images : image_set[RandomIdx],
+                                                     points_gt : points_set[RandomIdx],
+                                                     is_training : args.is_training})
                     # Writer.add_summary(summary)
                     duration = time.time() - start_time
                     print('Epoch: [%d][%d/%d]\tTime %.3f\tLoss %2.3f' %
-                          (epoch, step+1, args.epoch_size, duration, lm_loss))
+                          (epoch, batch_id+1, args.epoch_size, duration, lm_loss))
+                    batch_id += 1
                     step += 1
                 Saver.save(sess, args.model_dir + '/model', global_step=step)
             Writer.close()
