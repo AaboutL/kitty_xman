@@ -32,15 +32,18 @@ import tensorflow as tf
 import argparse
 import os
 import sys
-import facenet
 from six.moves import xrange
+
+from utilities import model_tool
+
+os.environ['CUDA_VISIBLE_DEVICES'] = ''
 
 def main(args):
     with tf.Graph().as_default():
         with tf.Session() as sess:
             # Load the model metagraph and checkpoint
             print('Model directory: %s' % args.model_dir)
-            meta_file, ckpt_file = facenet.get_model_filenames(os.path.expanduser(args.model_dir))
+            meta_file, ckpt_file = model_tool.get_model_filenames(os.path.expanduser(args.model_dir))
             
             print('Metagraph file: %s' % meta_file)
             print('Checkpoint file: %s' % ckpt_file)
@@ -55,7 +58,7 @@ def main(args):
             input_graph_def = sess.graph.as_graph_def()
             
             # Freeze the graph def
-            output_graph_def = freeze_graph_def(sess, input_graph_def, 'embeddings')
+            output_graph_def = freeze_graph_def(sess, input_graph_def, args.output_node_name)
 
         # Serialize and dump the output graph to the filesystem
         with tf.gfile.GFile(args.output_file, 'wb') as f:
@@ -79,8 +82,8 @@ def freeze_graph_def(sess, input_graph_def, output_node_names):
     # Get the list of important nodes
     whitelist_names = []
     for node in input_graph_def.node:
-        if (node.name.startswith('InceptionResnetV2') or node.name == 'input' or
-                node.name.startswith('phase_train') or node.name.startswith('Logits')):
+        if (node.name.startswith('alexnet_v2') or node.name == 'Placeholder_1' or node.name=='Placeholder_2' or
+                node.name == 'is_training'):
             whitelist_names.append(node.name)
 
     # Replace all the variables in the graph with constants of the same values
@@ -92,10 +95,14 @@ def freeze_graph_def(sess, input_graph_def, output_node_names):
 def parse_arguments(argv):
     parser = argparse.ArgumentParser()
     
-    parser.add_argument('model_dir', type=str, 
-        help='Directory containing the metagraph (.meta) file and the checkpoint (ckpt) file containing model parameters')
-    parser.add_argument('output_file', type=str, 
-        help='Filename for the exported graphdef protobuf (.pb)')
+    parser.add_argument('--model_dir', type=str,
+        help='Directory containing the metagraph (.meta) file and the checkpoint (ckpt) file containing model parameters',
+        default='/home/public/nfs132_1/hanfy/models/fine_model')
+    parser.add_argument('--output_file', type=str,
+        help='Filename for the exported graphdef protobuf (.pb)',
+        default='/home/public/nfs132_1/hanfy/models/pb_model/test.pb')
+    parser.add_argument('--output_node_name', type=str, help='output node of the model',
+                        default='alexnet_v2/fc8/squeezed')
     return parser.parse_args(argv)
 
 if __name__ == '__main__':

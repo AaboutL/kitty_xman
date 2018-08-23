@@ -57,9 +57,9 @@ if __name__ == '__main__':
         global_step = tf.Variable(0, trainable=False)
 
         # placeholders
-        lr = tf.placeholder(tf.float32)
-        images = tf.placeholder(tf.float32, [None, 224, 224, 3])
-        points_gt = tf.placeholder(tf.float32, [None, args.num_landmarks*2])
+        lr = tf.placeholder(tf.float32, name='learning_rate')
+        images = tf.placeholder(tf.float32, [None, 224, 224, 3], name='image_ph')
+        points_gt = tf.placeholder(tf.float32, [None, args.num_landmarks*2], name='points_gt_ph')
         is_training = tf.placeholder(tf.bool, name='is_training')
 
         # tf.summary.image('input_image', images, 10)
@@ -83,6 +83,7 @@ if __name__ == '__main__':
                 batch_id = 0
                 while batch_id < args.epoch_size:
                     RandomIdx = np.random.choice(image_set.shape[0], args.batch_size, False)
+                    print('RandomIdx:', RandomIdx)
                     start_time = time.time()
                     # summary, _, lm_loss = sess.run([merged, optimizer, loss],
                     #                                feed_dict={images : image_set[RandomIdx],

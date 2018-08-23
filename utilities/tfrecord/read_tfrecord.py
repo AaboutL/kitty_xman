@@ -18,7 +18,8 @@ def decode(serialized_example):
         serialized_example,
         features={
             'image': tf.FixedLenFeature([], tf.string),
-            'label': tf.FixedLenFeature([], tf.float32),
+            # 'label': tf.FixedLenFeature([], tf.float32),
+            'label': tf.FixedLenSequenceFeature([], tf.float32, allow_missing=True),
         }
     )
     image = tf.decode_raw(features['image'], tf.uint8)
@@ -41,9 +42,44 @@ def convert_from_tfrecord(batch_size, num_epochs, input_file):
         dataset = dataset.map(decode)
         dataset = dataset.map(normalize)
 
-        dataset = dataset.shuffle(3883) # buffer_size should be the data set size
+        dataset = dataset.shuffle(5000) # buffer_size should be the data set size
         dataset = dataset.repeat(num_epochs)
         dataset = dataset.batch(batch_size)
         iterator = dataset.make_one_shot_iterator()
 
     return iterator.get_next()
+
+#################################################################################################
+
+def read_and_decode(rec_file):
+    shuffle_batch = False
+    reader = tf.TFRecordReader()
+    _, serialized_example = reader.read(rec_file)
+    features = tf.parse_single_example(
+        serialized_example,
+        features={
+            'image': tf.FixedLenFeature([], tf.string),
+            # 'label': tf.FixedLenFeature([], tf.float32),
+            'label': tf.FixedLenSequenceFeature([], tf.float32, allow_missing=True),
+        }
+    )
+    image = tf.decode_raw(features['image'], tf.uint8)
+    image = tf.reshape(image, [224, 224, 3])
+    label = features['label']
+    label = tf.reshape(label, [136])
+
+    if shuffle_batch:
+        images, labels = tf.train.shuffle_batch([image, label],
+                                                batch_size=64,
+                                                capacity=1000,
+                                                num_threads=4,
+                                                min_after_dequeue=200)
+    else:
+        images, labels = tf.train.batch([image, label],
+                                        batch_size=64,
+                                        capacity=1000,
+                                        num_threads=4
+                                        )
+    return images, labels
+
+

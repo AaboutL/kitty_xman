@@ -30,7 +30,8 @@ class Dataset(object):
         items = os.listdir(root_dir)
         items.sort()
         for item in items:
-            if item == 'testset': continue
+            # if item == 'testset': continue
+            if item in ['testset']:continue
             path = os.path.join(root_dir, item)
             if not os.path.isfile(path):
                 self.get_datalist(path, format)
@@ -51,7 +52,7 @@ class Dataset(object):
                 points.append(point)
         return points
 
-    def gether_data(self):
+    def gether_data(self, is_bbox_aug=True):
         total_image = []
         total_pts = []
         for item in self.datalist:
@@ -61,21 +62,19 @@ class Dataset(object):
             pts = self.read_pts(pts_path)
             self.preprocess.set_img(img)
             self.preprocess.set_pts(pts)
-            self.preprocess.get_shape_gt()
-            if show:
-                visualize.show_points(self.preprocess.image, self.preprocess.points)
-                visualize.show_rect(self.preprocess.image, self.preprocess.ori_bbox)
-                visualize.show_image(self.preprocess.image, 'ori', 0)
 
-            norm_img, norm_pts = self.preprocess.normalize_data()
+            norm_img, norm_pts = self.preprocess.resize_data(is_bbox_aug)
             pts_float = np.asarray(norm_pts, np.float32)
-            norm_bbox = cv2.boundingRect(pts_float)
             if show:
+                norm_bbox = cv2.boundingRect(pts_float)
                 visualize.show_points(norm_img, norm_pts)
                 visualize.show_rect(norm_img, norm_bbox)
                 visualize.show_image(norm_img, 'norm', 0)
             total_image.append(norm_img)
             norm_pts = sum(norm_pts.tolist(), [])
+            if show:
+                visualize.show_points(norm_img, norm_pts, dim=1)
+                visualize.show_image(norm_img, 'norm', 0)
             total_pts.append(norm_pts)
         return total_image, total_pts
 
@@ -108,20 +107,17 @@ class Dataset(object):
         print('generating %s' %output_file)
         total_image, total_pts = self.gether_data()
         print('total sampes:', len(total_image))
-        exit(0)
         indices = np.arange(0, len(total_image))
         random.shuffle(indices)
-        print('indices:', indices)
         with tf.python_io.TFRecordWriter(output_file) as record_writer:
             for i in indices:
                 image = total_image[i]
-                print
                 image_raw = image.tostring()
                 pts = total_pts[i]
                 example = tf.train.Example(features=tf.train.Features(
                     feature={
                         'image': tfrecords_util.bytes_feature(image_raw),
-                        'label': tfrecords_util.float_list_feature(pts)
+                        'label': tfrecords_util.float_list_feature(pts),
                     }
                 ))
                 record_writer.write(example.SerializeToString())
