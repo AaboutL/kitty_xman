@@ -11,6 +11,8 @@ import time
 from utilities import dataset
 from net_archs import AlexNet
 from utilities.tfrecord import read_tfrecord
+from utilities import model_tool
+from utilities import visualize
 
 os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 
@@ -39,8 +41,18 @@ def main(args):
         Saver = tf.train.Saver(tf.trainable_variables(), max_to_keep=10)
         Writer = tf.summary.FileWriter(args.log_dir, tf.get_default_graph())
         with tf.Session() as sess:
+            # test
+            # img_batch, pts_batch = sess.run([image_batch, points_batch])
+            # for i in range(len(img_batch)):
+            #     visualize.show_points(img_batch[i], pts_batch[i], dim=1)
+            #     visualize.show_image(img_batch[i], 'img', 0)
+
             sess.run(tf.global_variables_initializer())
+
             step = 0
+            if args.pretrained_model_dir is not None:
+                step = int(model_tool.load_model(sess, model_dir=args.pretrained_model_dir))
+
             try:
                 while True:
                     start_time = time.time()
@@ -62,18 +74,22 @@ if __name__ == '__main__':
                         default='/home/public/nfs132_1/hanfy/align/ibugs/trainset.record')
     parser.add_argument('--num_landmarks', type=int, help='number of landmarks on a face',
                         default=68)
+    parser.add_argument('--learning_rate', type=float, help='learning rate',
+                        default=0.001)
     parser.add_argument('--is_training', type=bool, help='which mode, training or inference',
                         default=True)
     parser.add_argument('--batch_size', type=int, help='size of a batch',
                         default=64)
     parser.add_argument('--num_epochs', type=int, help='how many epoches should train',
-                        default=100)
+                        default=1000)
     parser.add_argument('--epoch_size', type=int, help='how many batches in one epoch',
                         default=1000)
     parser.add_argument('--log_dir', type=str, help='Directory to the log file',
                         default='/home/public/nfs132_1/hanfy/logs/align_log')
     parser.add_argument('--model_dir', type=str, help='Director to the model file',
-                        default='/home/public/nfs132_1/hanfy/models/align_model')
+                        default='/home/public/nfs132_1/hanfy/models/align_model/model_0824_pm')
+    parser.add_argument('--pretrained_model_dir', type=str, help='Directory to the pretrain model')
+                        # ,default='/home/public/nfs132_1/hanfy/models/align_model/model_0822')
     parser.add_argument('--dropout_keep_prob', type=float, help='dropout rate',
                         default=0.5)
 

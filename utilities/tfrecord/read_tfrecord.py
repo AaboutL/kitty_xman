@@ -28,9 +28,13 @@ def decode(serialized_example):
     points = features['label']
     return image, points
 
-def normalize(image, points):
-    image = tf.cast(image, tf.float32) * (1./ 255) - 0.5
-    return image, points
+def preprocess(image, points):
+    # image = tf.cast(image, tf.float32) * (1./ 255) - 0.5 # does this method only fit gray image?
+    image = tf.image.random_brightness(image, max_delta=63)
+    image = tf.image.random_contrast(image, lower=0.2, upper=1.8)
+    norm_image = tf.image.per_image_standardization(image)
+    return norm_image, points
+
 
 def convert_from_tfrecord(batch_size, num_epochs, input_file):
     if not num_epochs:
@@ -59,7 +63,6 @@ def read_and_decode(rec_file):
         serialized_example,
         features={
             'image': tf.FixedLenFeature([], tf.string),
-            # 'label': tf.FixedLenFeature([], tf.float32),
             'label': tf.FixedLenSequenceFeature([], tf.float32, allow_missing=True),
         }
     )

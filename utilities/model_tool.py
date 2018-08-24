@@ -17,7 +17,8 @@ def get_model_filenames(model_dir):
     ckpt = tf.train.get_checkpoint_state(model_dir)
     if ckpt and ckpt.model_checkpoint_path:
         ckpt_file = os.path.basename(ckpt.model_checkpoint_path)
-        return meta_file, ckpt_file
+        step = ckpt_file.split('-')[-1]
+        return meta_file, ckpt_file, step
 
 def load_model(sess, model_dir):
     model_exp = os.path.expanduser(model_dir)
@@ -29,11 +30,12 @@ def load_model(sess, model_dir):
             tf.import_graph_def(graph_def, name='')
     else:
         print('model directory %s' %model_exp)
-        meta_file, ckpt_file = get_model_filenames(model_exp)
+        meta_file, ckpt_file, step = get_model_filenames(model_exp)
         print('meta_file %s' %meta_file)
         print('ckpt_file %s' %ckpt_file)
         saver = tf.train.import_meta_graph(os.path.join(model_exp, meta_file))
         saver.restore(sess, os.path.join(model_exp, ckpt_file))
+        return step
 
 def show_op_name():
     graph = tf.get_default_graph()

@@ -63,19 +63,25 @@ class Dataset(object):
             self.preprocess.set_img(img)
             self.preprocess.set_pts(pts)
 
-            norm_img, norm_pts = self.preprocess.resize_data(is_bbox_aug)
-            pts_float = np.asarray(norm_pts, np.float32)
+            resized_img, resized_pts = self.preprocess.resize_data(is_bbox_aug)
+            mirrored_img, mirrored_pts = self.preprocess.flip_left_right(resized_img, resized_pts)
+            pts_float = np.asarray(mirrored_pts, np.float32)
             if show:
-                norm_bbox = cv2.boundingRect(pts_float)
-                visualize.show_points(norm_img, norm_pts)
-                visualize.show_rect(norm_img, norm_bbox)
-                visualize.show_image(norm_img, 'norm', 0)
-            total_image.append(norm_img)
-            norm_pts = sum(norm_pts.tolist(), [])
+                mir_bbox = cv2.boundingRect(pts_float)
+                visualize.show_points(mirrored_img, mirrored_pts)
+                visualize.show_rect(mirrored_img, mir_bbox)
+                visualize.show_image(mirrored_img, 'pts', 0)
+                visualize.show_image(resized_img, 'resize', 0)
+            total_image.append(resized_img)
+            total_image.append(mirrored_img)
+            resized_flatten_pts = sum(resized_pts.tolist(), [])
+            mirrored_flatten_pts = sum(mirrored_pts.tolist(), [])
             if show:
-                visualize.show_points(norm_img, norm_pts, dim=1)
-                visualize.show_image(norm_img, 'norm', 0)
-            total_pts.append(norm_pts)
+                tmp_img = resized_img
+                visualize.show_points(tmp_img, resized_flatten_pts, dim=1)
+                visualize.show_image(tmp_img, 'pts2', 0)
+            total_pts.append(resized_flatten_pts)
+            total_pts.append(mirrored_flatten_pts)
         return total_image, total_pts
 
     def save(self, output_file, format):

@@ -78,7 +78,11 @@ class Preprocess(object):
         self.auged_bbox = [left, up, right-left, down-up]
         return [left, up, right-left, down-up]
 
-
+    def flip_left_right(self, image, pts):
+        flipped_img = cv2.flip(image, 1)
+        img_w = image.shape[1]
+        flipped_pts = np.abs(np.subtract(pts, [img_w, 0]))
+        return flipped_img, flipped_pts
 
 
 

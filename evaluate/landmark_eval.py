@@ -18,20 +18,25 @@ def dist(gtLandmark, dist_type='centers', left_pt=36, right_pt=42, num_eye_pts=6
     return normDist
 
 def landmark_error(gtLandmarks, predict_Landmarks, dist_type='centers', show_results=False, verbose=False):
+    norm_errors = []
     errors = []
     for i in range(len(gtLandmarks)):
         norm_dist = dist(gtLandmarks[i], dist_type=dist_type)
-        error = np.mean(np.sqrt(np.sum((gtLandmarks[i] - predict_Landmarks[i])**2, axis=1)))/norm_dist
+        error = np.mean(np.sqrt(np.sum((gtLandmarks[i] - predict_Landmarks[i])**2, axis=1)))
+        norm_error = error/norm_dist
         errors.append(error)
+        norm_errors.append(norm_error)
         if verbose:
             print('{0}: {1}'.format(i, error))
 
-    if verbose:
+    if show_results:
         print("Image idxs sorted by error")
         print(np.argsort(errors))
+    avg_norm_error = np.mean(norm_errors)
     avg_error = np.mean(errors)
     print("Average error: {0}".format(avg_error))
-    return errors
+    print("Average norm error: {0}".format(avg_norm_error))
+    return norm_errors
 
 def auc_error(errors, failure_threshold, step=0.0001, showCurve=False):
     nErrors = len(errors)
