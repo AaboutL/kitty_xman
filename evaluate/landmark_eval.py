@@ -36,7 +36,7 @@ def landmark_error(gtLandmarks, predict_Landmarks, dist_type='centers', show_res
     avg_error = np.mean(errors)
     print("Average error: {0}".format(avg_error))
     print("Average norm error: {0}".format(avg_norm_error))
-    return norm_errors
+    return norm_errors, errors
 
 def auc_error(errors, failure_threshold, step=0.0001, showCurve=False):
     nErrors = len(errors)

@@ -30,13 +30,13 @@ def decode(serialized_example):
 
 def preprocess(image, points):
     # image = tf.cast(image, tf.float32) * (1./ 255) - 0.5 # does this method only fit gray image?
-    image = tf.image.random_brightness(image, max_delta=63)
-    image = tf.image.random_contrast(image, lower=0.2, upper=1.8)
+    # image = tf.image.random_brightness(image, max_delta=63)
+    # image = tf.image.random_contrast(image, lower=0.2, upper=1.8)
     norm_image = tf.image.per_image_standardization(image)
     return norm_image, points
 
 
-def convert_from_tfrecord(batch_size, num_epochs, input_file):
+def convert_from_tfrecord(input_file, batch_size=0, num_epochs=1, is_preprocess=True, is_shuffle=True):
     if not num_epochs:
         num_epochs = None
 
@@ -44,14 +44,19 @@ def convert_from_tfrecord(batch_size, num_epochs, input_file):
         dataset = tf.data.TFRecordDataset(input_file)
 
         dataset = dataset.map(decode)
-        dataset = dataset.map(normalize)
+        if is_preprocess is True:
+            dataset = dataset.map(preprocess)
 
-        dataset = dataset.shuffle(5000) # buffer_size should be the data set size
-        dataset = dataset.repeat(num_epochs)
-        dataset = dataset.batch(batch_size)
+        if is_shuffle is True:
+            dataset = dataset.shuffle(1000+3*batch_size) # buffer_size should be the data set size
+        if num_epochs>1:
+            dataset = dataset.repeat(num_epochs)
+        if batch_size>0:
+            dataset = dataset.batch(batch_size)
         iterator = dataset.make_one_shot_iterator()
 
     return iterator.get_next()
+    # return iterator
 
 #################################################################################################
 

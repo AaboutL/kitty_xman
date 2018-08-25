@@ -7,6 +7,7 @@ import argparse
 import os
 import numpy as np
 import time
+import cv2
 
 from utilities import dataset
 from utilities import model_tool
@@ -36,8 +37,13 @@ def main(args):
 
             results = np.reshape(results, [-1, 68, 2])
             points_set = np.reshape(points_set, [-1, 68, 2])
-            errors = landmark_eval.landmark_error(points_set, results, show_results=True)
-            landmark_eval.auc_error(errors, 1, showCurve=True)
+            norm_errors, errors = landmark_eval.landmark_error(points_set, results, show_results=True)
+            # landmark_eval.auc_error(norm_errors, 1, showCurve=True)
+            for i in range(len(results)):
+                visualize.show_points(image_set[i], results[i], dim=2, color=(0, 0, 255))
+                visualize.show_points(image_set[i], points_set[i], dim=2)
+                cv2.putText(image_set[i], str(errors[i]), (30, 20), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0))
+                visualize.show_image(image_set[i], 'pts', 0)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()

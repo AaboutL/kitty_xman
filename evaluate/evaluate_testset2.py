@@ -12,6 +12,7 @@ from utilities import dataset
 from utilities import model_tool
 from utilities import visualize
 from evaluate import landmark_eval
+from utilities.tfrecord import read_tfrecord
 
 os.environ['CUDA_VISIBLE_DEVICES']=''
 
@@ -24,23 +25,27 @@ def main(args):
     with tf.Graph().as_default():
         with tf.Session() as sess:
             model_tool.load_model(sess, args.model)
+            # model_tool.show_op_name()
+            # exit(0)
+            image_batch, points_batch = read_tfrecord.convert_from_tfrecord(64, 1, '/home/public/nfs132_1/hanfy/align/ibugs/validationset.record')
 
             image_input = tf.get_default_graph().get_tensor_by_name('IteratorGetNext:0')
             training_placeholder = tf.get_default_graph().get_tensor_by_name('is_training:0')
             pts_pred = tf.get_default_graph().get_tensor_by_name('alexnet_v2/fc8/squeezed:0')
 
             start_time = time.time()
-            results = sess.run(pts_pred, feed_dict={image_input:image_set, training_placeholder:False})
+            images = sess.run(image_batch)
+            results = sess.run(pts_pred, feed_dict={image_input:images, training_placeholder:False})
             duration = time.time() - start_time
             print('%d images total cost %f, average cost %f' %(len(image_set), duration, duration/len(image_set)))
 
             results = np.reshape(results, [-1, 68, 2])
             points_set = np.reshape(points_set, [-1, 68, 2])
 
-            for i in range(len(image_set)):
+            for i in range(len(images)):
                 print('res:', results[i])
-                visualize.show_points(image_set[i], results[i], dim=2)
-                visualize.show_image(image_set[i], 'test', 0)
+                visualize.show_points(images[i], results[i], dim=2)
+                visualize.show_image(images[i], 'test', 0)
 
             errors = landmark_eval.landmark_error(points_set, results)
             landmark_eval.auc_error(errors, 0.2, showCurve=True)
@@ -49,7 +54,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--model', type=str, help='where is model stored',
                         # default='/home/public/nfs132_1/hanfy/models/pb_model/test.pb')
-                        default='/home/public/nfs132_1/hanfy/models/align_model/model_0822')
+                        default='/home/public/nfs132_1/hanfy/models/align_model/model_0824_pm')
     parser.add_argument('--dataset_dir', type=str, help='dataset for test',
                         default='/home/public/nfs72/face/ibugs/lfpw/testset')
 

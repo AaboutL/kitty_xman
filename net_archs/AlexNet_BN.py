@@ -19,13 +19,13 @@ def alexnet_v2(inputs,
         # Collect outputs for conv2d, fully_connected and max_pool2d.
         with slim.arg_scope([slim.conv2d, slim.fully_connected, slim.max_pool2d],
                             outputs_collections=[end_points_collection]):
-            net = slim.conv2d(inputs, 64, [11, 11], 4, padding='VALID', scope='conv1')
+            net = slim.batch_norm(slim.conv2d(inputs, 64, [11, 11], 4, padding='VALID', scope='conv1'))
             net = slim.max_pool2d(net, [3, 3], 2, scope='pool1')
-            net = slim.conv2d(net, 192, [5, 5], scope='conv2')
+            net = slim.batch_norm(slim.conv2d(net, 192, [5, 5], scope='conv2'))
             net = slim.max_pool2d(net, [3, 3], 2, scope='pool2')
-            net = slim.conv2d(net, 384, [3, 3], scope='conv3')
-            net = slim.conv2d(net, 384, [3, 3], scope='conv4')
-            net = slim.conv2d(net, 256, [3, 3], scope='conv5')
+            net = slim.batch_norm(slim.conv2d(net, 384, [3, 3], scope='conv3'))
+            net = slim.batch_norm(slim.conv2d(net, 384, [3, 3], scope='conv4'))
+            net = slim.batch_norm(slim.conv2d(net, 256, [3, 3], scope='conv5'))
             net = slim.max_pool2d(net, [3, 3], 2, scope='pool5')
 
             # Use conv2d instead of fully_connected layers.
