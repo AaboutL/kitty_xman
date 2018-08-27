@@ -13,13 +13,14 @@ from utilities import model_tool
 from utilities import visualize
 from evaluate import landmark_eval
 from utilities.tfrecord import read_tfrecord
+import cv2
 
 os.environ['CUDA_VISIBLE_DEVICES']=''
 
 def main(args):
     dset = dataset.Dataset()
     dset.get_datalist(args.dataset_dir,['png', 'jpg'])
-    image_set, points_set = dset.gether_data()
+    image_set, points_set = dset.gether_data(is_bbox_aug=False)
     print('image_set len %d' %len(image_set))
 
     with tf.Graph().as_default():
@@ -27,7 +28,7 @@ def main(args):
             model_tool.load_model(sess, args.model)
             # model_tool.show_op_name()
             # exit(0)
-            image_batch, points_batch = read_tfrecord.convert_from_tfrecord('/home/public/nfs132_1/hanfy/align/ibugs/validationset.record', 64, 1, is_preprocess=False)
+            image_batch, points_batch = read_tfrecord.convert_from_tfrecord('/home/public/nfs132_1/hanfy/align/ibugs/validationset_bbox_auged.record', 64, 1, is_preprocess=False)
 
             # image_input = tf.get_default_graph().get_tensor_by_name('IteratorGetNext:0')
             image_input = tf.get_default_graph().get_tensor_by_name('image_input:0')
@@ -35,27 +36,30 @@ def main(args):
             pts_pred = tf.get_default_graph().get_tensor_by_name('alexnet_v2/fc8/squeezed:0')
 
             start_time = time.time()
-            images = sess.run(image_batch)
-            results = sess.run(pts_pred, feed_dict={image_input:images, training_placeholder:False})
+            image_set, points_set = sess.run([image_batch, points_batch])
+            results = sess.run(pts_pred, feed_dict={image_input:image_set, training_placeholder:False})
             duration = time.time() - start_time
             print('%d images total cost %f, average cost %f' %(len(image_set), duration, duration/len(image_set)))
 
             results = np.reshape(results, [-1, 68, 2])
             points_set = np.reshape(points_set, [-1, 68, 2])
 
-            for i in range(len(images)):
-                print('res:', results[i])
-                visualize.show_points(images[i], results[i], dim=2)
-                visualize.show_image(images[i], 'test', 0)
-
-            errors = landmark_eval.landmark_error(points_set, results)
+            norm_errors, errors = landmark_eval.landmark_error(points_set, results, show_results=True)
             landmark_eval.auc_error(errors, 0.2, showCurve=True)
+
+            for i in range(len(image_set)):
+                print('res:', results[i])
+                visualize.show_points(image_set[i], results[i], dim=2)
+                visualize.show_points(image_set[i], points_set[i], dim=2, color=(0,0, 255))
+                cv2.putText(image_set[i], str(errors[i]), (30, 20), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0))
+                visualize.show_image(image_set[i], 'test', 0)
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--model', type=str, help='where is model stored',
                         # default='/home/public/nfs132_1/hanfy/models/pb_model/test.pb')
-                        default='/home/public/nfs132_1/hanfy/models/align_model/model_0827_pm')
+                        default='/home/public/nfs132_1/hanfy/models/align_model/model_0827_am2')
     parser.add_argument('--dataset_dir', type=str, help='dataset for test',
                         default='/home/public/nfs72/face/ibugs/lfpw/testset')
 

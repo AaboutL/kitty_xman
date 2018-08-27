@@ -16,6 +16,8 @@ from utilities import model_tool
 from utilities import visualize
 from evaluate import landmark_eval
 
+from train import loss_func
+
 os.environ['CUDA_VISIBLE_DEVICES'] = '1'
 
 TRAIN_FILE = 'train.tfrecords'
@@ -30,8 +32,8 @@ def NormRmse(GroudTruth, Prediction, num_points):
 
 def main(args):
 
-    os.mkdir(args.model_dir)
-    os.mkdir(args.log_dir)
+    os.makedirs(args.model_dir, exist_ok=True)
+    os.makedirs(args.log_dir, exist_ok=True)
 
     with tf.Graph().as_default():
         val_image, val_pts = read_tfrecord.convert_from_tfrecord(args.val_file, batch_size=448, is_preprocess=False, is_shuffle=False)
@@ -44,8 +46,8 @@ def main(args):
 
         # construct loss
         inference, _ = AlexNet_BN.alexnet_v2(image_batch, args.num_landmarks*2, is_training, args.dropout_keep_prob)
-        loss = tf.reduce_mean(NormRmse(GroudTruth=points_batch, Prediction=inference, num_points=args.num_landmarks))
-        optimizer = tf.train.AdamOptimizer(0.001).minimize(loss,var_list=tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES,'alexnet_v2'))
+        loss = tf.reduce_mean(loss_func.NormRmse(GroudTruth=points_batch, Prediction=inference, num_points=args.num_landmarks))
+        optimizer = tf.train.AdamOptimizer(args.learning_rate).minimize(loss,var_list=tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES,'alexnet_v2'))
 
         Saver = tf.train.Saver(tf.trainable_variables(), max_to_keep=10)
         Writer = tf.summary.FileWriter(args.log_dir, tf.get_default_graph())
@@ -89,13 +91,13 @@ def main(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--input_file', type=str, help='path to the dataset',
-                        default='/home/public/nfs132_1/hanfy/align/ibugs/trainset.record')
+                        default='/home/public/nfs132_1/hanfy/align/ibugs/trainset_bbox_auged.record')
     parser.add_argument('--val_file', type=str, help='validation file',
-                        default='/home/public/nfs132_1/hanfy/align/ibugs/validationset.record')
+                        default='/home/public/nfs132_1/hanfy/align/ibugs/validationset_bbox_auged.record')
     parser.add_argument('--num_landmarks', type=int, help='number of landmarks on a face',
                         default=68)
     parser.add_argument('--learning_rate', type=float, help='learning rate',
-                        default=0.001)
+                        default=0.0005)
     parser.add_argument('--is_training', type=bool, help='which mode, training or inference',
                         default=True)
     parser.add_argument('--batch_size', type=int, help='size of a batch',
@@ -105,11 +107,11 @@ if __name__ == '__main__':
     parser.add_argument('--epoch_size', type=int, help='how many batches in one epoch',
                         default=1000)
     parser.add_argument('--log_dir', type=str, help='Directory to the log file',
-                        default='/home/public/nfs132_1/hanfy/logs/log_0827')
+                        default='/home/public/nfs132_1/hanfy/logs/log_0827_am2')
     parser.add_argument('--model_dir', type=str, help='Director to the model file',
-                        default='/home/public/nfs132_1/hanfy/models/align_model/model_0827_pm')
-    parser.add_argument('--pretrained_model_dir', type=str, help='Directory to the pretrain model')
-                        # ,default='/home/public/nfs132_1/hanfy/models/align_model/model_0822')
+                        default='/home/public/nfs132_1/hanfy/models/align_model/model_finetune0.0005_from_0827_am2')
+    parser.add_argument('--pretrained_model_dir', type=str, help='Directory to the pretrain model'
+                        ,default='/home/public/nfs132_1/hanfy/models/align_model/model_0827_am2')
     parser.add_argument('--dropout_keep_prob', type=float, help='dropout rate',
                         default=0.5)
 

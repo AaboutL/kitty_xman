@@ -14,14 +14,14 @@ root_dir = '/home/public/nfs72/face/ibugs'
 root_dir = '/home/public/nfs132_1/hanfy/align/ibugs/testset'
 train_items = []
 validate_items = []
-trainset_tfrecords = '/home/public/nfs132_1/hanfy/align/ibugs/trainset_bbox_aug.record'
+trainset_tfrecords = '/home/public/nfs132_1/hanfy/align/ibugs/trainset_bbox_flip.record'
 validationset_tfrecords = '/home/public/nfs132_1/hanfy/align/ibugs/validationset.record'
 
 dset = dataset.Dataset()
 dset.get_datalist(root_dir, ['png', 'jpg'])
 dset.gether_data(True)
-# dset.save(trainset_tfrecords, format='tfrecords')
-dset.save(validationset_tfrecords, format='tfrecords')
+dset.save(trainset_tfrecords, format='tfrecords')
+# dset.save(validationset_tfrecords, format='tfrecords')
 print('finished!')
 
 
