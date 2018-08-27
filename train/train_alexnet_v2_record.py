@@ -10,6 +10,7 @@ import time
 
 from utilities import dataset
 from net_archs import AlexNet
+from net_archs import AlexNet_BN
 from utilities.tfrecord import read_tfrecord
 from utilities import model_tool
 from utilities import visualize
@@ -28,6 +29,10 @@ def NormRmse(GroudTruth, Prediction, num_points):
     return loss/norm
 
 def main(args):
+
+    os.mkdir(args.model_dir)
+    os.mkdir(args.log_dir)
+
     with tf.Graph().as_default():
         val_image, val_pts = read_tfrecord.convert_from_tfrecord(args.val_file, batch_size=448, is_preprocess=False, is_shuffle=False)
 
@@ -38,7 +43,7 @@ def main(args):
         is_training = tf.placeholder(tf.bool, name='is_training')
 
         # construct loss
-        inference, _ = AlexNet.alexnet_v2(image_batch, args.num_landmarks*2, is_training, args.dropout_keep_prob)
+        inference, _ = AlexNet_BN.alexnet_v2(image_batch, args.num_landmarks*2, is_training, args.dropout_keep_prob)
         loss = tf.reduce_mean(NormRmse(GroudTruth=points_batch, Prediction=inference, num_points=args.num_landmarks))
         optimizer = tf.train.AdamOptimizer(0.001).minimize(loss,var_list=tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES,'alexnet_v2'))
 
@@ -100,9 +105,9 @@ if __name__ == '__main__':
     parser.add_argument('--epoch_size', type=int, help='how many batches in one epoch',
                         default=1000)
     parser.add_argument('--log_dir', type=str, help='Directory to the log file',
-                        default='/home/public/nfs132_1/hanfy/logs/align_log')
+                        default='/home/public/nfs132_1/hanfy/logs/log_0827')
     parser.add_argument('--model_dir', type=str, help='Director to the model file',
-                        default='/home/public/nfs132_1/hanfy/models/align_model/model_0825_pm')
+                        default='/home/public/nfs132_1/hanfy/models/align_model/model_0827_pm')
     parser.add_argument('--pretrained_model_dir', type=str, help='Directory to the pretrain model')
                         # ,default='/home/public/nfs132_1/hanfy/models/align_model/model_0822')
     parser.add_argument('--dropout_keep_prob', type=float, help='dropout rate',

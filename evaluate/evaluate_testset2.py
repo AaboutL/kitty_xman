@@ -27,9 +27,10 @@ def main(args):
             model_tool.load_model(sess, args.model)
             # model_tool.show_op_name()
             # exit(0)
-            image_batch, points_batch = read_tfrecord.convert_from_tfrecord(64, 1, '/home/public/nfs132_1/hanfy/align/ibugs/validationset.record')
+            image_batch, points_batch = read_tfrecord.convert_from_tfrecord('/home/public/nfs132_1/hanfy/align/ibugs/validationset.record', 64, 1, is_preprocess=False)
 
-            image_input = tf.get_default_graph().get_tensor_by_name('IteratorGetNext:0')
+            # image_input = tf.get_default_graph().get_tensor_by_name('IteratorGetNext:0')
+            image_input = tf.get_default_graph().get_tensor_by_name('image_input:0')
             training_placeholder = tf.get_default_graph().get_tensor_by_name('is_training:0')
             pts_pred = tf.get_default_graph().get_tensor_by_name('alexnet_v2/fc8/squeezed:0')
 
@@ -54,7 +55,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--model', type=str, help='where is model stored',
                         # default='/home/public/nfs132_1/hanfy/models/pb_model/test.pb')
-                        default='/home/public/nfs132_1/hanfy/models/align_model/model_0824_pm')
+                        default='/home/public/nfs132_1/hanfy/models/align_model/model_0827_pm')
     parser.add_argument('--dataset_dir', type=str, help='dataset for test',
                         default='/home/public/nfs72/face/ibugs/lfpw/testset')
 
