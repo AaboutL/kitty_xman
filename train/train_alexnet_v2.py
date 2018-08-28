@@ -62,8 +62,6 @@ if __name__ == '__main__':
         points_gt = tf.placeholder(tf.float32, [None, args.num_landmarks*2], name='points_gt_ph')
         is_training = tf.placeholder(tf.bool, name='is_training')
 
-        # tf.summary.image('input_image', images, 10)
-
         # construct loss
         inference, _ = AlexNet.alexnet_v2(images, args.num_landmarks*2, is_training, args.dropout_keep_prob)
         loss = tf.reduce_mean(NormRmse(GroudTruth=points_gt, Prediction=inference, num_points=args.num_landmarks))

@@ -7,7 +7,7 @@ import tensorflow.contrib.slim as slim
 
 trunc_normal = lambda stddev: tf.truncated_normal_initializer(0.0, stddev)
 
-def alexnet_v2(inputs,
+def inference(inputs,
                num_classes=136,
                is_training=True,
                dropout_keep_prob=0.5,

@@ -30,20 +30,27 @@ def main(args):
             pts_pred = tf.get_default_graph().get_tensor_by_name('alexnet_v2/fc8/squeezed:0')
             print(len(image_set))
 
-            start_time = time.time()
-            results = sess.run(pts_pred, feed_dict={image_input:image_set, training_placeholder:False})
-            duration = time.time() - start_time
-            print('%d images total cost %f, average cost %f' %(len(image_set), duration, duration/len(image_set)))
+            for i in range(len(image_set)):
+                image = []
+                img = image_set[i]
+                image.append(img)
+                start_time = time.time()
+                result = sess.run(pts_pred, feed_dict={image_input:image, training_placeholder:False})
+                duration = time.time() - start_time
+                print('%d images total cost %f, average cost %f' %(len(image_set), duration, duration/len(image_set)))
+                res = np.reshape(result, [68, 2])
+                pts = points_set[i]
+                pts = np.reshape(pts, [68, 2])
+                error = np.mean(np.sqrt(np.sum(np.subtract(res, pts))))
+                visualize.show_points(img, res, dim=2)
+                visualize.show_points(img, pts, dim=2, color=(0,0, 255))
+                cv2.putText(image_set[i], str(error), (40, 20), cv2.FONT_HERSHEY_TRIPLEX, 1, (255, 0, 0))
+                visualize.show_image(img, 'test', 0)
 
-            results = np.reshape(results, [-1, 68, 2])
-            points_set = np.reshape(points_set, [-1, 68, 2])
-            norm_errors, errors = landmark_eval.landmark_error(points_set, results, show_results=True)
+            # results = np.reshape(results, [-1, 68, 2])
+            # points_set = np.reshape(points_set, [-1, 68, 2])
+            # norm_errors, errors = landmark_eval.landmark_error(points_set, results, show_results=True)
             # landmark_eval.auc_error(norm_errors, 1, showCurve=True)
-            for i in range(len(results)):
-                visualize.show_points(image_set[i], results[i], dim=2, color=(0, 0, 255))
-                visualize.show_points(image_set[i], points_set[i], dim=2)
-                cv2.putText(image_set[i], str(errors[i]), (30, 20), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0))
-                visualize.show_image(image_set[i], 'pts', 0)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()

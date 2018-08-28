@@ -60,8 +60,8 @@ def convert_from_tfrecord(input_file, batch_size=0, num_epochs=1, is_preprocess=
 
 #################################################################################################
 
-def read_and_decode(rec_file):
-    shuffle_batch = False
+def read_and_decode(rec_file, is_shuffle=True):
+    shuffle_batch = is_shuffle
     reader = tf.TFRecordReader()
     _, serialized_example = reader.read(rec_file)
     features = tf.parse_single_example(
@@ -79,13 +79,13 @@ def read_and_decode(rec_file):
     if shuffle_batch:
         images, labels = tf.train.shuffle_batch([image, label],
                                                 batch_size=64,
-                                                capacity=1000,
+                                                capacity=10000,
                                                 num_threads=4,
                                                 min_after_dequeue=200)
     else:
         images, labels = tf.train.batch([image, label],
                                         batch_size=64,
-                                        capacity=1000,
+                                        capacity=10000,
                                         num_threads=4
                                         )
     return images, labels

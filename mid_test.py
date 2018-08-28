@@ -11,7 +11,7 @@ from utilities import visualize
 os.environ['CUDA_VISIBLE_DEVICES'] = ''
 
 root_dir = '/home/public/nfs72/face/ibugs'
-root_dir = '/home/public/nfs132_1/hanfy/align/ibugs/testset'
+# root_dir = '/home/public/nfs132_1/hanfy/align/ibugs/testset'
 train_items = []
 validate_items = []
 trainset_tfrecords = '/home/public/nfs132_1/hanfy/align/ibugs/trainset_bbox_flip.record'
