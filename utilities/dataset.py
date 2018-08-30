@@ -54,6 +54,7 @@ class Dataset(object):
 
     def gether_data(self, is_bbox_aug=True, is_flip=True):
         total_image = []
+        total_pts_flatten = []
         total_pts = []
         for item in self.datalist:
             img_path = item
@@ -66,13 +67,23 @@ class Dataset(object):
             resized_img, resized_pts = self.preprocess.resize_data(is_bbox_aug)
             resized_flatten_pts = sum(resized_pts.tolist(), [])
             total_image.append(resized_img)
-            total_pts.append(resized_flatten_pts)
+            total_pts_flatten.append(resized_flatten_pts)
+            total_pts.append(resized_pts)
             if is_flip is True:
                 mirrored_img, mirrored_pts = self.preprocess.flip_left_right(resized_img, resized_pts)
                 total_image.append(mirrored_img)
                 mirrored_flatten_pts = sum(mirrored_pts.tolist(), [])
-                total_pts.append(mirrored_flatten_pts)
-        return total_image, total_pts
+                total_pts_flatten.append(mirrored_flatten_pts)
+                total_pts.append(mirrored_pts)
+        return total_image, total_pts_flatten, total_pts
+
+    def normalize_pts(self, points_set):
+        points_arr = np.asarray(points_set)
+        mean = np.mean(points_arr, axis=0)
+        std = np.std(points_arr, axis=0)
+        print('mean', mean)
+        print('std', std)
+        return mean, std
 
     def save(self, output_file, format):
         if format=='hdf5':
