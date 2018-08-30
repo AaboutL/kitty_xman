@@ -25,7 +25,7 @@ validationset_tfrecords = '/home/public/nfs132_1/hanfy/align/ibugs/validationset
 # dset.save(validationset_tfrecords, format='tfrecords')
 # print('finished!')
 
-output_tfrecords = '/home/public/nfs132_1/hanfy/align/ibugs/validationset_bbox1.record'
+output_tfrecords = '/home/public/nfs132_1/hanfy/align/ibugs/trainset_bbox5_flip.record'
 filename_queue = tf.train.string_input_producer([output_tfrecords], num_epochs=1)
 images, labels = read_tfrecord.read_and_decode(filename_queue, is_shuffle=True)
 init_op = tf.group(tf.global_variables_initializer(), tf.local_variables_initializer())
@@ -36,7 +36,8 @@ with tf.Session() as sess:
     for i in range(1000):
         imgs, labs = sess.run([images, labels])
         for j in range(4):
-            img = imgs[j]
+            img = imgs[j].copy()
+            print(np.shape(img))
             points = labs[j]
             visualize.show_points(img, points, dim=1)
             pts1 = np.reshape(points, [68,2])

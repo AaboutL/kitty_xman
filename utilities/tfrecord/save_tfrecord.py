@@ -27,13 +27,18 @@ def convert_to_tfrecord(image_set, points_set, output_file):
             ))
             record_writer.write(example.SerializeToString())
 
-# root_dir = '/home/public/nfs72/face/ibugs'
-root_dir = '/home/public/nfs132_1/hanfy/align/ibugs/testset'
-trainset_tfrecord = '/home/public/nfs132_1/hanfy/align/ibugs/trainset_bbox5_flip.record'
-validationset_tfrecord = '/home/public/nfs132_1/hanfy/align/ibugs/validationset_bbox5.record'
-
+# generate trainset
+train_dir = '/home/public/nfs72/face/ibugs'
+trainset_tfrecord = '/home/public/nfs132_1/hanfy/align/ibugs/trainset_bbox_flip_227.record'
 dset = dataset.Dataset()
-dset.get_datalist(root_dir, ['png', 'jpg'])
+dset.get_datalist(train_dir, ['png', 'jpg'])
 image_set, points_set = dset.gether_data(is_flip=True)
-# convert_to_tfrecord(image_set, points_set, trainset_tfrecord)
+convert_to_tfrecord(image_set, points_set, trainset_tfrecord)
+
+# generate testset
+root_dir = '/home/public/nfs132_1/hanfy/align/ibugs/testset'
+validationset_tfrecord = '/home/public/nfs132_1/hanfy/align/ibugs/validationset_bbox_227.record'
+dset = dataset.Dataset()
+dset.get_datalist(train_dir, ['png', 'jpg'])
+image_set, points_set = dset.gether_data(is_flip=False)
 convert_to_tfrecord(image_set, points_set, validationset_tfrecord)

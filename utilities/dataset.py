@@ -24,7 +24,7 @@ class Dataset(object):
         '''
         # self.root_dir = root_dir
         self.datalist = []
-        self.preprocess = preprocess.Preprocess(None, None, [224, 224])
+        self.preprocess = preprocess.Preprocess(None, None, [227, 227])
 
     def get_datalist(self, root_dir, format):
         items = os.listdir(root_dir)

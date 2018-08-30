@@ -50,9 +50,9 @@ def main(args):
 
         # construct loss
         inference, _ = net.inference(image_batch, args.num_landmarks*2, is_training, args.dropout_keep_prob)
-        # loss = tf.reduce_mean(loss_func.NormRmse(gtLandmarks=points_batch, predLandmarks=inference, num_points=args.num_landmarks))
-        loss = loss_func.wing_loss(gtLandmarks=points_batch, predLandmarks=inference, num_points=args.num_landmarks)
-        tf.summary.scalar('wing_loss', loss)
+        loss = tf.reduce_mean(loss_func.NormRmse(gtLandmarks=points_batch, predLandmarks=inference, num_points=args.num_landmarks))
+        # loss = loss_func.wing_loss(gtLandmarks=points_batch, predLandmarks=inference, num_points=args.num_landmarks)
+        tf.summary.scalar('norm_loss', loss)
         optimizer = tf.train.AdamOptimizer(args.learning_rate).minimize(loss,var_list=tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES,'alexnet_v2'))
 
         Saver = tf.train.Saver(tf.trainable_variables(), max_to_keep=10)
@@ -84,19 +84,19 @@ def main(args):
                     print('step: [%d]\tTime %.3f\tLoss %2.3f' %(step, duration, lm_loss))
                     Writer.add_summary(summary, step)
                     step += 1
-                    if step % 1000 == 0:
+                    if step % 100 == 0:
                         pred_pts = sess.run([inference], feed_dict={image_batch:img_val, is_training:False})
                         pred_pts = np.reshape(pred_pts, [len(pts_val), 68, 2])
                         pts_val = np.reshape(pts_val, [len(pts_val), 68, 2])
                         for i in range(20):
-                            img = img_val[i]
-                            # print(np.shape(img))
-                            # print(np.shape(pred_pts))
-                            # print(np.shape(pts_val))
+                            img = img_val[i].copy()
+                            print(np.shape(img))
+                            print(np.shape(pred_pts))
+                            print(np.shape(pts_val))
                             visualize.show_points(img, pred_pts[i], color=(0, 0, 255))
                             visualize.show_points(img, pts_val[i], color=(0, 255, 0))
-                            visualize.show_image(img, name='val', waitkey=100)
-                        cv2.destroyWindow('val')
+                            visualize.show_image(img, name='slave7', waitkey=100)
+                        cv2.destroyWindow('slave7')
                         landmark_eval.landmark_error(pts_val, pred_pts)
 
                         Saver.save(sess, args.model_dir + '/model', global_step=step)
@@ -108,9 +108,9 @@ def main(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--input_file', type=str, help='path to the dataset',
-                        default='/home/public/nfs132_1/hanfy/align/ibugs/trainset_bbox_flip.record')
+                        default='/home/public/nfs132_1/hanfy/align/ibugs/trainset_bbox5_flip.record')
     parser.add_argument('--val_file', type=str, help='validation file',
-                        default='/home/public/nfs132_1/hanfy/align/ibugs/validationset_bbox_auged.record')
+                        default='/home/public/nfs132_1/hanfy/align/ibugs/validationset_bbox5.record')
     parser.add_argument('--num_landmarks', type=int, help='number of landmarks on a face',
                         default=68)
     parser.add_argument('--learning_rate', type=float, help='learning rate',
@@ -124,11 +124,11 @@ if __name__ == '__main__':
     parser.add_argument('--epoch_size', type=int, help='how many batches in one epoch',
                         default=1000)
     parser.add_argument('--log_dir', type=str, help='Directory to the log file',
-                        default='/home/public/nfs132_1/hanfy/logs/log_0827_am2')
+                        default='/home/public/nfs132_1/hanfy/logs/log_0830_am')
     parser.add_argument('--model_dir', type=str, help='Director to the model file',
-                        default='/home/public/nfs132_1/hanfy/models/align_model/model_wingloss_0829')
-    parser.add_argument('--pretrained_model_dir', type=str, help='Directory to the pretrain model'
-                        ,default='/home/public/nfs132_1/hanfy/models/align_model/model_wingloss_0829')
+                        default='/home/public/nfs132_1/hanfy/models/align_model/model_0830_am')
+    parser.add_argument('--pretrained_model_dir', type=str, help='Directory to the pretrain model')
+                        # ,default='/home/public/nfs132_1/hanfy/models/align_model/model_wingloss_0829')
     parser.add_argument('--dropout_keep_prob', type=float, help='dropout rate',
                         default=0.5)
 
