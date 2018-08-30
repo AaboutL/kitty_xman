@@ -79,7 +79,7 @@ def main(args):
                 while True:
                     start_time = time.time()
                     _, lm_loss, summary = sess.run([optimizer, loss, merged],
-                                          feed_dict={is_training : args.is_training})
+                                                   feed_dict={is_training : args.is_training})
                     duration = time.time() - start_time
                     print('step: [%d]\tTime %.3f\tLoss %2.3f' %(step, duration, lm_loss))
                     Writer.add_summary(summary, step)
@@ -134,4 +134,3 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
     main(args)
-

@@ -56,7 +56,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--model', type=str, help='where is model stored',
                         # default='/home/public/nfs132_1/hanfy/models/pb_model/test.pb')
-                        default='/home/public/nfs132_1/hanfy/models/align_model/model_finetune0.0005_from_0827_am2')
+                        default='/home/public/nfs132_1/hanfy/models/align_model/model_wingloss_0829')
     parser.add_argument('--dataset_dir', type=str, help='dataset for test',
                         default='/home/public/nfs72/face/ibugs/lfpw/testset')
 

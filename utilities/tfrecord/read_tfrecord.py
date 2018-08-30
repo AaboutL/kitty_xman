@@ -40,6 +40,7 @@ def convert_from_tfrecord(input_file, batch_size=0, num_epochs=1, is_preprocess=
     if not num_epochs:
         num_epochs = None
 
+    num_samples = sum(1 for _ in tf.python_io.tf_record_iterator(input_file))
     with tf.name_scope('input'):
         dataset = tf.data.TFRecordDataset(input_file)
 
@@ -48,7 +49,7 @@ def convert_from_tfrecord(input_file, batch_size=0, num_epochs=1, is_preprocess=
             dataset = dataset.map(preprocess)
 
         if is_shuffle is True:
-            dataset = dataset.shuffle(1000+3*batch_size) # buffer_size should be the data set size
+            dataset = dataset.shuffle(num_samples) # buffer_size should be the data set size
         if num_epochs>1:
             dataset = dataset.repeat(num_epochs)
         if batch_size>0:

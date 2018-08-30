@@ -45,7 +45,7 @@ def main(args):
             points_set = np.reshape(points_set, [-1, 68, 2])
 
             norm_errors, errors = landmark_eval.landmark_error(points_set, results, show_results=True)
-            landmark_eval.auc_error(errors, 0.2, showCurve=True)
+            landmark_eval.auc_error(norm_errors, 0.2, showCurve=True)
 
             for i in range(len(image_set)):
                 print('res:', results[i])
@@ -60,7 +60,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--model', type=str, help='where is model stored',
                         # default='/home/public/nfs132_1/hanfy/models/pb_model/test.pb')
-                        default='/home/public/nfs132_1/hanfy/models/align_model/model_finetune0.0005_from_0827_am2')
+                        default='/home/public/nfs132_1/hanfy/models/align_model/model_0827_am2')
+                        # default='/home/public/nfs132_1/hanfy/models/align_model/model_wingloss')
     parser.add_argument('--dataset_dir', type=str, help='dataset for test',
                         default='/home/public/nfs72/face/ibugs/lfpw/testset')
 

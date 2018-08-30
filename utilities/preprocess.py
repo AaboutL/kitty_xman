@@ -69,9 +69,10 @@ class Preprocess(object):
         delta_left = self.rand_scale.uniform(self.scale[0], self.scale[1]) * ori_bbox_w
         delta_right = self.rand_scale.uniform(self.scale[0], self.scale[1]) * ori_bbox_w
 
-        left = np.maximum(int(ori_bbox[0]-delta_left), 0)
+        delta_right = delta_up = delta_down = delta_left = 5
         height = self.image.shape[0]
         width = self.image.shape[1]
+        left = np.maximum(int(ori_bbox[0]-delta_left), 0)
         right = np.minimum(int(ori_bbox[0]+ori_bbox[2]+delta_right), width)
         up = np.maximum(int(ori_bbox[1] - delta_up), 0)
         down = np.minimum(int(ori_bbox[1]+ori_bbox[3]+delta_down), height)
