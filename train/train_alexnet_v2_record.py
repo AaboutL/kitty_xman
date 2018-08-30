@@ -23,17 +23,6 @@ import cv2
 from train import loss_func
 
 os.environ['CUDA_VISIBLE_DEVICES'] = '1'
-
-TRAIN_FILE = 'train.tfrecords'
-VALIDATION_FILE = 'validation.tfrecords'
-
-def NormRmse(GroudTruth, Prediction, num_points):
-    Gt = tf.reshape(GroudTruth, [-1, num_points, 2])
-    Pt = tf.reshape(Prediction, [-1, num_points, 2])
-    loss = tf.reduce_mean(tf.sqrt(tf.reduce_sum(tf.squared_difference(Gt, Pt), 2)), 1)
-    norm = tf.norm(tf.reduce_mean(Gt[:, 36:42, :],1) - tf.reduce_mean(Gt[:, 42:48, :],1), axis=1)
-    return loss/norm
-
 def main(args):
 
     os.makedirs(args.model_dir, exist_ok=True)
@@ -54,19 +43,12 @@ def main(args):
         # loss = loss_func.wing_loss(gtLandmarks=points_batch, predLandmarks=inference, num_points=args.num_landmarks)
         tf.summary.scalar('norm_loss', loss)
         optimizer = tf.train.AdamOptimizer(args.learning_rate).minimize(loss,var_list=tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES,'alexnet_v2'))
-
         Saver = tf.train.Saver(tf.trainable_variables(), max_to_keep=10)
         merged = tf.summary.merge_all()
         Writer = tf.summary.FileWriter(args.log_dir, tf.get_default_graph())
         with tf.Session() as sess:
             # test
             img_val, pts_val = sess.run([val_image, val_pts])
-            # img_batch, pts_batch = sess.run([image_batch, points_batch])
-            # for i in range(len(img_batch)):
-            #     visualize.show_points(img_batch[i], pts_batch[i], dim=1)
-            #     visualize.show_image(img_batch[i], 'img', 0)
-            #     visualize.show_points(img_val[i], pts_val[i], dim=1)
-            #     visualize.show_image(img_val[i], 'val', 0)
 
             sess.run(tf.global_variables_initializer())
             sess.run(tf.local_variables_initializer())
@@ -90,9 +72,6 @@ def main(args):
                         pts_val = np.reshape(pts_val, [len(pts_val), 68, 2])
                         for i in range(20):
                             img = img_val[i].copy()
-                            print(np.shape(img))
-                            print(np.shape(pred_pts))
-                            print(np.shape(pts_val))
                             visualize.show_points(img, pred_pts[i], color=(0, 0, 255))
                             visualize.show_points(img, pts_val[i], color=(0, 255, 0))
                             visualize.show_image(img, name='slave7', waitkey=100)

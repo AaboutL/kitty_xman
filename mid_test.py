@@ -26,7 +26,7 @@ validationset_tfrecords = '/home/public/nfs132_1/hanfy/align/ibugs/validationset
 # print('finished!')
 
 output_tfrecords = '/home/public/nfs132_1/hanfy/align/ibugs/trainset_bbox5_flip.record'
-filename_queue = tf.train.string_input_producer([output_tfrecords], num_epochs=1)
+filename_queue = tf.train.string_input_producer([output_tfrecords], num_epochs=2)
 images, labels = read_tfrecord.read_and_decode(filename_queue, is_shuffle=True)
 init_op = tf.group(tf.global_variables_initializer(), tf.local_variables_initializer())
 with tf.Session() as sess:
