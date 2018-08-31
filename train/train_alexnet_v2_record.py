@@ -70,12 +70,12 @@ def main(args):
                         pred_pts = sess.run([inference], feed_dict={image_batch:img_val, is_training:False})
                         pred_pts = np.reshape(pred_pts, [len(pts_val), 68, 2])
                         pts_val = np.reshape(pts_val, [len(pts_val), 68, 2])
-                        for i in range(20):
-                            img = img_val[i].copy()
-                            visualize.show_points(img, pred_pts[i], color=(0, 0, 255))
-                            visualize.show_points(img, pts_val[i], color=(0, 255, 0))
-                            visualize.show_image(img, name='slave7', waitkey=100)
-                        cv2.destroyWindow('slave7')
+                        # for i in range(20):
+                            # img = img_val[i].copy()
+                            # visualize.show_points(img, pred_pts[i], color=(0, 0, 255))
+                            # visualize.show_points(img, pts_val[i], color=(0, 255, 0))
+                            # visualize.show_image(img, name='slave7', waitkey=100)
+                        # cv2.destroyWindow('slave7')
                         landmark_eval.landmark_error(pts_val, pred_pts)
 
                         Saver.save(sess, args.model_dir + '/model', global_step=step)
@@ -87,9 +87,9 @@ def main(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--input_file', type=str, help='path to the dataset',
-                        default='/home/public/nfs132_1/hanfy/align/ibugs/trainset_bbox5_flip.record')
+                        default='/home/public/nfs132_1/hanfy/align/ibugs/trainset_bbox5_norm.record')
     parser.add_argument('--val_file', type=str, help='validation file',
-                        default='/home/public/nfs132_1/hanfy/align/ibugs/validationset_bbox5.record')
+                        default='/home/public/nfs132_1/hanfy/align/ibugs/validationset_bbox5_norm.record')
     parser.add_argument('--num_landmarks', type=int, help='number of landmarks on a face',
                         default=68)
     parser.add_argument('--learning_rate', type=float, help='learning rate',
@@ -103,9 +103,9 @@ if __name__ == '__main__':
     parser.add_argument('--epoch_size', type=int, help='how many batches in one epoch',
                         default=1000)
     parser.add_argument('--log_dir', type=str, help='Directory to the log file',
-                        default='/home/public/nfs132_1/hanfy/logs/log_0830_am')
+                        default='/home/public/nfs132_1/hanfy/logs/log_0831_pm')
     parser.add_argument('--model_dir', type=str, help='Director to the model file',
-                        default='/home/public/nfs132_1/hanfy/models/align_model/model_0830_am')
+                        default='/home/public/nfs132_1/hanfy/models/align_model/model_0831_pm')
     parser.add_argument('--pretrained_model_dir', type=str, help='Directory to the pretrain model')
                         # ,default='/home/public/nfs132_1/hanfy/models/align_model/model_wingloss_0829')
     parser.add_argument('--dropout_keep_prob', type=float, help='dropout rate',

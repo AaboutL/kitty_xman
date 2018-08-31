@@ -69,7 +69,7 @@ class Preprocess(object):
         delta_left = self.rand_scale.uniform(self.scale[0], self.scale[1]) * ori_bbox_w
         delta_right = self.rand_scale.uniform(self.scale[0], self.scale[1]) * ori_bbox_w
 
-        delta_right = delta_up = delta_down = delta_left = 5
+        # delta_right = delta_up = delta_down = delta_left = 5
         height = self.image.shape[0]
         width = self.image.shape[1]
         left = np.maximum(int(ori_bbox[0]-delta_left), 0)
@@ -80,13 +80,68 @@ class Preprocess(object):
         return [left, up, right-left, down-up]
 
     def flip_left_right(self, image, pts):
+        pts_cp = pts.copy()
         flipped_img = cv2.flip(image, 1)
         img_w = image.shape[1]
-        flipped_pts = np.abs(np.subtract(pts, [img_w, 0]))
-        return flipped_img, flipped_pts
+        pts_cp = np.abs(np.subtract(pts_cp, [img_w, 0]))
+        mirrored_pts = self.mirrorShape(pts_cp)
+        return flipped_img, mirrored_pts
 
+    def mirrorShape(self, facialshape):
+        fs = facialshape.copy()
+        lEyeIndU = list(range(36, 40))
+        lEyeIndD = [40, 41]
+        rEyeIndU = list(range(42, 46))
+        rEyeIndD = [46, 47]
+        lBrowInd = list(range(17, 22))
+        rBrowInd = list(range(22, 27))
 
+        uMouthInd = list(range(48, 55))
+        dMouthInd = list(range(55, 60))
+        uInnMouthInd = list(range(60, 65))
+        dInnMouthInd = list(range(65, 68))
+        noseInd = list(range(31, 36))
+        beardInd = list(range(17))
 
+        lEyeU = fs[lEyeIndU].copy()
+        lEyeD = fs[lEyeIndD].copy()
+        rEyeU = fs[rEyeIndU].copy()
+        rEyeD = fs[rEyeIndD].copy()
+        lBrow = fs[lBrowInd].copy()
+        rBrow = fs[rBrowInd].copy()
+        uMouth = fs[uMouthInd].copy()
+        dMouth = fs[dMouthInd].copy()
+        uInnMouth = fs[uInnMouthInd].copy()
+        dInnMouth = fs[dInnMouthInd].copy()
+        nose = fs[noseInd].copy()
+        beard = fs[beardInd].copy()
 
+        lEyeIndU.reverse()
+        lEyeIndD.reverse()
+        rEyeIndU.reverse()
+        rEyeIndD.reverse()
+        lBrowInd.reverse()
+        rBrowInd.reverse()
 
+        uMouthInd.reverse()
+        dMouthInd.reverse()
+        uInnMouthInd.reverse()
+        dInnMouthInd.reverse()
+        beardInd.reverse()
+        noseInd.reverse()
+
+        fs[rEyeIndU] = lEyeU
+        fs[rEyeIndD] = lEyeD
+        fs[lEyeIndU] = rEyeU
+        fs[lEyeIndD] = rEyeD
+        fs[rBrowInd] = lBrow
+        fs[lBrowInd] = rBrow
+
+        fs[uMouthInd] = uMouth
+        fs[dMouthInd] = dMouth
+        fs[uInnMouthInd] = uInnMouth
+        fs[dInnMouthInd] = dInnMouth
+        fs[noseInd] = nose
+        fs[beardInd] = beard
+        return fs
 

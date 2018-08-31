@@ -18,15 +18,11 @@ validate_items = []
 trainset_tfrecords = '/home/public/nfs132_1/hanfy/align/ibugs/trainset_bbox_flip.record'
 validationset_tfrecords = '/home/public/nfs132_1/hanfy/align/ibugs/validationset.record'
 
+tmp_dir = '/home/public/nfs132_1/hanfy/align/ibugs/tmp'
 dset = dataset.Dataset()
-dset.get_datalist(root_dir, ['png', 'jpg'])
-b, a, points_set = dset.gether_data(False, False)
-dset.normalize_pts(points_set)
-
-
-# dset.save(trainset_tfrecords, format='tfrecords')
-# dset.save(validationset_tfrecords, format='tfrecords')
-print('finished!')
+dset.get_datalist(tmp_dir, ['png', 'jpg'])
+total_image, a, points_set = dset.gether_data()
+# mean, std = dset.normalize_pts(points_set)
 
 # output_tfrecords = '/home/public/nfs132_1/hanfy/align/ibugs/trainset_bbox5_flip.record'
 # filename_queue = tf.train.string_input_producer([output_tfrecords], num_epochs=2)
