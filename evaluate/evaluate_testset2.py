@@ -20,8 +20,13 @@ os.environ['CUDA_VISIBLE_DEVICES']=''
 def main(args):
     dset = dataset.Dataset()
     dset.get_datalist(args.dataset_dir,['png', 'jpg'])
-    image_set, points_set = dset.gether_data(is_bbox_aug=False)
+    image_set, points_set , _= dset.gether_data(is_bbox_aug=True)
     print('image_set len %d' %len(image_set))
+
+    shape_mean = np.loadtxt('/home/hanfy/workspace/DL/alignment/align_untouch/shape_mean.txt', delimiter=' ')
+    shape_std = np.loadtxt('/home/hanfy/workspace/DL/alignment/align_untouch/shape_std.txt', delimiter=' ')
+    print('mean', shape_mean)
+    print('std', shape_std)
 
     with tf.Graph().as_default():
         with tf.Session() as sess:
@@ -37,24 +42,27 @@ def main(args):
 
             start_time = time.time()
             image_set, points_set = sess.run([image_batch, points_batch])
-            results = sess.run(pts_pred, feed_dict={image_input:image_set, training_placeholder:False})
+            results = sess.run([pts_pred], feed_dict={image_input:image_set, training_placeholder:False})
             duration = time.time() - start_time
             print('%d images total cost %f, average cost %f' %(len(image_set), duration, duration/len(image_set)))
 
-            results = np.reshape(results, [-1, 68, 2])
             points_set = np.reshape(points_set, [-1, 68, 2])
+            results = np.reshape(results, [-1, 68, 2])
+            # results = np.multiply(np.sum(np.multiply(results, model_tool.std), model_tool.mean), 224)
 
-            norm_errors, errors = landmark_eval.landmark_error(points_set, results, show_results=True)
+            # norm_errors, errors = landmark_eval.landmark_error(points_set, results, show_results=True)
             # norm_errors, errors = landmark_eval.landmark_error(points_set, points_set, show_results=True)
-            landmark_eval.auc_error(norm_errors, 0.2, showCurve=True)
+            # landmark_eval.auc_error(norm_errors, 0.2, showCurve=True)
 
             for i in range(len(image_set)):
-                print('res:', results[i])
-                print('gt:', points_set[i])
-                visualize.show_points(image_set[i], results[i], dim=2)
+                print('pts: ', len(results[i]))
+                pred_shape = np.multiply(np.add(np.multiply(results[i], shape_std), shape_mean) + 0.5, 224.0)
+
+                # visualize.show_points(image_set[i], results[i], dim=2)
+                visualize.show_points(image_set[i], pred_shape, dim=2)
                 # visualize.show_points(image_set[i], points_set[i], dim=2)
                 visualize.show_points(image_set[i], points_set[i], dim=2, color=(0,0, 255))
-                cv2.putText(image_set[i], str(errors[i]), (40, 20), cv2.FONT_HERSHEY_TRIPLEX, 1, (255, 0, 0))
+                # cv2.putText(image_set[i], str(errors[i]), (40, 20), cv2.FONT_HERSHEY_TRIPLEX, 1, (255, 0, 0))
                 visualize.show_image(image_set[i], 'test', 0)
 
 
@@ -62,7 +70,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--model', type=str, help='where is model stored',
                         # default='/home/public/nfs132_1/hanfy/models/pb_model/test.pb')
-                        default='/home/public/nfs132_1/hanfy/models/align_model/model_0830_am')
+                        default='/home/public/nfs132_1/hanfy/models/align_model/model_0901_pm')
                         # default='/home/public/nfs132_1/hanfy/models/align_model/model_wingloss')
     parser.add_argument('--dataset_dir', type=str, help='dataset for test',
                         default='/home/public/nfs72/face/ibugs/lfpw/testset')

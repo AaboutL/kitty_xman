@@ -9,6 +9,8 @@ import cv2
 from utilities import tfrecords_util
 from utilities import dataset
 from utilities import preprocess
+from utilities import visualize
+from utilities import model_tool
 import numpy as np
 
 os.environ['CUDA_VISIBLE_DEVICES'] = ''
@@ -30,27 +32,33 @@ def convert_to_tfrecord(image_set, points_set, output_file):
             record_writer.write(example.SerializeToString())
 
 # generate trainset
-# tmp_dir = '/home/public/nfs132_1/hanfy/align/ibugs/tmp'
+# train_dir = '/home/public/nfs132_1/hanfy/align/ibugs/tmp'
 train_dir = '/home/public/nfs72/face/ibugs'
-trainset_tfrecord = '/home/public/nfs132_1/hanfy/align/ibugs/trainset_bbox_flip_norm.record'
+trainset_tfrecord = '/home/public/nfs132_1/hanfy/align/ibugs/trainset_bbox_flip.record'
 dset = dataset.Dataset()
 dset.get_datalist(train_dir, ['png', 'jpg'])
-image_set, _, points_set = dset.gether_data()
-mean, std = dset.normalize_pts(points_set)
-print('mean:', mean)
-size_factor = 1.0 / 224.0
-# points_set_norm = np.divide(np.subtract(points_set, mean), std) * size_factor
-points_set_norm = np.divide(np.subtract(np.multiply(points_set , size_factor), mean), std)
-points_set_norm_flatten = [sum(pts.tolist(), []) for pts in points_set_norm]
-convert_to_tfrecord(image_set, points_set_norm_flatten , trainset_tfrecord)
+image_set, _, shapes = dset.gether_data()
+mean, std, normed_shapes = dset.normalize_pts(shapes, 1.0/224.0)
+# np.savetxt('/home/hanfy/workspace/DL/alignment/align_untouch/shape_mean.txt', mean, header='mean')
+# np.savetxt('/home/hanfy/workspace/DL/alignment/align_untouch/shape_std.txt', mean, header='std')
+for i in range(len(image_set)):
+    img = image_set[i].copy()
+    res = np.multiply(np.add(np.multiply(normed_shapes[i], std), mean) + 0.5, 224.0)
+    print('norm', normed_shapes[i])
+    print('re', res)
+    print('ori', shapes[i])
+    visualize.show_points(img, res)
+    visualize.show_points(img, shapes[i], color=(0, 0, 255))
+    visualize.show_image(img, 'img', 0)
+exit(0)
+normed_shapes_flatten = [sum(pts.tolist(), []) for pts in shapes]
+convert_to_tfrecord(image_set, normed_shapes_flatten , trainset_tfrecord)
 
 # generate testset
 # root_dir = '/home/public/nfs132_1/hanfy/align/ibugs/testset'
-# validationset_tfrecord = '/home/public/nfs132_1/hanfy/align/ibugs/validationset_bbox_norm.record'
+# validationset_tfrecord = '/home/public/nfs132_1/hanfy/align/ibugs/validationset_bbox.record'
 # dset = dataset.Dataset()
 # dset.get_datalist(train_dir, ['png', 'jpg'])
 # image_set, _, points_set = dset.gether_data(is_flip=False)
-# # mean, std = dset.normalize_pts(points_set)
-# points_set_norm = np.divide(np.subtract(np.multiply(points_set , size_factor), mean), std)
-# points_set_norm_flatten = [sum(pts.tolist(), []) for pts in points_set_norm]
+# points_set_norm_flatten = [sum(pts.tolist(), []) for pts in points_set]
 # convert_to_tfrecord(image_set, points_set_norm_flatten, validationset_tfrecord)

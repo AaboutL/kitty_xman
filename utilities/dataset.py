@@ -77,13 +77,14 @@ class Dataset(object):
                 total_pts.append(mirrored_pts)
         return total_image, total_pts_flatten, total_pts
 
-    def normalize_pts(self, points_set):
-        points_arr = np.asarray(points_set)
-        mean = np.mean(points_arr, axis=0)
-        std = np.std(points_arr, axis=0)
-        print('mean', mean)
-        print('std', std)
-        return mean, std
+    def normalize_pts(self, points_set, scale_factor):
+        scaled_points = np.asarray(points_set) * scale_factor - 0.5
+        mean = np.mean(scaled_points, axis=0)
+        std = np.std(scaled_points, axis=0)
+        # print('mean', mean)
+        # print('std', std)
+        normed_points = np.divide(np.subtract(scaled_points, mean), std)
+        return mean, std, normed_points
 
     def save(self, output_file, format):
         if format=='hdf5':
