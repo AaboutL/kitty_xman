@@ -3,6 +3,8 @@ from __future__ import division
 from __future__ import print_function
 
 import numpy as np
+import matplotlib
+matplotlib.use('Agg')
 from matplotlib import pyplot as plt
 from scipy.integrate import simps
 
@@ -38,7 +40,7 @@ def landmark_error(gtLandmarks, predict_Landmarks, dist_type='centers', show_res
     print("Average norm error: {0}".format(avg_norm_error))
     return norm_errors, errors
 
-def auc_error(errors, failure_threshold, step=0.0001, showCurve=False):
+def auc_error(errors, failure_threshold, step=0.0001, save_path='', showCurve=True):
     nErrors = len(errors)
     xAxis = list(np.arange(0., failure_threshold+step, step))
     ced = [float(np.count_nonzero([errors <= x])) / nErrors for x in xAxis]
@@ -50,4 +52,6 @@ def auc_error(errors, failure_threshold, step=0.0001, showCurve=False):
     if showCurve:
         plt.plot(xAxis, ced)
         plt.show()
+        plt.savefig(save_path)
 
+    return auc, failure_rate

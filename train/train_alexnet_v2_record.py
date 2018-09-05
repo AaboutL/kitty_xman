@@ -106,9 +106,9 @@ if __name__ == '__main__':
     parser.add_argument('--epoch_size', type=int, help='how many batches in one epoch',
                         default=1000)
     parser.add_argument('--log_dir', type=str, help='Directory to the log file',
-                        default='/home/public/nfs132_1/hanfy/logs/log_0901_pm')
+                        default='/home/public/nfs132_1/hanfy/logs/log_0903_pm')
     parser.add_argument('--model_dir', type=str, help='Director to the model file',
-                        default='/home/public/nfs132_1/hanfy/models/align_model/model_0901_pm')
+                        default='/home/public/nfs132_1/hanfy/models/align_model/model_0903_pm')
     parser.add_argument('--pretrained_model_dir', type=str, help='Directory to the pretrain model')
                         # ,default='/home/public/nfs132_1/hanfy/models/align_model/model_wingloss_0829')
     parser.add_argument('--dropout_keep_prob', type=float, help='dropout rate',

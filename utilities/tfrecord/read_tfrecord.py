@@ -79,7 +79,7 @@ def read_and_decode(rec_file, is_shuffle=True):
 
     if shuffle_batch:
         images, labels = tf.train.shuffle_batch([image, label],
-                                                batch_size=64,
+                                                batch_size=30,
                                                 capacity=10000,
                                                 num_threads=4,
                                                 min_after_dequeue=200)

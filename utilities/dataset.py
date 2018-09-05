@@ -31,7 +31,7 @@ class Dataset(object):
         items.sort()
         for item in items:
             # if item == 'testset': continue
-            if item in ['testset']:continue
+            if item in ['testset', 'ibug']:continue
             path = os.path.join(root_dir, item)
             if not os.path.isfile(path):
                 self.get_datalist(path, format)
@@ -65,6 +65,8 @@ class Dataset(object):
             self.preprocess.set_pts(pts)
 
             resized_img, resized_pts = self.preprocess.resize_data(is_bbox_aug)
+            if resized_img is None:
+                continue
             resized_flatten_pts = sum(resized_pts.tolist(), [])
             total_image.append(resized_img)
             total_pts_flatten.append(resized_flatten_pts)
@@ -100,20 +102,19 @@ class Dataset(object):
 
     def save_hdf5(self, output_file):
         with h5py.File(output_file, 'w') as output_f:
-            total_image, total_pts = self.gether_data()
+            total_image, _, total_pts = self.gether_data()
             img_set = output_f.create_dataset('image_dset', np.shape(total_image), dtype='i8', data=total_image)
-            pts_set = output_f.create_dataset('points_dset', np.shape(total_pts), dtype='f', data=total_pts)
+            pts_set = output_f.create_dataset('points_dset', np.shape(total_pts), dtype='f', data=total_pts) # [68, 2]
 
     def read_hdf5(self, input_file):
         with h5py.File(input_file, 'r') as input_f:
             image_set = input_f['/image_dset'].value
-            points_set = input_f['/points_dset'].value
-
+            points_set = input_f['/points_dset'].value # [-1, 68, 2]
             return image_set, points_set
 
     def save_tfrecords(self, output_file):
         print('generating %s' %output_file)
-        total_image, total_pts = self.gether_data()
+        total_image, total_pts, _ = self.gether_data()
         print('total sampes:', len(total_image))
         indices = np.arange(0, len(total_image))
         random.shuffle(indices)

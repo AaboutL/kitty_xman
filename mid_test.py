@@ -11,20 +11,22 @@ from evaluate import landmark_eval
 
 os.environ['CUDA_VISIBLE_DEVICES'] = ''
 
+tmp_dir = '/home/public/nfs132_1/hanfy/align/ibugs/tmp'
 # root_dir = '/home/public/nfs72/face/ibugs'
-root_dir = '/home/public/nfs132_1/hanfy/align/ibugs/testset'
+# root_dir = '/home/public/nfs132_1/hanfy/align/ibugs/testset'
 train_items = []
 validate_items = []
-trainset_tfrecords = '/home/public/nfs132_1/hanfy/align/ibugs/trainset_bbox_flip.record'
-validationset_tfrecords = '/home/public/nfs132_1/hanfy/align/ibugs/validationset.record'
-
-tmp_dir = '/home/public/nfs132_1/hanfy/align/ibugs/tmp'
 dset = dataset.Dataset()
 dset.get_datalist(tmp_dir, ['png', 'jpg'])
-total_image, a, points_set = dset.gether_data()
+dset.save_hdf5('/home/public/nfs132_1/hanfy/align/ibugs/tmpset.hdf5')
+
+# tmp_dir = '/home/public/nfs132_1/hanfy/align/ibugs/tmp'
+# dset = dataset.Dataset()
+# dset.get_datalist(tmp_dir, ['png', 'jpg'])
+# total_image, a, points_set = dset.gether_data()
 # mean, std = dset.normalize_pts(points_set)
 
-# output_tfrecords = '/home/public/nfs132_1/hanfy/align/ibugs/trainset_bbox5_flip.record'
+# output_tfrecords = '/home/public/nfs132_1/hanfy/align/ibugs/validationset_bbox.record'
 # filename_queue = tf.train.string_input_producer([output_tfrecords], num_epochs=2)
 # images, labels = read_tfrecord.read_and_decode(filename_queue, is_shuffle=True)
 # init_op = tf.group(tf.global_variables_initializer(), tf.local_variables_initializer())
@@ -34,10 +36,11 @@ total_image, a, points_set = dset.gether_data()
 #     threads = tf.train.start_queue_runners(coord=coord)
 #     for i in range(1000):
 #         imgs, labs = sess.run([images, labels])
-#         for j in range(4):
+#         for j in range(30):
 #             img = imgs[j].copy()
 #             print(np.shape(img))
 #             points = labs[j]
+#             print(points)
 #             visualize.show_points(img, points, dim=1)
 #             pts1 = np.reshape(points, [68,2])
 #             pts2 = np.reshape(points, [68,2])+2

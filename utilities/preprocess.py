@@ -12,7 +12,7 @@ import h5py
 from utilities import visualize
 
 class Preprocess(object):
-    def __init__(self, image, points, target_size, scale=[0., 0.2]):
+    def __init__(self, image, points, target_size, scale=[0.1, 0.2]):
         '''
         :param image: origin image
         :param points: origin points, [[x,y]...]
@@ -42,13 +42,16 @@ class Preprocess(object):
             bbox = self.ori_bbox
         else:
             bbox = self.auged_bbox
+        # print(bbox[0], bbox[1], bbox[2], bbox[3])
         self.crop_face = self.image[bbox[1]: bbox[1] + bbox[3], bbox[0]: bbox[0] + bbox[2]]
         self.crop_shape = np.subtract(self.points_ori, [bbox[0], bbox[1]])
 
     def resize_data(self, is_bbox_aug=True):
         self.ori_bbox = cv2.boundingRect(np.asarray(self.points_ori, np.float32))
         if is_bbox_aug is True:
-            bbox = self.bbox_aug()
+            bbox = self.bbox_aug1()
+            if bbox is None:
+                return None, None
         else:
             bbox = self.ori_bbox
 
@@ -59,25 +62,59 @@ class Preprocess(object):
         return resized_img, resized_gts
 
     def bbox_aug(self):
+        height = self.image.shape[0]
+        width = self.image.shape[1]
+
         ori_bbox = self.ori_bbox
         ori_bbox_w = ori_bbox[2]
         ori_bbox_h = ori_bbox[3]
-        # ori_head = self.image[ori_bbox[1]: ori_bbox[1] + ori_bbox[3], ori_bbox[0]: ori_bbox[0] + ori_bbox[2]]
 
         delta_up = self.rand_scale.uniform(self.scale[0], self.scale[1]) * ori_bbox_h
         delta_down = self.rand_scale.uniform(self.scale[0], self.scale[1]) * ori_bbox_h
         delta_left = self.rand_scale.uniform(self.scale[0], self.scale[1]) * ori_bbox_w
         delta_right = self.rand_scale.uniform(self.scale[0], self.scale[1]) * ori_bbox_w
 
-        # delta_right = delta_up = delta_down = delta_left = 5
-        height = self.image.shape[0]
-        width = self.image.shape[1]
         left = np.maximum(int(ori_bbox[0]-delta_left), 0)
         right = np.minimum(int(ori_bbox[0]+ori_bbox[2]+delta_right), width)
         up = np.maximum(int(ori_bbox[1] - delta_up), 0)
         down = np.minimum(int(ori_bbox[1]+ori_bbox[3]+delta_down), height)
         self.auged_bbox = [left, up, right-left, down-up]
         return [left, up, right-left, down-up]
+
+    def bbox_aug1(self):
+        height = self.image.shape[0]
+        width = self.image.shape[1]
+
+        ori_bbox = self.ori_bbox
+        ori_bbox_x = ori_bbox[0]
+        ori_bbox_y = ori_bbox[1]
+        ori_bbox_w = ori_bbox[2]
+        ori_bbox_h = ori_bbox[3]
+
+        center_x = ori_bbox_x + int(ori_bbox_w/2)
+        center_y = ori_bbox_y + int(ori_bbox_h/2)
+        big_size = np.maximum(ori_bbox_w, ori_bbox_h)
+        delta_s = int(np.ceil(self.rand_scale.uniform(self.scale[0], self.scale[1]) * big_size))
+        bbox_s = big_size + delta_s
+        half_s = bbox_s // 2
+        if bbox_s > np.minimum(height, width):
+            self.auged_bbox = None
+            return None
+        left = center_x - half_s
+        up = center_y - half_s
+        right = center_x + half_s
+        down = center_y + half_s
+        if left < 0:
+            left = 0
+        if up < 0:
+            up = 0
+        if right > width:
+            left = width - bbox_s
+        if down > height:
+            up = height - bbox_s
+        self.auged_bbox = [left, up, bbox_s, bbox_s]
+        return [left, up, bbox_s, bbox_s]
+
 
     def flip_left_right(self, image, pts):
         pts_cp = pts.copy()
