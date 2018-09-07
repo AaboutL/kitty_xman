@@ -29,7 +29,7 @@ def main(args):
     # image_set, points_set = dset.read_hdf5('/home/public/nfs132_1/hanfy/align/ibugs/trainset.hdf5')
     # points_set = points_set.reshape(len(points_set), 68*2)
 
-    tmp_dir = '/home/public/nfs132_1/hanfy/align/ibugs/testset'
+    tmp_dir = '/home/public/nfs132_1/hanfy/align_data/ibugs/testset'
     dset = dataset.Dataset()
     dset.get_datalist(tmp_dir, ['png', 'jpg'])
     image_set, points_set, _ = dset.gether_data()
@@ -66,10 +66,11 @@ def main(args):
                 # cv2.imwrite(args.result_dir + '/' + str(i) + '.jpg', img)
                 cv2.imwrite(os.path.join(img_result_dir, str(i) + '.jpg'), img)
 
+            auc, failure_rate = landmark_eval.auc_error(errors, args.failure_threshold,
+                                                        save_path=os.path.join(args.result_dir, 'auc.jpg'))
             mean_error = np.mean(errors)
             print('mean_error', mean_error)
-            auc, failure_rate = landmark_eval.auc_error(errors, args.failure_threshold, save_path=os.path.join(args.result_dir, 'auc.jpg'))
-            with open(args.result, 'w+') as fp:
+            with open(args.result, 'a+') as fp:
                 fp.write("mean error: {0}".format(mean_error) + '\n')
                 fp.write("AUC @ {0}: {1}".format(args.failure_threshold, auc) + '\n')
                 fp.write("Failure rate: {0}".format(failure_rate) + '\n')
@@ -83,16 +84,16 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--model', type=str, help='where is model stored',
                         # default='/home/public/nfs132_1/hanfy/models/pb_model/test.pb')
-                        default='/home/public/nfs132_1/hanfy/models/align_model/model_0904_h5')
+                        default='/home/public/nfs132_1/hanfy/models/align_model/model_0905_h5')
     parser.add_argument('--dataset_dir', type=str, help='dataset for test',
                         default='/home/public/nfs132_1/hanfy/align/ibugs/testset')
     parser.add_argument('--test_file', type=str, help='path to the validation set',
                         default='/home/public/nfs132_1/hanfy/align/ibugs/testset.hdf5')
                         # default='/home/public/nfs132_1/hanfy/align/ibugs/tmpset.hdf5')
     parser.add_argument('--result_dir', type=str, help='save image with result',
-                        default='/home/public/nfs132_1/hanfy/results/0904_alex_l1_bbox_flip')
+                        default='/home/public/nfs132_1/hanfy/result_files/0904_alex_l1')
     parser.add_argument('--result', type=str, help='save test result',
-                        default='/home/public/nfs132_1/hanfy/results/0904_alex_l1_bbox_flip/result.txt')
+                        default='/home/public/nfs132_1/hanfy/result_files/0904_alex_l1/result.txt')
     parser.add_argument('--failure_threshold', type=float, default=10.0)
 
     args = parser.parse_args()
