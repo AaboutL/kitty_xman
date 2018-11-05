@@ -11,14 +11,17 @@ from evaluate import landmark_eval
 
 os.environ['CUDA_VISIBLE_DEVICES'] = ''
 
-tmp_dir = '/home/public/nfs132_1/hanfy/align/ibugs/tmp'
+# tmp_dir = '/home/public/nfs132_1/hanfy/align/ibugs/tmp'
+# tmp_dir = '/home/public/nfs132_1/hanfy/align_data/ibugs/common'
+tmp_dir = '/home/public/nfs132_1/hanfy/align_data/ibugs/challenge'
 # root_dir = '/home/public/nfs72/face/ibugs'
 # root_dir = '/home/public/nfs132_1/hanfy/align/ibugs/testset'
 train_items = []
 validate_items = []
 dset = dataset.Dataset()
 dset.get_datalist(tmp_dir, ['png', 'jpg'])
-dset.save_hdf5('/home/public/nfs132_1/hanfy/align/ibugs/tmpset.hdf5')
+# dset.save_hdf5('/home/public/nfs132_1/hanfy/align_data/ibugs/common.hdf5', True, False)
+dset.save_hdf5('/home/public/nfs132_1/hanfy/align_data/ibugs/challenge.hdf5', True, False)
 
 # tmp_dir = '/home/public/nfs132_1/hanfy/align/ibugs/tmp'
 # dset = dataset.Dataset()

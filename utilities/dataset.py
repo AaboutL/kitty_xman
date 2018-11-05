@@ -100,9 +100,9 @@ class Dataset(object):
         if format=='tfrecords':
             self.read_tfrecords(input_file)
 
-    def save_hdf5(self, output_file):
+    def save_hdf5(self, output_file, is_bbox_aug=True, is_flip=True):
         with h5py.File(output_file, 'w') as output_f:
-            total_image, _, total_pts = self.gether_data()
+            total_image, _, total_pts = self.gether_data(is_bbox_aug, is_flip)
             img_set = output_f.create_dataset('image_dset', np.shape(total_image), dtype='i8', data=total_image)
             pts_set = output_f.create_dataset('points_dset', np.shape(total_pts), dtype='f', data=total_pts) # [68, 2]
 

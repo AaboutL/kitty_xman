@@ -3,11 +3,11 @@ import os
 
 import importlib
 import tensorflow.contrib.slim as slim
-from tools import model_tools
+from utilities import model_tool
 
-model_dir = '/home/public/nfs72/hanfy/models/hand/fine_model/hand_36_no_fused_squeezenet-20180621-115258/ori'
-model_file = os.path.join(model_dir, '20180621-115258-284000.data-00000-of-00001')
-meta_file = os.path.join(model_dir, '20180621-115258-284000.meta')
+model_dir = '/home/slam/nfs132_0/landmark/version2/Train/09251428/models'
+model_file = os.path.join(model_dir, 'x-509952.data-00000-of-00001')
+meta_file = os.path.join(model_dir, 'x-509952.meta')
 
 with tf.Graph().as_default():
 
@@ -29,7 +29,7 @@ with tf.Graph().as_default():
     logits = tf.identity(logits, 'squeezenet/output_logits_stu')
     output = tf.nn.softmax(logits=logits, name="squeezenet/output_softmax_stu")
     # embeddings = tf.nn.l2_normalize(prelogits, 1, 1e-10, name='student_embeddings')
-    saver = model_tools.load_pretrained_model(sess, model_dir)
+    saver = model_tool.load_model(sess, model_dir)
     saver.save(sess, '/home/public/nfs72/hanfy/models/hand/fine_model/hand_36_no_fused_squeezenet-20180621-115258/renamed/hand_36_no_fused_squeezenet-20180621-115258')
 
 

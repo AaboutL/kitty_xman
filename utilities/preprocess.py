@@ -12,7 +12,7 @@ import h5py
 from utilities import visualize
 
 class Preprocess(object):
-    def __init__(self, image, points, target_size, scale=[0.1, 0.2]):
+    def __init__(self, image, points, target_size, scale=[0.1, 0.2], rotate_dev=30):
         '''
         :param image: origin image
         :param points: origin points, [[x,y]...]
@@ -23,6 +23,7 @@ class Preprocess(object):
         self.points_ori = points
         self.target_size = target_size
         self.scale = scale
+        self.rotate_dev = rotate_dev
         self.rand_scale = random.Random()
 
     def set_img(self, image):
@@ -115,6 +116,31 @@ class Preprocess(object):
         self.auged_bbox = [left, up, bbox_s, bbox_s]
         return [left, up, bbox_s, bbox_s]
 
+    def bbox_aug2(self, num_aug):
+        height = self.image.shape[0]
+        width = self.image.shape[1]
+
+        ori_bbox = self.ori_bbox
+        ori_bbox_w = ori_bbox[2]
+        ori_bbox_h = ori_bbox[3]
+        ori_bbox_l = ori_bbox[0]
+        ori_bbox_t = ori_bbox[1]
+        ori_bbox_r = ori_bbox_l + ori_bbox_w
+        ori_bbox_d = ori_bbox_t + ori_bbox_h
+        rand = random.Random()
+        ret_rects = []
+        ret_rects.append(ori_bbox)
+        for i in range(num_aug):
+            rand_l = rand.uniform(-(width)/10, width/10)
+            rand_t = rand.uniform(-(width)/10, width/10)
+            rand_r = rand.uniform(-(width)/10, width/10)
+            rand_d = rand.uniform(-(width)/10, width/10)
+            l_new = int(round(np.maximum(0, ori_bbox_l - rand_l)))
+            t_new = int(round(np.maximum(0, ori_bbox_t - rand_t)))
+            r_new = int(round(np.minimum(ori_bbox_r + rand_r, width)))
+            d_new = int(round(np.minimum(ori_bbox_d - rand_d, height)))
+            ret_rects.append([l_new, t_new, r_new - l_new, d_new - t_new])
+        return ret_rects
 
     def flip_left_right(self, image, pts):
         pts_cp = pts.copy()
@@ -181,4 +207,14 @@ class Preprocess(object):
         fs[noseInd] = nose
         fs[beardInd] = beard
         return fs
+
+    def rotate(self, nums=10):
+        for i in range(nums):
+            angle = np.random.uniform(0, self.rotate_dev)
+            R = np.array([[np.cos(angle), -np.sin(angle)], [np.sin(angle), np.cos(angle)]])
+            pts_rotate = np.dot(R, (self.points_ori - np.mean(self.points_ori, axis=0)).T).T + np.mean(self.points_ori, axis=0)
+
+            nose_pts = self.points_ori[30]
+            R_mat = cv2.getRotationMatrix2D(self.points_ori)
+            img_rotate = cv2.warpAffine()
 

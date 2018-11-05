@@ -9,9 +9,9 @@ import argparse
 import time
 
 from utilities import dataset
-# from net_archs import AlexNet as net
+from net_archs import AlexNet as net
 # from net_archs import AlexNet_BN as net
-from net_archs import squeezenet_v11 as net
+# from net_archs import squeezenet_v11 as net
 from evaluate import landmark_eval
 from train import loss_func
 from utilities import model_tool
@@ -42,9 +42,9 @@ def main(args):
         # construct loss
         inference, _ = net.inference(images, args.num_landmarks*2, is_training, args.dropout_keep_prob)
         with tf.variable_scope('squeezenet'):
-            # loss = tf.reduce_mean(loss_func.NormRmse(gtLandmarks=points_gt, predLandmarks=inference, num_points=args.num_landmarks))
+            loss = tf.reduce_mean(loss_func.NormRmse(gtLandmarks=points_gt, predLandmarks=inference, num_points=args.num_landmarks))
             # loss = tf.reduce_mean(loss_func.l1_loss(gtLandmarks=points_gt, predLandmarks=inference))
-            loss = tf.reduce_mean(loss_func.smooth_l1_loss(gtLandmarks=points_gt, predLandmarks=inference, num_points=args.num_landmarks))
+            # loss = tf.reduce_mean(loss_func.smooth_l1_loss(gtLandmarks=points_gt, predLandmarks=inference, num_points=args.num_landmarks))
             tf.summary.scalar('landmark_loss', loss)
         with tf.control_dependencies(tf.get_collection(tf.GraphKeys.UPDATE_OPS, 'squeezenet')):
             optimizer = tf.train.AdamOptimizer(0.001).minimize(loss,var_list=tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES,'alexnet_v2'))
@@ -93,6 +93,7 @@ def main(args):
                             mid_result.write("{0} {1}".format(step, str(mean_error))+'\n')
                             if mean_error < min_error:
                                 min_error = mean_error
+                                print('saving model...')
                                 Saver.save(sess, args.model_dir + '/model', global_step=step)
                 Writer.close()
 
@@ -100,9 +101,9 @@ def main(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--input_file', type=str, help='path to the dataset',
-                        default='/home/public/nfs132_1/hanfy/align/ibugs/trainset.hdf5')
+                        default='/home/public/nfs132_1/hanfy/align_data/ibugs/trainset.hdf5')
     parser.add_argument('--test_file', type=str, help='path to the validation set',
-                        default='/home/public/nfs132_1/hanfy/align/ibugs/testset.hdf5')
+                        default='/home/public/nfs132_1/hanfy/align_data/ibugs/testset.hdf5')
     parser.add_argument('--num_landmarks', type=int, help='number of landmarks on a face',
                         default=68)
     parser.add_argument('--is_training', type=bool, help='which mode, training or inference',
@@ -110,15 +111,15 @@ if __name__ == '__main__':
     parser.add_argument('--batch_size', type=int, help='size of a batch',
                         default=64)
     parser.add_argument('--epochs', type=int, help='how many epoches should train',
-                        default=90)
+                        default=70)
     parser.add_argument('--epoch_size', type=int, help='how many batches in one epoch',
                         default=1000)
     parser.add_argument('--log_dir', type=str, help='Directory to the log file',
-                        default='/home/public/nfs132_1/hanfy/result_files/0905_h5_BN_smooth/log')
+                        default='/home/public/nfs132_1/hanfy/result_files/0907_alex_l2/log')
     parser.add_argument('--mid_result_dir', type=str, help='file to keep test error',
-                        default='/home/public/nfs132_1/hanfy/result_files/0905_h5_BN_smooth')
+                        default='/home/public/nfs132_1/hanfy/result_files/0907_alex_l2')
     parser.add_argument('--model_dir', type=str, help='Director to the model file',
-                        default='/home/public/nfs132_1/hanfy/result_files/0905_h5_BN_smooth/model')
+                        default='/home/public/nfs132_1/hanfy/result_files/0907_alex_l2/model')
     parser.add_argument('--pretrained_model_dir', type=str, help='Directory to the pretrain model')
                         # , default='/home/public/nfs132_1/hanfy/models/align_model/0905_h5_BN_smooth')
     parser.add_argument('--dropout_keep_prob', type=float, help='dropout rate',
