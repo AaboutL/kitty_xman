@@ -1,12 +1,11 @@
+#coding=utf-8
 from scipy import ndimage
 import numpy as np
-from utilities import utils
-# import cPickle as pickle
-import pickle
+import utils
+from six.moves import cPickle as pickle
 import glob
 from os import path
-from matplotlib import pyplot as plt
-import cv2
+
 class ImageServer(object):
     def __init__(self, imgSize=[112, 112], frameFraction=0.25, initialization='box', color=False):
         self.origLandmarks = []
@@ -33,7 +32,7 @@ class ImageServer(object):
         imageServer.__dict__.update(arrays)
 
         if (len(imageServer.imgs.shape) == 3):
-            imageServer.imgs = imageServer.imgs[:, np.newaxis]
+            imageServer.imgs = imageServer.imgs[:, :, :, np.newaxis]
 
         return imageServer
 
@@ -48,15 +47,15 @@ class ImageServer(object):
         np.savez(datasetDir + filename, **arrays)
 
     def PrepareData(self, imageDirs, boundingBoxFiles, meanShape, startIdx, nImgs, mirrorFlag):
-        filenames = []
-        landmarks = []
-        boundingBoxes = []
-
+        filenames = []#此list和filenamesInDir完全一样，可以去除
+        landmarks = []#此list用于存储特征点坐标
+        boundingBoxes = []#此list用于存储bbx
+        # import pdb; pdb.set_trace()
 
         for i in range(len(imageDirs)):
             filenamesInDir = glob.glob(imageDirs[i] + "*.jpg")
             filenamesInDir += glob.glob(imageDirs[i] + "*.png")
-
+            # import pdb; pdb.set_trace()
             if boundingBoxFiles is not None:
                 boundingBoxDict = pickle.load(open(boundingBoxFiles[i], 'rb'))
 
@@ -95,12 +94,14 @@ class ImageServer(object):
         self.gtLandmarks = []
 
         for i in range(len(self.filenames)):
+            #这段代码写得不好，self.color并没有实际意义
             img = ndimage.imread(self.filenames[i])
-
             if self.color:
+            	
                 if len(img.shape) == 2:
                     img = np.dstack((img, img, img))
             else:
+            	# img = ndimage.imread(self.filenames[i], mode='L')
                 if len(img.shape) > 2:
                     img = np.mean(img, axis=2)
             img = img.astype(np.uint8)
@@ -109,19 +110,20 @@ class ImageServer(object):
                 self.origLandmarks[i] = utils.mirrorShape(self.origLandmarks[i], img.shape)
                 img = np.fliplr(img)
 
-            if self.color:
-                img = np.transpose(img, (2, 0, 1))
-            else:
-                img = img[np.newaxis]
+            if not self.color:
+            #     img = np.transpose(img, (2, 0, 1))
+            # else:
+                img = img[np.newaxis]#img从shape(H,W)变成shape(1,H,W)
+                # img = np.transpose(img, (1, 2, 0))
 
             groundTruth = self.origLandmarks[i]
 
             if self.initialization == 'rect':
-                bestFit = utils.bestFitRect(groundTruth, self.meanShape)
+                bestFit = utils.bestFitRect(groundTruth, self.meanShape)#仅仅把meanshape适应进入由landmark确定的框中
             elif self.initialization == 'similarity':
-                bestFit = utils.bestFit(groundTruth, self.meanShape)
+                bestFit = utils.bestFit(groundTruth, self.meanShape)#找到meanShape到gt的最优变换，并变换之
             elif self.initialization == 'box':
-                bestFit = utils.bestFitRect(groundTruth, self.meanShape, box=self.boundingBoxes[i])
+                bestFit = utils.bestFitRect(groundTruth, self.meanShape, box=self.boundingBoxes[i])#仅仅把meanshape适应进入由检测到的bbx确定的框中
 
             self.imgs.append(img)
             self.initLandmarks.append(bestFit)
@@ -133,16 +135,16 @@ class ImageServer(object):
     def GeneratePerturbations(self, nPerturbations, perturbations):
         self.perturbations = perturbations
         meanShapeSize = max(self.meanShape.max(axis=0) - self.meanShape.min(axis=0))
-        destShapeSize = min(self.imgSize) * (1 - 2 * self.frameFraction)  # 112 * 0.5 = 56
+        destShapeSize = min(self.imgSize) * (1 - 2 * self.frameFraction)
         scaledMeanShape = self.meanShape * destShapeSize / meanShapeSize
 
         newImgs = []  
         newGtLandmarks = []
         newInitLandmarks = []           
 
-        translationMultX, translationMultY, rotationStdDev, scaleStdDev = perturbations  # 0.2 0.2 20 0.25
+        translationMultX, translationMultY, rotationStdDev, scaleStdDev = perturbations
 
-        rotationStdDevRad = rotationStdDev * np.pi / 180
+        rotationStdDevRad = rotationStdDev * np.pi / 180         
         translationStdDevX = translationMultX * (scaledMeanShape[:, 0].max() - scaledMeanShape[:, 0].min())
         translationStdDevY = translationMultY * (scaledMeanShape[:, 1].max() - scaledMeanShape[:, 1].min())
         print("Creating perturbations of " + str(self.gtLandmarks.shape[0]) + " shapes")
@@ -159,12 +161,12 @@ class ImageServer(object):
                 R = np.array([[np.cos(angle), -np.sin(angle)],[np.sin(angle), np.cos(angle)]])     
             
                 tempInit = tempInit + offset
-                tempInit = (tempInit - tempInit.mean(axis=0)) * scaling + tempInit.mean(axis=0)
+                tempInit = (tempInit - tempInit.mean(axis=0)) * scaling + tempInit.mean(axis=0)            
                 tempInit = np.dot(R, (tempInit - tempInit.mean(axis=0)).T).T + tempInit.mean(axis=0)
 
-                tempImg, tempInit, tempGroundTruth = self.CropResizeRotate(self.imgs[i], tempInit, self.gtLandmarks[i])                
+                tempImg, tempInit, tempGroundTruth = self.CropResizeRotate(self.imgs[i], tempInit, self.gtLandmarks[i])#位移0.2，旋转20度，放缩+-0.25              
 
-                newImgs.append(tempImg)
+                newImgs.append(tempImg.transpose((1,2,0)))
                 newInitLandmarks.append(tempInit)
                 newGtLandmarks.append(tempGroundTruth)
 
@@ -180,7 +182,7 @@ class ImageServer(object):
         for i in range(self.initLandmarks.shape[0]):
             tempImg, tempInit, tempGroundTruth = self.CropResizeRotate(self.imgs[i], self.initLandmarks[i], self.gtLandmarks[i])
 
-            newImgs.append(tempImg)
+            newImgs.append(tempImg.transpose((1,2,0)))
             newInitLandmarks.append(tempInit)
             newGtLandmarks.append(tempGroundTruth)
 
@@ -205,15 +207,16 @@ class ImageServer(object):
         
         self.imgs = self.imgs / self.stdDevImg
 
-        # from matplotlib import pyplot as plt
+        from matplotlib import pyplot as plt  
 
         meanImg = self.meanImg - self.meanImg.min()
         meanImg = 255 * meanImg / meanImg.max()  
-        meanImg = meanImg.astype(np.uint8)
+        meanImg = meanImg.astype(np.uint8)   
         if self.color:
-            plt.imshow(np.transpose(meanImg, (1, 2, 0)))
+            # plt.imshow(np.transpose(meanImg, (1, 2, 0)))
+            plt.imshow(meanImg)
         else:
-            plt.imshow(meanImg[0], cmap=plt.cm.gray)
+            plt.imshow(meanImg[:,:,0], cmap=plt.cm.gray)
         plt.savefig("../meanImg.jpg")
         plt.clf()
 
@@ -221,16 +224,16 @@ class ImageServer(object):
         stdDevImg = 255 * stdDevImg / stdDevImg.max()  
         stdDevImg = stdDevImg.astype(np.uint8)   
         if self.color:
-            plt.imshow(np.transpose(stdDevImg, (1, 2, 0)))
+            # plt.imshow(np.transpose(stdDevImg, (1, 2, 0)))
+            plt.imshow(stdDevImg)
         else:
-            plt.imshow(stdDevImg[0], cmap=plt.cm.gray)
+            plt.imshow(stdDevImg[:,:,0], cmap=plt.cm.gray)
         plt.savefig("../stdDevImg.jpg")
         plt.clf()
-        exit(0)
 
     def CropResizeRotate(self, img, initShape, groundTruth):
         meanShapeSize = max(self.meanShape.max(axis=0) - self.meanShape.min(axis=0))
-        destShapeSize = min(self.imgSize) * (1 - 2 * self.frameFraction)  # 56
+        destShapeSize = min(self.imgSize) * (1 - 2 * self.frameFraction)
 
         scaledMeanShape = self.meanShape * destShapeSize / meanShapeSize
 
@@ -239,7 +242,7 @@ class ImageServer(object):
         destShape += offset
 
         A, t = utils.bestFit(destShape, initShape, True)
-
+    
         A2 = np.linalg.inv(A)
         t2 = np.dot(-t, A2)
 
@@ -247,16 +250,9 @@ class ImageServer(object):
         for i in range(img.shape[0]):
             outImg[i] = ndimage.interpolation.affine_transform(img[i], A2, t2[[1, 0]], output_shape=self.imgSize)
 
-        # for i in range(len(groundTruth)):
-        #     cv2.circle(outImg[0], (int(destShape[i][0]), int(destShape[i][1])), 1, 255)
         initShape = np.dot(initShape, A) + t
-        # for i in range(len(groundTruth)):
-        #     cv2.circle(outImg[0], (int(initShape[i][0]), int(initShape[i][1])), 3, 255)
-        # cv2.imshow('outim', outImg[0])
-        # cv2.waitKey(0)
 
         groundTruth = np.dot(groundTruth, A) + t
-
         return outImg, initShape, groundTruth
 
 
