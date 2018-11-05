@@ -210,8 +210,8 @@ class ImageServer(object):
         from matplotlib import pyplot as plt  
 
         meanImg = self.meanImg - self.meanImg.min()
-        meanImg = 255 * meanImg / meanImg.max()  
-        meanImg = meanImg.astype(np.uint8)   
+        meanImg = 255 * meanImg / meanImg.max()
+        meanImg = meanImg.astype(np.uint8)
         if self.color:
             # plt.imshow(np.transpose(meanImg, (1, 2, 0)))
             plt.imshow(meanImg)
@@ -221,8 +221,8 @@ class ImageServer(object):
         plt.clf()
 
         stdDevImg = self.stdDevImg - self.stdDevImg.min()
-        stdDevImg = 255 * stdDevImg / stdDevImg.max()  
-        stdDevImg = stdDevImg.astype(np.uint8)   
+        stdDevImg = 255 * stdDevImg // stdDevImg.max()
+        stdDevImg = stdDevImg.astype(np.uint8)
         if self.color:
             # plt.imshow(np.transpose(stdDevImg, (1, 2, 0)))
             plt.imshow(stdDevImg)

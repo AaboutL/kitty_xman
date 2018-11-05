@@ -21,7 +21,7 @@ meanShape = np.load("../data/meanFaceShape.npz")["meanShape"]
 
 trainSet = ImageServer(initialization='rect')
 # trainSet.PrepareData(imageDirs, None, meanShape, 100, 100000, True)
-trainSet.PrepareData(imageDirs, None, meanShape, 10, 100, True)
+trainSet.PrepareData(imageDirs, None, meanShape, 0, 2, True)
 trainSet.LoadImages()
 trainSet.GeneratePerturbations(10, [0.2, 0.2, 20, 0.25])
 trainSet.NormalizeImages()
