@@ -15,7 +15,8 @@ boundingBoxFiles = ["../data/py3boxes300WIndoor.pkl",
                     "../data/py3boxesLFPWTrain.pkl",
                     "../data/py3boxesHelenTrain.pkl",
                     "../data/py3boxesAFW.pkl"]
-datasetDir = "/home/public/nfs72/hanfy/datasets/DAN/"
+# datasetDir = "/home/public/nfs72/hanfy/datasets/DAN/"
+datasetDir = "../data/"
 
 meanShape = np.load("../data/meanFaceShape.npz")["meanShape"]
 
@@ -25,12 +26,14 @@ trainSet.PrepareData(imageDirs, None, meanShape, 0, 2, True)
 trainSet.LoadImages()
 trainSet.GeneratePerturbations(10, [0.2, 0.2, 20, 0.25])
 trainSet.NormalizeImages()
-trainSet.Save(datasetDir)
+# trainSet.Save(datasetDir)
+print("here")
+trainSet.save_tfrecord("/home/hanfy/workspace/DL/alignment/align_untouch/temp/test.record")
 
-validationSet = ImageServer(initialization='box')
-validationSet.PrepareData(imageDirs, boundingBoxFiles, meanShape, 0, 100, False)
-validationSet.LoadImages()
-validationSet.CropResizeRotateAll()
-validationSet.imgs = validationSet.imgs.astype(np.float32)
-validationSet.NormalizeImages(trainSet)
-validationSet.Save(datasetDir)
+# validationSet = ImageServer(initialization='box')
+# validationSet.PrepareData(imageDirs, boundingBoxFiles, meanShape, 0, 100, False)
+# validationSet.LoadImages()
+# validationSet.CropResizeRotateAll()
+# validationSet.imgs = validationSet.imgs.astype(np.float32)
+# validationSet.NormalizeImages(trainSet)
+# validationSet.Save(datasetDir)

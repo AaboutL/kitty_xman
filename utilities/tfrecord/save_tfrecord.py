@@ -31,6 +31,7 @@ def convert_to_tfrecord(image_set, points_set, output_file):
             ))
             record_writer.write(example.SerializeToString())
 
+'''
 # generate trainset
 # train_dir = '/home/public/nfs132_1/hanfy/align/ibugs/tmp'
 train_dir = '/home/public/nfs72/face/ibugs'
@@ -42,17 +43,7 @@ image_set, _, shapes = dset.gether_data()
 mean, std, normed_shapes = dset.normalize_pts(shapes, 1.0/224.0)
 np.savetxt('/home/hanfy/workspace/DL/alignment/align_untouch/shape_mean.txt', mean, header='mean')
 np.savetxt('/home/hanfy/workspace/DL/alignment/align_untouch/shape_std.txt', mean, header='std')
-# for i in range(len(image_set)):
-#     img = image_set[i].copy()
-#     res = shapes[i].copy()
-    # res = np.multiply(np.add(np.multiply(normed_shapes[i], std), mean) + 0.5, 224.0)
-    # print('norm', normed_shapes[i])
-    # print('re', res)
-    # print('ori', shapes[i])
-    # visualize.show_points(img, res)
-    # visualize.show_points(img, shapes[i], color=(0, 0, 255))
-    # visualize.show_image(img, 'img', 0)
-# exit(0)
+
 normed_shapes_flatten = [sum(pts.tolist(), []) for pts in normed_shapes]
 convert_to_tfrecord(image_set, normed_shapes_flatten , trainset_tfrecord_norm)
 normed_shapes_flatten = [sum(pts.tolist(), []) for pts in shapes]
@@ -68,3 +59,4 @@ dset.get_datalist(test_dir, ['png', 'jpg'])
 image_set, _, points_set = dset.gether_data(is_flip=False)
 points_set_norm_flatten = [sum(pts.tolist(), []) for pts in points_set]
 convert_to_tfrecord(image_set, points_set_norm_flatten, validationset_tfrecord)
+'''

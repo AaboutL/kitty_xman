@@ -1,10 +1,11 @@
 #coding=utf-8
 from scipy import ndimage
 import numpy as np
-import utils
+from utilities import utils
 from six.moves import cPickle as pickle
 import glob
 from os import path
+from utilities.save_read_tfrecord import save_tfrecord, read_tfrecord1
 
 class ImageServer(object):
     def __init__(self, imgSize=[112, 112], frameFraction=0.25, initialization='box', color=False):
@@ -45,6 +46,20 @@ class ImageServer(object):
 
         arrays = {key:value for key, value in self.__dict__.items() if not key.startswith('__') and not callable(key)}
         np.savez(datasetDir + filename, **arrays)
+
+    def read_tfrecord(self, input, is_shuffle):
+        read_tfrecord1(input, is_shuffle=is_shuffle)
+    def save_tfrecord(self, output):
+        self.gtLandmarks = np.reshape(self.gtLandmarks, (len(self.gtLandmarks), 136)).astype(np.float32)
+        self.imgs = self.imgs.astype(np.uint8)
+        self.imgs = np.squeeze(self.imgs,axis=3)
+        print("img shape", np.shape(self.imgs))
+        print("img type: ", self.imgs[0].dtype)
+        print("pts shape", np.shape(self.gtLandmarks))
+        print("pts type: ", self.gtLandmarks[0].dtype)
+        print(self.imgs[0])
+        save_tfrecord(self.imgs, self.gtLandmarks, output)
+
 
     def PrepareData(self, imageDirs, boundingBoxFiles, meanShape, startIdx, nImgs, mirrorFlag):
         filenames = []#此list和filenamesInDir完全一样，可以去除
@@ -212,23 +227,25 @@ class ImageServer(object):
         meanImg = self.meanImg - self.meanImg.min()
         meanImg = 255 * meanImg / meanImg.max()
         meanImg = meanImg.astype(np.uint8)
+        print('meanImg shape: ', meanImg.shape)
         if self.color:
             # plt.imshow(np.transpose(meanImg, (1, 2, 0)))
             plt.imshow(meanImg)
         else:
             plt.imshow(meanImg[:,:,0], cmap=plt.cm.gray)
-        plt.savefig("../meanImg.jpg")
+            # plt.imshow(meanImg)
+        plt.savefig("../temp/meanImg.jpg")
         plt.clf()
 
         stdDevImg = self.stdDevImg - self.stdDevImg.min()
-        stdDevImg = 255 * stdDevImg // stdDevImg.max()
+        stdDevImg = 255 * stdDevImg / stdDevImg.max()
         stdDevImg = stdDevImg.astype(np.uint8)
         if self.color:
             # plt.imshow(np.transpose(stdDevImg, (1, 2, 0)))
             plt.imshow(stdDevImg)
         else:
             plt.imshow(stdDevImg[:,:,0], cmap=plt.cm.gray)
-        plt.savefig("../stdDevImg.jpg")
+        plt.savefig("../temp/stdDevImg.jpg")
         plt.clf()
 
     def CropResizeRotate(self, img, initShape, groundTruth):
