@@ -1,12 +1,11 @@
 from __future__ import absolute_import
-from __future__ import print_function
 from __future__ import division
+from __future__ import print_function
 
 import tensorflow as tf
-import os
-import cv2
 
-from utilities import tfrecords_util
+from utilities.data_preparation import tfrecords_util
+
 
 def save_tfrecord(image_set, points_set, output_file):
     assert len(image_set)==len(points_set)
@@ -17,37 +16,28 @@ def save_tfrecord(image_set, points_set, output_file):
             image = image_set[i]
             image_raw = image.tostring()
             pts = points_set[i]
-            print("img type: ", image.dtype)
-            print("img shape: ", image.shape)
-            print("pts shp: ", pts.dtype)
-            for j in range(len(pts)//2):
-                cv2.circle(image, (int(pts[j*2]), int(pts[j*2+1])), 2, 255)
-            cv2.imshow("img", image)
-            cv2.waitKey(1)
             example = tf.train.Example(features=tf.train.Features(
                 feature={
-                    # 'image': tfrecords_util.bytes_feature(tf.compat.as_bytes(image_raw)),
                     'image': tfrecords_util.bytes_feature(image_raw),
                     'label': tfrecords_util.float_list_feature(pts)
                 }
             ))
             record_writer.write(example.SerializeToString())
 
-def read_tfrecord1(rec_file, is_shuffle=True):
+def load_tfrecord(rec_file, pts_num=68, img_shape=[112,112], is_shuffle=True):
     reader = tf.TFRecordReader()
     _, serialized_example = reader.read(rec_file)
     features = tf.parse_single_example(
         serialized_example,
         features={
             'image': tf.FixedLenFeature([], tf.string, default_value=""),
-            'label': tf.FixedLenSequenceFeature([], tf.float32, allow_missing=True)
+            'label': tf.FixedLenFeature([pts_num * 2], tf.float32)
         }
     )
     image = tf.decode_raw(features['image'], tf.uint8)
-    # image = tf.decode_raw(features['image'], tf.float32)
-    image = tf.reshape(image, [112, 112, 1])
+    image = tf.reshape(image, img_shape)
     label = features['label']
-    label = tf.reshape(label, [136])
+    label = tf.reshape(label, [pts_num * 2])
 
     if is_shuffle:
         print("test")
@@ -65,20 +55,19 @@ def read_tfrecord1(rec_file, is_shuffle=True):
 
     return images, labels
 
-def decode(serialized_example):
+def decode(serialized_example, pts_num=68, img_shape=[224,224,3]):
     """Parses an image and label from the given `serialized_example`."""
     features = tf.parse_single_example(
         serialized_example,
         features={
             'image': tf.FixedLenFeature([], tf.string),
-            # 'label': tf.FixedLenFeature([], tf.float32),
-            'label': tf.FixedLenSequenceFeature([], tf.float32, allow_missing=True),
+            'label': tf.FixedLenFeature([], tf.float32),
         }
     )
     image = tf.decode_raw(features['image'], tf.uint8)
-    # image.set_shape((224, 224, 3))
-    image = tf.reshape(image, [224, 224, 3])
+    image = tf.reshape(image, img_shape)
     points = features['label']
+    points = tf.reshape(points, [pts_num * 2])
     return image, points
 
 def convert_from_tfrecord(input_file, batch_size=0, num_epochs=1, is_shuffle=True):

@@ -5,15 +5,28 @@ from __future__ import print_function
 import os
 import sys
 import argparse
+import numpy as np
 from evaluate import landmark_eval
+
+def get_landmark(lines):
+    landmarks = []
+    for line in lines:
+        line = line.strip('\n').split(' ')[0:-1]
+        line = np.asarray([float(pt) for pt in line]).reshape(68, 2)
+        landmarks.append(line)
+    return landmarks
 
 def main(args):
     with open(args.gtlandmarkfile, 'r') as gt_f:
         gtlandmarks = gt_f.readlines()
+        gtlandmarks = get_landmark(gtlandmarks)
+        print(len(gtlandmarks))
     with open(args.predictlandmarkfile, 'r') as pre_f:
         predictlandmarks = pre_f.readlines()
+        predictlandmarks = get_landmark(predictlandmarks)
+        print(len(predictlandmarks))
     errors = landmark_eval.landmark_error(gtlandmarks, predictlandmarks, args.dist_type)
-    landmark_eval.auc_error(errors, args.failure_threshold, args.show_curve)
+    landmark_eval.auc_error(errors=errors, failure_threshold=args.failure_threshold, showCurve=args.show_curve)
 
 def parser_augments(argv):
     parser = argparse.ArgumentParser()

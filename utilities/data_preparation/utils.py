@@ -2,6 +2,16 @@
 
 import numpy as np
 
+def load_bbox(bbox_file):
+    imgpath_bbox = dict()
+    with open(bbox_file, 'r') as bbox_f:
+        lines = bbox_f.readlines()
+    for line in lines:
+        items = line.strip('\n').split(' ')
+        imgpath = items[-1]
+        bbox_str = items[: -3]
+        bbox = [int(a) for a in bbox_str]
+        imgpath_bbox[imgpath] = bbox
 
 def loadFromPts(filename):
     landmarks = np.genfromtxt(filename, skip_header=3, skip_footer=1)

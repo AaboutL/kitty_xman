@@ -1,11 +1,14 @@
 from __future__ import absolute_import
-from __future__ import print_function
 from __future__ import division
-import numpy as np
+from __future__ import print_function
+
 import os
-import tensorflow as tf
+
 import cv2
-from utilities import tfrecords_util
+import tensorflow as tf
+
+from utilities.data_preparation import tfrecords_util
+
 
 def read_text(dataset_dir, dataset_txt):
     img_paths = []

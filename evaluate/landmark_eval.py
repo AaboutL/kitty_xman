@@ -31,11 +31,11 @@ def landmark_error(gtLandmarks, predict_Landmarks, dist_type='centers', show_res
         if verbose:
             print('{0}: {1}'.format(i, error))
 
-    if show_results:
+    if verbose:
         print("Image idxs sorted by error")
         print(np.argsort(errors))
-    avg_norm_error = np.mean(norm_errors)
     avg_error = np.mean(errors)
+    avg_norm_error = np.mean(norm_errors)
     print("Average error: {0}".format(avg_error))
     print("Average norm error: {0}".format(avg_norm_error))
     return norm_errors, errors

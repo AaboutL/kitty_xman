@@ -1,11 +1,17 @@
 #coding=utf-8
-from scipy import ndimage
-import numpy as np
-from utilities import utils
-from six.moves import cPickle as pickle
+'''
+    Better use data_server.py in data_preparation instead of this script
+'''
 import glob
 from os import path
-from utilities.save_read_tfrecord import save_tfrecord, read_tfrecord1
+
+import numpy as np
+from scipy import ndimage
+from six.moves import cPickle as pickle
+
+from utilities.data_preparation import utils
+from utilities.data_preparation.save_read_tfrecord import save_tfrecord, load_tfrecord
+
 
 class ImageServer(object):
     def __init__(self, imgSize=[112, 112], frameFraction=0.25, initialization='box', color=False):
@@ -48,7 +54,8 @@ class ImageServer(object):
         np.savez(datasetDir + filename, **arrays)
 
     def read_tfrecord(self, input, is_shuffle):
-        read_tfrecord1(input, is_shuffle=is_shuffle)
+        load_tfrecord(input, is_shuffle=is_shuffle)
+
     def save_tfrecord(self, output):
         self.gtLandmarks = np.reshape(self.gtLandmarks, (len(self.gtLandmarks), 136)).astype(np.float32)
         self.imgs = self.imgs.astype(np.uint8)

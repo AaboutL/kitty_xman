@@ -1,17 +1,17 @@
 from __future__ import absolute_import
-from __future__ import print_function
 from __future__ import division
+from __future__ import print_function
 
 import os
-import cv2
-import numpy as np
-import h5py
-import tensorflow as tf
 import random
 
+import cv2
+import h5py
+import numpy as np
+import tensorflow as tf
+
 from utilities import preprocess
-from utilities import visualize
-from utilities import tfrecords_util
+from utilities.data_preparation import tfrecords_util
 
 show = False
 
