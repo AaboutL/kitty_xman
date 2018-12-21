@@ -17,7 +17,7 @@ from net_archs import AlexNet_BN as net
 from utilities.tfrecord import read_tfrecord
 from utilities import model_tool
 from utilities import visualize
-from evaluate import landmark_eval
+from evaluate import eval_tools
 import cv2
 
 from train import loss_func
@@ -97,7 +97,7 @@ def main(args):
                             visualize.show_points(img, pts_val[i], color=(0, 255, 0))
                             visualize.show_image(img, name='val', waitkey=100)
                         cv2.destroyWindow('val')
-                        landmark_eval.landmark_error(pts_val, pred_pts)
+                        eval_tools.landmark_error(pts_val, pred_pts)
 
                         Saver.save(sess, args.model_dir + '/model', global_step=step)
             except tf.errors.OutOfRangeError:

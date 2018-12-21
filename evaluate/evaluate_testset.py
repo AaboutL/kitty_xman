@@ -12,7 +12,7 @@ import cv2
 from utilities import dataset
 from utilities import model_tool
 from utilities import visualize
-from evaluate import landmark_eval
+from evaluate import eval_tools
 
 os.environ['CUDA_VISIBLE_DEVICES']=''
 
@@ -66,8 +66,8 @@ def main(args):
                 # cv2.imwrite(args.result_dir + '/' + str(i) + '.jpg', img)
                 cv2.imwrite(os.path.join(img_result_dir, str(i) + '.jpg'), img)
 
-            auc, failure_rate = landmark_eval.auc_error(errors, args.failure_threshold,
-                                                        save_path=os.path.join(args.result_dir, 'auc.jpg'))
+            auc, failure_rate = eval_tools.auc_error(errors, args.failure_threshold,
+                                                     save_path=os.path.join(args.result_dir, 'auc.jpg'))
             mean_error = np.mean(errors)
             print('mean_error', mean_error)
             with open(args.result, 'a+') as fp:

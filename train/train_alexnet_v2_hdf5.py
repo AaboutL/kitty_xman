@@ -12,7 +12,7 @@ from utilities import dataset
 from net_archs import AlexNet as net
 # from net_archs import AlexNet_BN as net
 # from net_archs import squeezenet_v11 as net
-from evaluate import landmark_eval
+from evaluate import eval_tools
 from train import loss_func
 from utilities import model_tool
 
@@ -88,7 +88,7 @@ def main(args):
                             pred_shapes = sess.run([inference], feed_dict={images:imgs_val, is_training:False})
                             pred_shapes = np.reshape(pred_shapes, [len(shapes_val), 68, 2])
                             pts_val = np.reshape(shapes_val, [len(shapes_val), 68, 2])
-                            norm_errors, errors = landmark_eval.landmark_error(pts_val, pred_shapes)
+                            norm_errors, errors = eval_tools.landmark_error(pts_val, pred_shapes)
                             mean_error = np.mean(errors)
                             mid_result.write("{0} {1}".format(step, str(mean_error))+'\n')
                             if mean_error < min_error:

@@ -7,7 +7,7 @@ import os
 
 from utilities.tfrecord import read_tfrecord
 from utilities import visualize
-from evaluate import landmark_eval
+from evaluate import eval_tools
 
 os.environ['CUDA_VISIBLE_DEVICES'] = ''
 

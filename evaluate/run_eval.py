@@ -6,7 +6,7 @@ import os
 import sys
 import argparse
 import numpy as np
-from evaluate import landmark_eval
+from evaluate import eval_tools
 
 def get_landmark(lines):
     landmarks = []
@@ -25,8 +25,8 @@ def main(args):
         predictlandmarks = pre_f.readlines()
         predictlandmarks = get_landmark(predictlandmarks)
         print(len(predictlandmarks))
-    errors = landmark_eval.landmark_error(gtlandmarks, predictlandmarks, args.dist_type)
-    landmark_eval.auc_error(errors=errors, failure_threshold=args.failure_threshold, showCurve=args.show_curve)
+    errors = eval_tools.landmark_error(gtlandmarks, predictlandmarks, args.dist_type)
+    eval_tools.auc_error(errors=errors, failure_threshold=args.failure_threshold, showCurve=args.show_curve)
 
 def parser_augments(argv):
     parser = argparse.ArgumentParser()
