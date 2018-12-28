@@ -42,10 +42,10 @@ def load_tfrecord(rec_file, pts_num=68, img_shape=[112,112], is_shuffle=True):
     if is_shuffle:
         print("test")
         images, labels = tf.train.shuffle_batch([image, label],
-                                                batch_size=2,
-                                                capacity=40,
+                                                batch_size=128,
+                                                capacity=20000,
                                                 num_threads=1,
-                                                min_after_dequeue=5)
+                                                min_after_dequeue=10000)
     else:
         images, labels = tf.train.batch([image, label],
                                         batch_size=4,

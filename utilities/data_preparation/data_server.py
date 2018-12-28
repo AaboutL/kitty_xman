@@ -45,7 +45,6 @@ class DataServer(object):
         print("img type: ", self.imgs[0].dtype)
         print("pts shape", np.shape(self.gtlandmarks))
         print("pts type: ", self.gtlandmarks[0].dtype)
-        print(self.imgs[0])
         save_tfrecord(self.imgs, self.gtlandmarks, output)
 
     def collect_data(self, data_dirs, bbox_file, meanshape, start_id, img_num, is_mirror): # taking data from 0 to start_id as validation set
@@ -125,6 +124,7 @@ class DataServer(object):
         destshape_size = min(self.imgsize) * (1 - 2*self.frameFraction)
         scaled_meanshape = self.meanshape * destshape_size / meanshape_size
 
+
         new_imgs = []
         new_gtlandmarks = []
         new_initlandmarks = []
@@ -139,19 +139,25 @@ class DataServer(object):
                 tmp_init = self.init_landmarks[i].copy()
                 angle = np.random.normal(0, rotationStdDevRad)
                 offset = [np.random.normal(0, translationStdDevX), np.random.normal(0, translationStdDevY)]
-                scaling = np.random.normal(1, scaleStdDev)
+                # scaling = np.random.normal(1, scaleStdDev)
+                scaling = 1
                 R = np.array([[np.cos(angle), -np.sin(angle)],[np.sin(angle), np.cos(angle)]])
 
+                # translate, scale, rotate
                 tempInit = tmp_init + offset
                 tempInit = (tempInit - tempInit.mean(axis=0)) * scaling + tempInit.mean(axis=0)
-                tempInit = np.dot(R, (tempInit - tempInit.mean(axis=0)).T).T + tempInit.mean(axis=0)
+                tempInit = np.dot(R, (tempInit - tempInit.mean(axis=0)).T).T + tempInit.mean(axis=0) # must subtract mean first
 
+                # for k in range(len(tempInit)):
+                #     cv2.circle(self.imgs[i].squeeze(), (int(tempInit[k][0]), int(tempInit[k][1])), 2, (0, 255, 0), 2)
+                # cv2.imshow('img', self.imgs[i].squeeze())
 
                 tempImg, tempInit, tempGroundTruth = self.CropResizeRotate(self.imgs[i], tempInit, self.gtlandmarks[i])
                 # print(self.imgs[i].shape)
                 # print("tmp: ", tempImg.shape)
                 # for k in range(len(tempGroundTruth)):
-                #     cv2.circle(tempImg, (int(tempGroundTruth[k][0]), int(tempGroundTruth[k][1])), 2, (0, 255, 0))
+                    # cv2.circle(tempImg, (int(tempGroundTruth[k][0]), int(tempGroundTruth[k][1])), 2, (0, 255, 0))
+                    # cv2.circle(tempImg, (int(tempInit[k][0]), int(tempInit[k][1])), 2, (0, 255, 0))
                 # cv2.imshow("i", tempImg)
                 # cv2.imshow('img', self.imgs[i].squeeze())
                 # cv2.waitKey(0)
@@ -166,8 +172,11 @@ class DataServer(object):
         self.gtlandmarks = np.array(new_gtlandmarks)
 
     def CropResizeRotate(self, img, initShape, groundTruth):
+        # initShape is random perturbated scaled meanshape
         meanShapeSize = max(self.meanshape.max(axis=0) - self.meanshape.min(axis=0))
-        destShapeSize = min(self.imgsize) * (1 - 2 * self.frameFraction)
+        # here scale the shape size
+        # destShapeSize = min(self.imgsize) * (1 - 2 * self.frameFraction)
+        destShapeSize = min(self.imgsize) * 0.9
 
         scaledMeanShape = self.meanshape * destShapeSize / meanShapeSize
 
@@ -183,7 +192,6 @@ class DataServer(object):
         # cv2.imshow("tmpdst", tmpdst)
         # cv2.imshow("tmpini", tmpini)
         # cv2.waitKey(0)
-
         A, t = utils.bestFit(destShape, initShape, True)
 
         A2 = np.linalg.inv(A)

@@ -12,6 +12,7 @@ def load_bbox(bbox_file):
         bbox_str = items[: -3]
         bbox = [int(a) for a in bbox_str]
         imgpath_bbox[imgpath] = bbox
+    return imgpath_bbox
 
 def loadFromPts(filename):
     landmarks = np.genfromtxt(filename, skip_header=3, skip_footer=1)
