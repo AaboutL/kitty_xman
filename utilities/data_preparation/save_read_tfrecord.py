@@ -24,7 +24,7 @@ def save_tfrecord(image_set, points_set, output_file):
             ))
             record_writer.write(example.SerializeToString())
 
-def load_tfrecord(rec_file, pts_num=68, img_shape=[112,112], is_shuffle=True):
+def load_tfrecord(rec_file, pts_num=68, img_shape=[112,112], batch_size=128, is_shuffle=True):
     reader = tf.TFRecordReader()
     _, serialized_example = reader.read(rec_file)
     features = tf.parse_single_example(
@@ -40,15 +40,14 @@ def load_tfrecord(rec_file, pts_num=68, img_shape=[112,112], is_shuffle=True):
     label = tf.reshape(label, [pts_num * 2])
 
     if is_shuffle:
-        print("test")
         images, labels = tf.train.shuffle_batch([image, label],
-                                                batch_size=128,
+                                                batch_size=batch_size,
                                                 capacity=20000,
                                                 num_threads=1,
                                                 min_after_dequeue=10000)
     else:
         images, labels = tf.train.batch([image, label],
-                                        batch_size=4,
+                                        batch_size=batch_size,
                                         capacity=20,
                                         num_threads=4
                                         )
