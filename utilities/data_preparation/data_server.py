@@ -58,12 +58,15 @@ class DataServer(object):
             img_paths_single += glob.glob(data_dir + "*.jpg")
 
             for j in range(len(img_paths_single)):
-                img_paths.append(img_paths_single[j])
-                pts_path = img_paths_single[j][: -3] + 'pts'
-                landmarks.append(utils.loadFromPts(pts_path))
                 if bbox_file is not None:
                     img_path = img_paths_single[j]
+                    if img_path not in bbox_dict.keys(): continue
                     bboxes.append(bbox_dict[img_path])
+                img_paths.append(img_paths_single[j])
+                pts_path = img_paths_single[j][: -3] + 'txt'
+                landmarks.append(utils.loadFromPts(pts_path))
+            print('img_path: ', len(img_paths))
+            print('landmarks: ', len(landmarks))
 
         img_paths = img_paths[start_id : start_id + img_num]
         landmarks = landmarks[start_id : start_id + img_num]

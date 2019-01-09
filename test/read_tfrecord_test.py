@@ -5,10 +5,10 @@ import numpy as np
 from utilities.data_preparation.save_read_tfrecord import load_tfrecord
 
 def main():
-    output_tfrecords = '/home/slam/workspace/DL/alignment_method/align_untouch/temp/trans_train.record'
+    output_tfrecords = '/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/total/train.record'
     # filename_queue = tf.train.string_input_producer([output_tfrecords], num_epochs=1)
     filename_queue = tf.train.string_input_producer([output_tfrecords])
-    images, labels = load_tfrecord(filename_queue, pts_num=3, img_shape=[224, 224], is_shuffle=True)
+    images, labels = load_tfrecord(filename_queue, pts_num=82, img_shape=[112, 112], is_shuffle=True)
     # images = read_tfrecord1(filename_queue, is_shuffle=True)
     init_op = tf.group(tf.global_variables_initializer(), tf.local_variables_initializer())
     with tf.Session() as sess:
@@ -23,14 +23,15 @@ def main():
             for j in range(len(imgs)):
                 print(labs[j])
                 lab = labs[j]
-                pts = np.array([[lab[0], lab[2], lab[4]], [lab[1], lab[3], lab[5]]])
-                dst = np.zeros((224, 224), dtype=np.uint8)
-                dst = cv2.warpAffine(imgs[j], pts, (224, 224))
-                print(pts)
-                # for k in range(len(pts)//2):
-                #     cv2.circle(imgs[j], (int(pts[k*2]), int(pts[k*2+1])), 2, 255)
+                pts = lab
+                # pts = np.array([[lab[0], lab[2], lab[4]], [lab[1], lab[3], lab[5]]])
+                # dst = np.zeros((224, 224), dtype=np.uint8)
+                # dst = cv2.warpAffine(imgs[j], pts, (224, 224))
+                # print(pts)
+                for k in range(len(pts)//2):
+                    cv2.circle(imgs[j], (int(pts[k*2]), int(pts[k*2+1])), 2, (0, 255, 0))
                 cv2.imshow("img", imgs[j])
-                cv2.imshow('dst', dst)
+                # cv2.imshow('dst', dst)
                 cv2.waitKey(0)
 
         coord.request_stop()

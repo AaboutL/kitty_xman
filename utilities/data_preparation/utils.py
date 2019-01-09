@@ -7,6 +7,7 @@ def load_bbox(bbox_file):
     with open(bbox_file, 'r') as bbox_f:
         lines = bbox_f.readlines()
     for line in lines:
+        print(line)
         items = line.strip('\n').split(' ')
         imgpath = items[-1]
         bbox_str = items[: -3]

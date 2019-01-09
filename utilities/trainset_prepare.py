@@ -4,21 +4,16 @@ from __future__ import division
 from utilities.data_preparation import data_server
 import numpy as np
 import cv2
+import gc
 
-# imageDirs = ["../data/images/lfpw/trainset/", "../data/images/helen/trainset/", "../data/images/afw/"]
-# boundingBoxFiles = ["../data/boxesLFPWTrain.pkl", "../data/boxesHelenTrain.pkl", "../data/boxesAFW.pkl"]
+# meanShape = np.load("../data/meanFaceShape.npz")["meanShape"] + np.array([56, 56])
+meanShape = np.genfromtxt('/home/slam/workspace/DL/alignment_method/align_untouch/meanshape_untouch.txt')
+meanShape = np.reshape(meanShape, [82, 2]) * 112
 
-imageDirs = ["/home/public/nfs132_0/landmark/dataset/untouch/untouch_labeled/total/data/"]
-bbox_file = '/home/public/nfs132_0/landmark/dataset/untouch/untouch_labeled/total/images_bbox_list.txt'
-datasetDir = "../data/"
+imageDirs = ["/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/total/data/"]
+bbox_file = '/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/total/images_bbox_list.txt'
 
-img = np.zeros([224, 224])
-meanShape = np.load("../data/meanFaceShape.npz")["meanShape"]
-for pt in meanShape:
-    cv2.circle(img, (int(pt[0]), int(pt[1])), 1, 255)
-
-
-trainSet = data_server.DataServer(initialization='rect')
+trainSet = data_server.DataServer(initialization='bbox')
 trainSet.collect_data(imageDirs, bbox_file, meanShape, 0, 100000, True) # take 0 ~ 100 as validation set
 # trainSet.collect_data(imageDirs, bbox_file, meanShape, 0, 2, True)
 trainSet.load_image()
@@ -26,4 +21,19 @@ trainSet.gen_perturbations(10, [0.1, 0.1, 10, 0.25])
 trainSet.NormalizeImages()
 # trainSet.Save(datasetDir)
 print("here")
-trainSet.save_tfrecord("/home/slam/workspace/DL/alignment_method/align_untouch/temp/test.record")
+trainSet.save_tfrecord("/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/total/train.record", pts_num=82)
+del trainSet
+gc.collect()
+
+imageDirs_test = ["/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/"]
+bbox_file_test = '/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/total/images_bbox_list_testset.txt'
+
+testSet = data_server.DataServer(initialization='bbox')
+testSet.collect_data(imageDirs_test, bbox_file_test, meanShape, 0, 1000, False) # take 0 ~ 100 as validation set
+testSet.load_image()
+testSet.gen_perturbations(10, [0.1, 0.1, 10, 0.25])
+# testSet.NormalizeImages()
+print("here")
+testSet.save_tfrecord("/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/total/test.record", pts_num=82)
+del testSet
+gc.collect()
