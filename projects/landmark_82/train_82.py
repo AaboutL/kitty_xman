@@ -16,9 +16,9 @@ def main(args):
 
     with tf.Graph().as_default():
         train_queue = tf.train.string_input_producer([trainset])
-        test_queue = tf.train.string_input_producer([testset])
+        test_queue = tf.train.string_input_producer([testset], num_epochs=1)
         images_train, points_train = load_tfrecord(train_queue, pts_num=82, img_shape=[112, 112, 1], batch_size=args.batch_size, is_shuffle=True)
-        images_test, points_test = load_tfrecord(test_queue, pts_num=82, img_shape=[112, 112, 1], batch_size=10000, is_shuffle=False)
+        images_test, points_test = load_tfrecord(test_queue, pts_num=82, img_shape=[112, 112, 1], batch_size=128, is_shuffle=False)
 
         imgs_ph = tf.placeholder(tf.float32, [None, 112, 112, 1], 'images_ph')
         pts_ph = tf.placeholder(tf.float32, [None, 164], 'points_ph')
@@ -44,49 +44,50 @@ def main(args):
             results = np.loadtxt(mid_result_path)
             if len(results) != 0:
                 min_error = np.min(results[:,1])
+            print('min_error', min_error)
 
             with tf.Session() as sess:
                 sess.run(init_op)
                 coord = tf.train.Coordinator()
                 threads = tf.train.start_queue_runners(coord=coord)
+                step = 0
                 if args.pretrained_model_dir is not None:
                     step = int(model_tool.load_model(sess, model_dir=args.pretrained_model_dir))
-                print('min_error', min_error)
-                step = 0
+                imgs_test, pts_test = sess.run([images_test, points_test])
                 while True:
                     step += 1
                     if step % 100 == 0:
-                        imgs_test, pts_test = sess.run([images_test, points_test])
-                        summary, _, loss = sess.run([merged, optimizer, loss],
+                        summary, _, error = sess.run([merged, optimizer, loss],
                                                     feed_dict={imgs_ph: imgs_test,
                                                                pts_ph: pts_test,
                                                                is_train_ph: False
                                                     })
-                        mid_result.write("{0} {1}".format(step, str(loss))+'\n')
-                        if loss < min_error:
-                            min_error = loss
+                        mid_result.write("{0} {1}".format(step, str(error))+'\n')
+                        print('evaluate on testset -> step: %d, loss: %2.4f'%(step, error))
+                        if error < min_error:
+                            min_error = error
                             print('saving model...')
                             Saver.save(sess, args.model_dir + '/model', global_step=step)
 
                     imgs_train, pts_train = sess.run([images_train, points_train])
-                    summary, _, loss = sess.run([merged, optimizer, loss],
+                    summary, _, error = sess.run([merged, optimizer, loss],
                                                 feed_dict={imgs_ph: imgs_train,
                                                            pts_ph: pts_train,
                                                            is_train_ph: True})
                     Writer.add_summary(summary, step)
-                    print('step: %d, loss: %2.4f'%(step, loss))
+                    print('step: %d, loss: %2.4f'%(step, error))
                 coord.request_stop()
                 coord.join(threads)
 
 def parse_arguments(argv):
     parser = argparse.ArgumentParser()
-    parser.add_argument('--trainset', type=str, default='/home/hanfy/dataset/STN/trans_train.record')
-    parser.add_argument('--validateset', type=str, default='/home/hanfy/dataset/STN/trans_validate.record')
-    parser.add_argument('--model_dir', type=str, default='/home/hanfy/models/STN')
-    parser.add_argument('--log_dir', type=str, default='')
-    parser.add_argument('--mid_result_dir', type=str, default='')
+    parser.add_argument('--trainset', type=str, default='/home/public/nfs132_0/landmark/dataset/untouch/untouch_labeled/total/train_112.record')
+    parser.add_argument('--testset', type=str, default='/home/public/nfs132_0/landmark/dataset/untouch/untouch_labeled/total/test_112.record')
+    parser.add_argument('--model_dir', type=str, default='/home/hanfy/models/landmark_82')
+    parser.add_argument('--log_dir', type=str, default='/home/hanfy/logs/landmark_82')
+    parser.add_argument('--mid_result_dir', type=str, default='/home/hanfy/result/landmark_82')
     parser.add_argument('--pretrained_model_dir', type=str, help='Directory to the pretrain model')
-    parser.add_argument('--batch_size', type=int, default='64')
+    parser.add_argument('--batch_size', type=int, default=64)
     return parser.parse_args(argv)
 
 if __name__ == '__main__':

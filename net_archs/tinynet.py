@@ -12,7 +12,7 @@ def inference(inputs, pts_num, is_training=True, dropout_keep_prob=0.5, scope='t
             print('pool1: ', net.shape)
             net = slim.conv2d(net, 16, [3, 3], stride=1, padding='VALID', activation_fn=tf.nn.leaky_relu, scope='conv2_1')
             print('conv2_1: ', net.shape)
-            net = slim.conv2d(net, 16, [3, 3], stride=1, padding='VALID', activation_fn=tf.nn.leaky_relu, scope='conv2_2')
+            net = slim.conv2d(net, 16, [3, 3], stride=1, padding='SAME', activation_fn=tf.nn.leaky_relu, scope='conv2_2')
             print('conv2_2: ', net.shape)
             net = slim.avg_pool2d(net, kernel_size=[2, 2], stride=2, scope='pool2')
             print('pool2: ', net.shape)
@@ -22,9 +22,9 @@ def inference(inputs, pts_num, is_training=True, dropout_keep_prob=0.5, scope='t
             print('conv3_2: ', net.shape)
             net = slim.avg_pool2d(net, kernel_size=[2, 2], stride=2, scope='pool3')
             print('pool3: ', net.shape)
-            net = slim.conv2d(net, 40, [3, 3], stride=1, padding='VALID', activation_fn=tf.nn.leaky_relu, scope='conv4_1')
+            net = slim.conv2d(net, 40, [3, 3], stride=1, padding='SAME', activation_fn=tf.nn.leaky_relu, scope='conv4_1')
             print('conv4_1: ', net.shape)
-            net = slim.conv2d(net, 40, [3, 3], stride=1, padding='VALID', activation_fn=tf.nn.leaky_relu, scope='conv4_2')
+            net = slim.conv2d(net, 80, [3, 3], stride=1, padding='SAME', activation_fn=tf.nn.leaky_relu, scope='conv4_2')
             print('conv4_2: ', net.shape)
             net = slim.flatten(net, scope='flatten')
             print('flatten: ', net.shape)
@@ -32,7 +32,7 @@ def inference(inputs, pts_num, is_training=True, dropout_keep_prob=0.5, scope='t
             print('fc1: ', net.shape)
             net = slim.fully_connected(net, 128, activation_fn=tf.nn.leaky_relu, scope='fc2')
             print('fc2: ', net.shape)
-            net = slim.fully_connected(net, pts_num)
+            net = slim.fully_connected(net, pts_num*2)
         return net
 
 
