@@ -12,12 +12,13 @@ def read_pose(path):
     with open(path, 'r') as pose_f:
         lines = pose_f.readlines()
         pitch, yaw, roll = [float(item) for item in lines[-3:]]
-    return pitch * factor, yaw * factor, roll * factor
+    # return pitch * factor, yaw * factor, roll * factor
+    return pitch, yaw, roll
 
 def pts_pose_path(img_path):
     prefix = img_path[:-4]
-    pts_path = prefix + '.pts'
-    pose_path = prefix + '_pose.txt'
+    pts_path = prefix + '.txt'
+    pose_path = prefix + '.pose'
     return pts_path, pose_path
 
 def gen_xml(images_file, xml_output):
@@ -102,8 +103,8 @@ def main(args):
 
 def parse_arguments(argv):
     parser = argparse.ArgumentParser()
-    parser.add_argument('--input_file', type=str, default='/home/slam/nfs132_0/landmark/dataset/ibugs_wflw_test/images_total_testset.txt')
-    parser.add_argument('--output_file', type=str, default='../data/test_data/total_testset.xml')
+    parser.add_argument('--input_file', type=str, default='/home/slam/workspace/DL/untouch_projects/dms_methods/tmp_result/testset_imgs_list.txt')
+    parser.add_argument('--output_file', type=str, default='../data/test_data/untouch_testset.xml')
     return parser.parse_args(argv)
 
 if __name__ == '__main__':
