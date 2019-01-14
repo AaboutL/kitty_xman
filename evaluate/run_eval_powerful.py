@@ -3,11 +3,18 @@ import argparse
 import sys
 import os
 import numpy as np
-from evaluate import eval_tools
 import matplotlib
 matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 from scipy.integrate import simps
+
+'''
+    How to use eval script to evaluate the landmark result.
+    First: use gen_xml.py to create testset groundtruth xml. Images, points and pose data should included in one folder.
+    Second: Use your algorithm to predict testset landmark, and save results to a txt.
+    Third: Use calc_save_error.py to calculate error between prediction and groundtruth, and save the result to xml.
+    Fourth: Use this script to evaluate two algorithms.
+'''
 
 def evaluate_subset(pixel_errors, norm_errors):
     avg_pixel_error = np.mean(pixel_errors)
@@ -163,11 +170,11 @@ def main(args):
 
 def parse_arguments(argv):
     parser = argparse.ArgumentParser()
-    parser.add_argument('--input_first_xml', type=str, default='/home/slam/workspace/DL/alignment_method/align_untouch/temp/single_model_errors_1116.xml')
-    parser.add_argument('--input_second_xml', type=str, default='/home/slam/workspace/DL/alignment_method/align_untouch/temp/multi_models_errors_1216.xml')
-    parser.add_argument('--split_num', type=int, default=3)
+    parser.add_argument('--input_first_xml', type=str, default='/home/slam/workspace/DL/alignment_method/align_untouch/temp/untouch_testset_error_dlib.xml')
+    parser.add_argument('--input_second_xml', type=str, default='/home/slam/workspace/DL/alignment_method/align_untouch/temp/untouch_testset_error_ljj.xml')
+    parser.add_argument('--split_num', type=int, help="if split_type==uniform, then the testset will split to split_num parts",default=3)
     parser.add_argument('--split_type', type=str, default='manual')
-    parser.add_argument('--split_ids', type=str, default='[-90,-40,-20,20,40,90]')
+    parser.add_argument('--split_ids', type=str, default='[-90,90]')
     parser.add_argument('--angle_type', type=str, default='yaw')
     parser.add_argument('--set_type', type=str, default='total')
     return parser.parse_args(argv)

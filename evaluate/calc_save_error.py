@@ -5,7 +5,7 @@ from evaluate.eval_tools import dist
 import argparse
 import sys
 
-def read_xml(file_path):
+def read_xml(file_path, pts_num=68):
     tree = ET.ElementTree(file=file_path)
     root = tree.getroot()
     images = root[1]
@@ -15,17 +15,18 @@ def read_xml(file_path):
         sets = image[0]
         angles = image[1]
         points = image[2]
+        print(img_path, len(points))
         pts_val = []
         for pt in points:
             x = float(pt.attrib['x'])
             y = float(pt.attrib['y'])
             pts_val.append(x)
             pts_val.append(y)
-        pts_val = np.asarray(pts_val).reshape(68, 2)
+        pts_val = np.asarray(pts_val).reshape(pts_num, 2)
         data_dict[img_path] = [sets, angles, pts_val]
     return data_dict
 
-def read_result(file_path):
+def read_result(file_path, pts_num=68):
     res_f = open(file_path, 'r')
     lines = res_f.readlines()
     res_f.close()
@@ -33,7 +34,7 @@ def read_result(file_path):
     for line in lines:
         items = line.strip('\n').split(' ')
         img_path = items[-1]
-        pts = np.asarray([float(pt) for pt in items[:-1]]).reshape(68, 2)
+        pts = np.asarray([float(pt) for pt in items[:-1]]).reshape(pts_num, 2)
         res_dict[img_path] = pts
     return res_dict
 
@@ -124,16 +125,16 @@ def main(args):
     if args.gt_file=='' or args.res_file=='' or args.output_xml=='':
         print("groundtruth file, result file and output file should be specified!")
         exit(0)
-    data_dict = read_xml(args.gt_file)
-    pred_dict = read_result(args.res_file)
+    data_dict = read_xml(args.gt_file, pts_num=82)
+    pred_dict = read_result(args.res_file, pts_num=82)
     save_errors(data_dict, pred_dict, args.output_xml, norm_type=args.norm_type)
 
 
 def parse_arguments(argv):
     parser = argparse.ArgumentParser()
-    parser.add_argument('--gt_file', type=str, default='/home/slam/workspace/DL/alignment_method/align_untouch/data/test_data/total_testset.xml')
-    parser.add_argument('--res_file', type=str, default='/home/slam/nfs132_0/landmark/dataset/ibugs/middle_data/test/fullset/pts_path_full_testset_single_model.txt')
-    parser.add_argument('--output_xml', type=str, default='/home/slam/workspace/DL/alignment_method/align_untouch/temp/singlemodel_errors.xml')
+    parser.add_argument('--gt_file', type=str, default='/home/slam/workspace/DL/alignment_method/align_untouch/data/test_data/untouch_testset.xml')
+    parser.add_argument('--res_file', type=str, default='/home/slam/workspace/DL/untouch_projects/dms_methods/tmp_result/pts_path_untouch_testset_ljj.txt')
+    parser.add_argument('--output_xml', type=str, default='/home/slam/workspace/DL/alignment_method/align_untouch/temp/untouch_testset_error_ljj.xml')
     parser.add_argument('--norm_type', type=str, default='centers')
     return parser.parse_args(argv)
 
