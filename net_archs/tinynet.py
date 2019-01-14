@@ -1,11 +1,11 @@
 import tensorflow as tf
 import tensorflow.contrib.slim as slim
 
-def inference(inputs, pts_num, is_training=True, dropout_keep_prob=0.5, scope='tiny', global_pool=False):
+def inference(inputs, meanshape, pts_num, is_training=True, dropout_keep_prob=0.5, scope='tiny', global_pool=False):
+    meanShape = tf.constant(meanshape)
     with tf.variable_scope(scope, default_name='tiny', values=[inputs]) as sc:
         end_points_collection = sc.original_name_scope + '_end_points'
-        with slim.arg_scope([slim.conv2d, slim.fully_connected, slim.max_pool2d],
-                            outputs_collections=[end_points_collection]):
+        with slim.arg_scope([slim.conv2d, slim.fully_connected, slim.max_pool2d]):
             net = slim.conv2d(inputs, 8, [5, 5], stride=2, padding='VALID', activation_fn=tf.nn.leaky_relu, scope='conv1_1')
             print('conv1_1: ', net.shape)
             net = slim.avg_pool2d(net, kernel_size=[2, 2], stride=2, scope='pool1')
@@ -33,6 +33,7 @@ def inference(inputs, pts_num, is_training=True, dropout_keep_prob=0.5, scope='t
             net = slim.fully_connected(net, 128, activation_fn=tf.nn.leaky_relu, scope='fc2')
             print('fc2: ', net.shape)
             net = slim.fully_connected(net, pts_num*2)
+            net = net + meanShape
         return net
 
 

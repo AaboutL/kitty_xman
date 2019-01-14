@@ -35,7 +35,7 @@ def NormRmse(gtLandmarks, predLandmarks, num_points):
     Gt = tf.reshape(gtLandmarks, [-1, num_points, 2])
     Pt = tf.reshape(predLandmarks, [-1, num_points, 2])
     loss = tf.reduce_mean(tf.sqrt(tf.reduce_sum(tf.squared_difference(Gt, Pt), 2)), 1)
-    norm = tf.norm(tf.reduce_mean(Gt[:, 44:52, :],1) - tf.reduce_mean(Gt[:, 52:60, :],1), axis=1)
+    norm = tf.norm(tf.reduce_mean(Gt[:, 44:52, :],0) - tf.reduce_mean(Gt[:, 52:60, :],0))
     return loss/norm
 
 def l1_loss(gtLandmarks, predLandmarks):

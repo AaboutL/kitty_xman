@@ -31,13 +31,14 @@ def main(args):
     shapes_val = shapes_val.reshape(len(shapes_val), 68*2)
 
     with tf.Graph().as_default():
-        global_step = tf.Variable(0, trainable=False)
+        global_steps = tf.Variable(0, trainable=False)
 
         # placeholders
-        lr = tf.placeholder(tf.float32, name='learning_rate')
+        lr_ph = tf.placeholder(tf.float32, name='learning_rate_ph')
         images = tf.placeholder(tf.float32, [None, 224, 224, 3], name='image_ph')
         points_gt = tf.placeholder(tf.float32, [None, args.num_landmarks*2], name='points_gt_ph')
         is_training = tf.placeholder(tf.bool, name='is_training')
+
 
         # construct loss
         inference, _ = net.inference(images, args.num_landmarks*2, is_training, args.dropout_keep_prob)
