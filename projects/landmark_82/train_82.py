@@ -5,7 +5,9 @@ import sys
 import numpy as np
 import argparse
 
-from net_archs.tinynet import inference
+# from net_archs.tinynet import inference
+from net_archs.AlexNet import inference
+from net_archs.squeezenet_v11 import inference
 from utilities.data_preparation.save_read_tfrecord import load_tfrecord
 from train import loss_func
 from utilities import model_tool
@@ -16,7 +18,6 @@ def main(args):
     testset = args.testset
 
     meanShape = np.genfromtxt('../../meanshape_untouch.txt')
-    print(meanShape.dtype)
     meanShape = np.reshape(meanShape, [164]).astype(np.float32) * 112
 
     with tf.Graph().as_default():
@@ -39,7 +40,7 @@ def main(args):
                                                    decay_rate=args.learning_rate_decay_rate,
                                                    staircase=True)
 
-        pts_pre = inference(imgs_ph, meanshape=meanShape, pts_num=82, is_training=is_train_ph)
+        pts_pre,_ = inference(imgs_ph, meanshape=meanShape, num_classes=82*2, is_training=is_train_ph)
         loss = tf.reduce_mean(loss_func.NormRmse(pts_ph, pts_pre, 82))
         opt = tf.train.AdamOptimizer(learning_rate=learning_rate)
         optimizer = opt.minimize(loss, global_step=global_steps)
@@ -101,9 +102,9 @@ def parse_arguments(argv):
     parser = argparse.ArgumentParser()
     parser.add_argument('--trainset', type=str, default='/home/public/nfs132_0/landmark/dataset/untouch/untouch_labeled/total/train_112.record')
     parser.add_argument('--testset', type=str, default='/home/public/nfs132_0/landmark/dataset/untouch/untouch_labeled/total/test_112.record')
-    parser.add_argument('--model_dir', type=str, default='/home/public/nfs71/hanfy/models/landmark_82')
-    parser.add_argument('--log_dir', type=str, default='/home/public/nfs71/hanfy/logs/landmark_82')
-    parser.add_argument('--mid_result_dir', type=str, default='/home/public/nfs71/hanfy/models/landmark_82/results')
+    parser.add_argument('--model_dir', type=str, default='/home/public/nfs71/hanfy/models/landmark_82_alexnet')
+    parser.add_argument('--log_dir', type=str, default='/home/public/nfs71/hanfy/logs/landmark_82_alexnet')
+    parser.add_argument('--mid_result_dir', type=str, default='/home/public/nfs71/hanfy/models/landmark_82_alexnet/results')
     parser.add_argument('--pretrained_model_dir', type=str, help='Directory to the pretrain model')
                         # ,default='/home/public/nfs71/hanfy/models/landmark_82')
     parser.add_argument('--batch_size', type=int, default=64)

@@ -27,7 +27,7 @@ def expand(inputs, num_outputs):
         e3x3 = slim.conv2d(inputs, num_outputs, [3, 3], scope='3x3')
     return tf.concat([e1x1, e3x3], 3)
 
-def inference(inputs, num_classes=136, is_training=True, dropout_keep_prob=0.5, weight_decay=0.0, reuse=None):
+def inference(inputs, meanshape=None, num_classes=136, is_training=True, dropout_keep_prob=0.5, weight_decay=0.0, reuse=None):
     batch_norm_params = {
         # Decay for the moving averages.
         'decay': 0.995,
@@ -65,4 +65,7 @@ def inference(inputs, num_classes=136, is_training=True, dropout_keep_prob=0.5, 
                 net = tf.squeeze(net, [1, 2], name='logits')
                 net = slim.fully_connected(net, num_classes, activation_fn=None,
                         scope='Bottleneck', reuse=False)
+                if meanshape is not None:
+                    meanShape = tf.constant(meanshape)
+                    net = net + meanShape
     return net, None

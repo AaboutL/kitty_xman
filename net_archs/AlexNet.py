@@ -8,6 +8,7 @@ import tensorflow.contrib.slim as slim
 trunc_normal = lambda stddev: tf.truncated_normal_initializer(0.0, stddev)
 
 def inference(inputs,
+               meanshape=None,
                num_classes=136,
                is_training=True,
                dropout_keep_prob=0.5,
@@ -53,5 +54,8 @@ def inference(inputs,
                     if spatial_squeeze:
                         net = tf.squeeze(net, [1, 2], name='fc8/squeezed')
                     end_points[sc.name + '/fc8'] = net
+                if meanshape is not None:
+                    meanShape = tf.constant(meanshape)
+                    net = net + meanShape
             return net, end_points
 inference.default_image_size = 224
