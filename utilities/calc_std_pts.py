@@ -52,15 +52,14 @@ def extractFeature(pts_path):
         h = roi[3] - roi[1] + 1
         keypoints[:, 0] = (keypoints[:, 0] - roi[0]) / w
         keypoints[:, 1] = (keypoints[:, 1] - roi[1]) / h
-
         ground_truth.append(keypoints)
 
 
         # pdb.set_trace()
         # vis_detections(src_img, pre_points)
     std_point = np.mean(ground_truth, axis=0)
-    np.savetxt('/home/slam/workspace/DL/alignment_method/align_untouch/meanshape_untouch.txt', std_point)
-    print(std_point)
+    print(std_point.shape)
+    np.savetxt('/home/slam/nfs132_0/landmark/dataset/untouch/meanshape_untouch.txt', std_point)
     for i in range(pts_num):
         pts = std_point[i]
         print("%f, %f, " % (pts[0], pts[1]))
@@ -105,5 +104,5 @@ def drawROC(align_errors):
 
 
 if __name__ == "__main__":
-    pts_path = "/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/total/pts_path.txt"
+    pts_path = "/home/slam/nfs132_0/landmark/dataset/untouch/pts_path.txt"
     std_points = extractFeature(pts_path)

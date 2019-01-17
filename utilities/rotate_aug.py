@@ -20,11 +20,11 @@ def get_files(rootDir):
     return file_lists
 
 
-pts_num = 68
+pts_num = 82
 
 if __name__ == '__main__':
-    lists = get_files("train")
-    save_path = "train_rotate/"
+    lists = get_files("/home/slam/nfs132_0/landmark/dataset/untouch/tmp")
+    save_path = "/home/slam/nfs132_0/landmark/dataset/untouch/tmp/"
     img_list = [name for name in lists
                 if name.endswith('.jpg') or name.endswith('.png')]
 
@@ -36,7 +36,7 @@ if __name__ == '__main__':
 
         src_img = cv2.imread(im_name)
         rows, cols, channel = src_img.shape
-        fp = open(im_name[0:-3] + "pts", "r")
+        fp = open(im_name[0:-3] + "txt", "r")
         points = []
         for i in range(pts_num):
             s_line = fp.readline()
