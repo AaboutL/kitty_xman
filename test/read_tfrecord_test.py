@@ -5,10 +5,10 @@ import numpy as np
 from utilities.data_preparation.save_read_tfrecord import load_tfrecord
 
 def main():
-    output_tfrecords = '/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/total/train.record'
+    output_tfrecords = '/home/slam/nfs132_0/landmark/dataset/untouch/train_116.record'
     # filename_queue = tf.train.string_input_producer([output_tfrecords], num_epochs=1)
     filename_queue = tf.train.string_input_producer([output_tfrecords])
-    images, labels = load_tfrecord(filename_queue, pts_num=82, img_shape=[112, 112], is_shuffle=True)
+    images, labels = load_tfrecord(filename_queue, pts_num=82, img_shape=[116, 116], is_shuffle=True)
     # images = read_tfrecord1(filename_queue, is_shuffle=True)
     init_op = tf.group(tf.global_variables_initializer(), tf.local_variables_initializer())
     with tf.Session() as sess:
@@ -28,9 +28,11 @@ def main():
                 # dst = np.zeros((224, 224), dtype=np.uint8)
                 # dst = cv2.warpAffine(imgs[j], pts, (224, 224))
                 # print(pts)
+                img = imgs[j]
+                img = np.stack([img, img, img], axis=2)
                 for k in range(len(pts)//2):
-                    cv2.circle(imgs[j], (int(pts[k*2]), int(pts[k*2+1])), 2, (0, 255, 0))
-                cv2.imshow("img", imgs[j])
+                    cv2.circle(img, (int(pts[k*2]), int(pts[k*2+1])), 2, (0, 255, 0))
+                cv2.imshow("img", img)
                 # cv2.imshow('dst', dst)
                 cv2.waitKey(0)
 
