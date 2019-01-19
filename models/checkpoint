@@ -1,2 +1,2 @@
-model_checkpoint_path: "/home/slam/workspace/DL/alignment_method/align_untouch/models/model"
-all_model_checkpoint_paths: "/home/slam/workspace/DL/alignment_method/align_untouch/models/model"
+model_checkpoint_path: "/home/slam/workspace/DL/alignment_method/align_untouch/models/pts82"
+all_model_checkpoint_paths: "/home/slam/workspace/DL/alignment_method/align_untouch/models/pts82"

@@ -105,8 +105,8 @@ def parse_arguments(argv):
     parser.add_argument('--model_dir', type=str, default='/home/public/nfs71/hanfy/models/landmark_82_alexnet')
     parser.add_argument('--log_dir', type=str, default='/home/public/nfs71/hanfy/logs/landmark_82_alexnet')
     parser.add_argument('--mid_result_dir', type=str, default='/home/public/nfs71/hanfy/models/landmark_82_alexnet/results')
-    parser.add_argument('--pretrained_model_dir', type=str, help='Directory to the pretrain model')
-                        # ,default='/home/public/nfs71/hanfy/models/landmark_82')
+    parser.add_argument('--pretrained_model_dir', type=str, help='Directory to the pretrain model'
+                        ,default='/home/slam/workspace/DL/alignment_method/align_untouch/models')
     parser.add_argument('--batch_size', type=int, default=64)
     parser.add_argument('--weight_decay', type=float, default=0.0005)
     parser.add_argument('--learning_rate', type=float, default=0.001)

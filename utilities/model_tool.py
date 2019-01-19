@@ -155,7 +155,12 @@ def get_model_filenames(model_dir):
     ckpt = tf.train.get_checkpoint_state(model_dir)
     if ckpt and ckpt.model_checkpoint_path:
         ckpt_file = os.path.basename(ckpt.model_checkpoint_path)
-        step = ckpt_file.split('-')[-1]
+        print('file: ', ckpt_file)
+        print('path: ', ckpt.model_checkpoint_path)
+        if len(ckpt_file.split('-')) == 1:
+            step = 0
+        else:
+            step = ckpt_file.split('-')[-1]
         return meta_file, ckpt_file, step
 
 def load_model(sess, model_dir):
