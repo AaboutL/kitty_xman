@@ -170,8 +170,8 @@ def main(args):
 
 def parse_arguments(argv):
     parser = argparse.ArgumentParser()
-    parser.add_argument('--input_first_xml', type=str, default='/home/slam/workspace/DL/alignment_method/align_untouch/temp/untouch_testset_error_dlib.xml')
-    parser.add_argument('--input_second_xml', type=str, default='/home/slam/workspace/DL/alignment_method/align_untouch/temp/untouch_testset_error_ljj.xml')
+    parser.add_argument('--input_first_xml', type=str, default='/home/slam/nfs132_0/landmark/dataset/untouch/AHD_USB/ahd_errors.xml')
+    parser.add_argument('--input_second_xml', type=str, default='/home/slam/nfs132_0/landmark/dataset/untouch/AHD_USB/usb_errors.xml')
     parser.add_argument('--split_num', type=int, help="if split_type==uniform, then the testset will split to split_num parts",default=3)
     parser.add_argument('--split_type', type=str, default='manual')
     parser.add_argument('--split_ids', type=str, default='[-90,90]')

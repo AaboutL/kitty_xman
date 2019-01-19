@@ -34,7 +34,8 @@ def read_result(file_path, pts_num=68):
     for line in lines:
         items = line.strip('\n').split(' ')
         img_path = items[-1]
-        pts = np.asarray([float(pt) for pt in items[:-1]]).reshape(pts_num, 2)
+        pts = items[:-1][70:160]
+        pts = np.asarray([float(pt) for pt in pts]).reshape(pts_num, 2)
         res_dict[img_path] = pts
     return res_dict
 
@@ -125,17 +126,18 @@ def main(args):
     if args.gt_file=='' or args.res_file=='' or args.output_xml=='':
         print("groundtruth file, result file and output file should be specified!")
         exit(0)
-    data_dict = read_xml(args.gt_file, pts_num=82)
-    pred_dict = read_result(args.res_file, pts_num=82)
+    data_dict = read_xml(args.gt_file, pts_num=args.pts_num)
+    pred_dict = read_result(args.res_file, pts_num=args.pts_num)
     save_errors(data_dict, pred_dict, args.output_xml, norm_type=args.norm_type)
 
 
 def parse_arguments(argv):
     parser = argparse.ArgumentParser()
-    parser.add_argument('--gt_file', type=str, default='/home/slam/workspace/DL/alignment_method/align_untouch/data/test_data/untouch_testset.xml')
-    parser.add_argument('--res_file', type=str, default='/home/slam/workspace/DL/untouch_projects/dms_methods/tmp_result/pts_path_untouch_testset_ljj.txt')
-    parser.add_argument('--output_xml', type=str, default='/home/slam/workspace/DL/alignment_method/align_untouch/temp/untouch_testset_error_ljj.xml')
+    parser.add_argument('--gt_file', type=str, default='/home/slam/nfs132_0/landmark/dataset/untouch/AHD_USB/usb_gt.xml')
+    parser.add_argument('--res_file', type=str, default='/home/slam/nfs132_0/landmark/dataset/untouch/AHD_USB/images_landmark_usb-slam_good_dlib.txt')
+    parser.add_argument('--output_xml', type=str, default='/home/slam/nfs132_0/landmark/dataset/untouch/AHD_USB/usb_errors.xml')
     parser.add_argument('--norm_type', type=str, default='centers')
+    parser.add_argument('--pts_num', type=int, default=45)
     return parser.parse_args(argv)
 
 if __name__ == '__main__':

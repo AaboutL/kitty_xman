@@ -12,8 +12,8 @@ def get_landmark(lines):
     landmarks = []
     for line in lines:
         line = line.strip('\n').split(' ')[0:-1]
-        line = np.asarray([float(pt) for pt in line]).reshape(68, 2)
-        landmarks.append(line)
+        pts = np.asarray([float(pt) for pt in line]).reshape(len(line)//2, 2)
+        landmarks.append(pts)
     return landmarks
 
 def main(args):
@@ -31,9 +31,9 @@ def main(args):
 def parser_augments(argv):
     parser = argparse.ArgumentParser()
     parser.add_argument('--gtlandmarkfile', type=str, help='path to the groundtruth landmarks file',
-                        default='')
+                        default='/home/slam/nfs132_0/landmark/dataset/untouch/png_jpg/jpg/landmarks_list.txt')
     parser.add_argument('--predictlandmarkfile', type=str, help='path to the predict landmark file',
-                        default='')
+                        default='/home/slam/nfs132_0/landmark/dataset/untouch/png_jpg/png/landmarks_list.txt')
     parser.add_argument('--failure_threshold', type=float, help='The predict landmark treat as failure if the score is above the threshold',
                         default=0.08)
     parser.add_argument('--step', type=float, help='the threshold growing step',

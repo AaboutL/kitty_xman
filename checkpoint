@@ -1,0 +1,2 @@
+model_checkpoint_path: "/home/slam/workspace/DL/alignment_method/align_untouch/models"
+all_model_checkpoint_paths: "/home/slam/workspace/DL/alignment_method/align_untouch/models"

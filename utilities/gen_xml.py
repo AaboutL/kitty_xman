@@ -21,6 +21,18 @@ def pts_pose_path(img_path):
     pose_path = prefix + '.pose'
     return pts_path, pose_path
 
+def get_pts_angels(img_path, use_angels=False):
+    prefix = img_path[:-4]
+    pts_path = prefix + '.txt'
+    pose_path = prefix + '.pose'
+    pts = read_points(pts_path)
+    if use_angels:
+        pitch, yaw, roll = read_pose(pose_path)
+        return pts, pitch, yaw, roll
+    else:
+        return pts
+
+
 def gen_xml(images_file, xml_output):
     doc = xml.dom.minidom.Document()
     # comment = doc.createElement('comment')
@@ -49,9 +61,9 @@ def gen_xml(images_file, xml_output):
 
     for i in range(len(image_paths)):
         img_path = image_paths[i]
-        pts_path, pose_path = pts_pose_path(img_path)
-        pts = read_points(pts_path)
-        pitch, yaw, roll = read_pose(pose_path)
+        pitch = yaw = roll = 0
+        # pts, pitch, yaw, roll = get_pts_angels(img_path, use_angels=True)
+        pts = get_pts_angels(img_path, use_angels=False)
         total = 'yes'
         common = challenge = full = wflw = 'no'
         if img_path.find('helen') or img_path.find('lfpw'):
@@ -103,8 +115,8 @@ def main(args):
 
 def parse_arguments(argv):
     parser = argparse.ArgumentParser()
-    parser.add_argument('--input_file', type=str, default='/home/slam/workspace/DL/untouch_projects/dms_methods/tmp_result/testset_imgs_list.txt')
-    parser.add_argument('--output_file', type=str, default='../data/test_data/untouch_testset.xml')
+    parser.add_argument('--input_file', type=str, default='/home/slam/nfs132_0/landmark/dataset/untouch/AHD_USB/ahd_results_list.txt')
+    parser.add_argument('--output_file', type=str, default='/home/slam/nfs132_0/landmark/dataset/untouch/AHD_USB/ahd_gt.xml')
     return parser.parse_args(argv)
 
 if __name__ == '__main__':
