@@ -40,8 +40,9 @@ def main(args):
                                                    decay_rate=args.learning_rate_decay_rate,
                                                    staircase=True)
 
-        pts_pre,_ = inference(imgs_ph, meanshape=meanShape, pts_num=82, is_training=is_train_ph)
-        loss = tf.reduce_mean(loss_func.NormRmse(pts_ph, pts_pre, 82))
+        pts_pre = inference(imgs_ph, meanshape=meanShape, pts_num=82, is_training=is_train_ph)
+        # loss = tf.reduce_mean(loss_func.NormRmse(pts_ph, pts_pre, 82))
+        loss = tf.reduce_mean(loss_func.smooth_l1_loss(pts_ph, pts_pre, 82))
         opt = tf.train.AdamOptimizer(learning_rate=learning_rate)
         optimizer = opt.minimize(loss, global_step=global_steps)
         opt.compute_gradients(loss)
@@ -106,7 +107,7 @@ def parse_arguments(argv):
     parser.add_argument('--log_dir', type=str, default='/home/public/nfs71/hanfy/logs/landmark_82_alexnet')
     parser.add_argument('--mid_result_dir', type=str, default='/home/public/nfs71/hanfy/models/landmark_82_alexnet/results')
     parser.add_argument('--pretrained_model_dir', type=str, help='Directory to the pretrain model'
-                        ,default='/home/hanfy/workspace/DL/alignment/align_untouch/models')
+                        ,default='/home/hanfy/workspace/DL/alignment/align_untouch/models/lm_82_tf')
     parser.add_argument('--batch_size', type=int, default=64)
     parser.add_argument('--weight_decay', type=float, default=0.0005)
     parser.add_argument('--learning_rate', type=float, default=0.001)

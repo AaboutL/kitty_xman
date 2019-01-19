@@ -19,6 +19,8 @@ def main(args):
         net = inference(imgs_ph, meanShape, pts_num=82, is_training=is_train_ph)
         saver = tf.train.Saver(tf.trainable_variables())
         vars = tf.trainable_variables()
+        for var in vars:
+            print(var.name[:-2])
         with tf.Session() as sess:
             data_dict = np.load(args.input, encoding='latin1').item()
             for op_name in data_dict:
@@ -27,7 +29,8 @@ def main(args):
                     for param_name, data in data_dict[op_name].items():
                         print('param_name: %s:\n data: %r'%(param_name, data))
                         try:
-                            if param_name not in vars:
+                            if (op_name + '/' + param_name) not in [var.name[:-2] for var in vars]:
+                                print(param_name)
                                 continue
                             var = tf.get_variable(param_name)
                             sess.run(var.assign(data))
