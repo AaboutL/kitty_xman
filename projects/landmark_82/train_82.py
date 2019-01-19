@@ -5,9 +5,9 @@ import sys
 import numpy as np
 import argparse
 
-# from net_archs.tinynet import inference
-from net_archs.AlexNet import inference
-from net_archs.squeezenet_v11 import inference
+from net_archs.tinynet_prelu import inference
+# from net_archs.AlexNet import inference
+# from net_archs.squeezenet_v11 import inference
 from utilities.data_preparation.save_read_tfrecord import load_tfrecord
 from train import loss_func
 from utilities import model_tool
@@ -40,7 +40,7 @@ def main(args):
                                                    decay_rate=args.learning_rate_decay_rate,
                                                    staircase=True)
 
-        pts_pre,_ = inference(imgs_ph, meanshape=meanShape, num_classes=82*2, is_training=is_train_ph)
+        pts_pre,_ = inference(imgs_ph, meanshape=meanShape, pts_num=82, is_training=is_train_ph)
         loss = tf.reduce_mean(loss_func.NormRmse(pts_ph, pts_pre, 82))
         opt = tf.train.AdamOptimizer(learning_rate=learning_rate)
         optimizer = opt.minimize(loss, global_step=global_steps)
@@ -106,7 +106,7 @@ def parse_arguments(argv):
     parser.add_argument('--log_dir', type=str, default='/home/public/nfs71/hanfy/logs/landmark_82_alexnet')
     parser.add_argument('--mid_result_dir', type=str, default='/home/public/nfs71/hanfy/models/landmark_82_alexnet/results')
     parser.add_argument('--pretrained_model_dir', type=str, help='Directory to the pretrain model'
-                        ,default='/home/slam/workspace/DL/alignment_method/align_untouch/models')
+                        ,default='/home/hanfy/workspace/DL/alignment/align_untouch/models')
     parser.add_argument('--batch_size', type=int, default=64)
     parser.add_argument('--weight_decay', type=float, default=0.0005)
     parser.add_argument('--learning_rate', type=float, default=0.001)
