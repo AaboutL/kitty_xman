@@ -230,18 +230,18 @@ class DataServer(object):
         meanImg = 255 * meanImg / meanImg.max()
         meanImg = meanImg.astype(np.uint8)
         if self.color:
-            cv2.imwrite('data/meanImg.jpg', meanImg)
+            cv2.imwrite('../../data/meanImg.jpg', meanImg)
         else:
             print(meanImg.shape)
-            cv2.imwrite('data/meanImg.jpg', meanImg.squeeze())
+            cv2.imwrite('../../data/meanImg.jpg', meanImg.squeeze())
 
         stdDevImg = self.stdDevImg - self.stdDevImg.min()
         stdDevImg = 255 * stdDevImg / stdDevImg.max()
         stdDevImg = stdDevImg.astype(np.uint8)
         if self.color:
-            cv2.imwrite('data/stdDevImg.jpg', stdDevImg)
+            cv2.imwrite('../../data/stdDevImg.jpg', stdDevImg)
         else:
-            cv2.imwrite('data/stdDevImg.jpg', stdDevImg.squeeze())
+            cv2.imwrite('../../data/stdDevImg.jpg', stdDevImg.squeeze())
 
     def CropResizeRotateAll(self):
         new_imgs = []
