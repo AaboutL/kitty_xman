@@ -5,7 +5,7 @@ import numpy as np
 from utilities.data_preparation.save_read_tfrecord import load_tfrecord
 
 def main():
-    output_tfrecords = '/home/slam/nfs132_0/landmark/dataset/untouch/train_116.record'
+    output_tfrecords = '/home/slam/nfs132_0/landmark/dataset/untouch/test_116.record'
     # filename_queue = tf.train.string_input_producer([output_tfrecords], num_epochs=1)
     filename_queue = tf.train.string_input_producer([output_tfrecords])
     images, labels = load_tfrecord(filename_queue, pts_num=82, img_shape=[116, 116], is_shuffle=True)

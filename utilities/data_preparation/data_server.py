@@ -40,9 +40,9 @@ class DataServer(object):
     def save_tfrecord(self, output, pts_num=68):
         self.gtlandmarks = np.reshape(self.gtlandmarks, (len(self.gtlandmarks), pts_num*2)).astype(np.float32)
         self.imgs = self.imgs.astype(np.uint8)
-        self.imgs = np.squeeze(self.imgs,axis=3)
         print("img shape", np.shape(self.imgs))
         print("img type: ", self.imgs[0].dtype)
+        self.imgs = np.squeeze(self.imgs,axis=3)
         print("pts shape", np.shape(self.gtlandmarks))
         print("pts type: ", self.gtlandmarks[0].dtype)
         save_tfrecord(self.imgs, self.gtlandmarks, output)
@@ -243,3 +243,19 @@ class DataServer(object):
         else:
             cv2.imwrite('data/stdDevImg.jpg', stdDevImg.squeeze())
 
+    def CropResizeRotateAll(self):
+        new_imgs = []
+        new_initlandmarks = []
+        new_gtlandmarks = []
+
+        for i in range(self.init_landmarks.shape[0]):
+            tempImg, tempInit, tempGroundTruth = self.CropResizeRotate(self.imgs[i], self.init_landmarks[i], self.gtlandmarks[i])
+
+            # new_imgs.append(tempImg.transpose((1,2,0)))
+            new_imgs.append(tempImg)
+            new_initlandmarks.append(tempInit)
+            new_gtlandmarks.append(tempGroundTruth)
+
+        self.imgs = np.array(new_imgs)
+        self.initLandmarks = np.array(new_initlandmarks)
+        self.gtlandmarks = np.array(new_gtlandmarks)
