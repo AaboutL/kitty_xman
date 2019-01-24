@@ -33,6 +33,8 @@ def main(args):
                                 print(param_name)
                                 continue
                             var = tf.get_variable(param_name)
+                            print(var.get_shape())
+                            print(data.shape)
                             sess.run(var.assign(data))
                         except ValueError:
                             if not args.ignore_missing:
