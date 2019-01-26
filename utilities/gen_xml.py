@@ -115,8 +115,8 @@ def main(args):
 
 def parse_arguments(argv):
     parser = argparse.ArgumentParser()
-    parser.add_argument('--input_file', type=str, default='/home/slam/nfs132_0/landmark/dataset/untouch/AHD_USB/ahd_results_list.txt')
-    parser.add_argument('--output_file', type=str, default='/home/slam/nfs132_0/landmark/dataset/untouch/AHD_USB/ahd_gt.xml')
+    parser.add_argument('--input_file', type=str, default='/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset_list.txt')
+    parser.add_argument('--output_file', type=str, default='/home/hanfy/workspace/DL/alignment/align_untouch/data/test_data/untouch_testset-256.xml')
     return parser.parse_args(argv)
 
 if __name__ == '__main__':
