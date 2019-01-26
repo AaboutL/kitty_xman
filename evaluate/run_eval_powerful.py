@@ -165,13 +165,13 @@ def main(args):
     show_error(pixel_errors_1, norm_errors_1, avg_pixel_errors_1, avg_norm_errors_1, sorted_angle_1,
          pixel_errors_2, norm_errors_2, avg_pixel_errors_2, avg_norm_errors_2, sorted_angle_2)
 
-    show_curve(norm_errors_sorted_1, norm_errors_sorted_2, failure_threshold=0.1)
+    show_curve(norm_errors_sorted_1, norm_errors_sorted_2, failure_threshold=0.08)
 
 
 def parse_arguments(argv):
     parser = argparse.ArgumentParser()
-    parser.add_argument('--input_first_xml', type=str, default='/home/slam/nfs132_0/landmark/dataset/untouch/AHD_USB/ahd_errors.xml')
-    parser.add_argument('--input_second_xml', type=str, default='/home/slam/nfs132_0/landmark/dataset/untouch/AHD_USB/usb_errors.xml')
+    parser.add_argument('--input_first_xml', type=str, default='/home/slam/workspace/DL/alignment_method/align_untouch/data/test_data/testset_error_dlib_3000.xml')
+    parser.add_argument('--input_second_xml', type=str, default='/home/slam/workspace/DL/alignment_method/align_untouch/data/test_data/testset_error_ljj_3000.xml')
     parser.add_argument('--split_num', type=int, help="if split_type==uniform, then the testset will split to split_num parts",default=3)
     parser.add_argument('--split_type', type=str, default='manual')
     parser.add_argument('--split_ids', type=str, default='[-90,90]')

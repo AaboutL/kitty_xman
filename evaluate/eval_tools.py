@@ -8,7 +8,7 @@ matplotlib.use('Agg')
 from matplotlib import pyplot as plt
 from scipy.integrate import simps
 
-def dist(gtLandmark, dist_type='centers', left_pt=36, right_pt=42, num_eye_pts=6):
+def dist(gtLandmark, dist_type='centers', left_pt=44, right_pt=52, num_eye_pts=8):
     if dist_type=='centers':
         normDist = np.linalg.norm(np.mean(gtLandmark[left_pt:left_pt+num_eye_pts], axis=0) -
                                   np.mean(gtLandmark[right_pt:right_pt+num_eye_pts], axis=0))

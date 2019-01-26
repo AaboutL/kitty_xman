@@ -133,9 +133,9 @@ def main(args):
 
 def parse_arguments(argv):
     parser = argparse.ArgumentParser()
-    parser.add_argument('--gt_file', type=str, default='/home/hanfy/workspace/DL/alignment/align_untouch/data/test_data/untouch_testset.xml')
-    parser.add_argument('--res_file', type=str, default='/home/slam/workspace/DL/untouch_projects/dms_methods/tmp_result/pts_path_untouch_testset_dlib.txt')
-    parser.add_argument('--output_xml', type=str, default='/home/hanfy/workspace/DL/alignment/align_untouch/data/test_data/testset_error_dlib_3000.xml')
+    parser.add_argument('--gt_file', type=str, default='/home/slam/workspace/DL/alignment_method/align_untouch/data/test_data/untouch_testset.xml')
+    parser.add_argument('--res_file', type=str, default='/home/slam/workspace/DL/untouch_projects/dms_methods/tmp_result/pts_path_untouch_testset_ljj_3000.txt')
+    parser.add_argument('--output_xml', type=str, default='/home/slam/workspace/DL/alignment_method/align_untouch/data/test_data/testset_error_ljj_3000.xml')
     parser.add_argument('--norm_type', type=str, default='centers')
     parser.add_argument('--pts_num', type=int, default=82)
     return parser.parse_args(argv)
