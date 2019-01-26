@@ -34,7 +34,7 @@ def read_result(file_path, pts_num=68):
     for line in lines:
         items = line.strip('\n').split(' ')
         img_path = items[-1]
-        pts = items[:-1][70:160]
+        pts = items[:-1]
         pts = np.asarray([float(pt) for pt in pts]).reshape(pts_num, 2)
         res_dict[img_path] = pts
     return res_dict
@@ -133,11 +133,11 @@ def main(args):
 
 def parse_arguments(argv):
     parser = argparse.ArgumentParser()
-    parser.add_argument('--gt_file', type=str, default='/home/slam/nfs132_0/landmark/dataset/untouch/AHD_USB/usb_gt.xml')
-    parser.add_argument('--res_file', type=str, default='/home/slam/nfs132_0/landmark/dataset/untouch/AHD_USB/images_landmark_usb-slam_good_dlib.txt')
-    parser.add_argument('--output_xml', type=str, default='/home/slam/nfs132_0/landmark/dataset/untouch/AHD_USB/usb_errors.xml')
+    parser.add_argument('--gt_file', type=str, default='/home/hanfy/workspace/DL/alignment/align_untouch/data/test_data/untouch_testset.xml')
+    parser.add_argument('--res_file', type=str, default='/home/slam/workspace/DL/untouch_projects/dms_methods/tmp_result/pts_path_untouch_testset_dlib.txt')
+    parser.add_argument('--output_xml', type=str, default='/home/hanfy/workspace/DL/alignment/align_untouch/data/test_data/testset_error_dlib_3000.xml')
     parser.add_argument('--norm_type', type=str, default='centers')
-    parser.add_argument('--pts_num', type=int, default=45)
+    parser.add_argument('--pts_num', type=int, default=82)
     return parser.parse_args(argv)
 
 if __name__ == '__main__':

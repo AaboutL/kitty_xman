@@ -2,97 +2,9 @@
 	<dataset>
 		<name>Landmark testset information</name>
 		<images>
-			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545101884111255410.jpg">
-				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="5.51269" roll="-6.45713" yaw="-1.55938"/>
-				<points>
-					<part name="00" x="122.366" y="220.08"/>
-					<part name="01" x="128.392" y="246.977"/>
-					<part name="02" x="134.557" y="274.745"/>
-					<part name="03" x="145.037" y="290.402"/>
-					<part name="04" x="159.145" y="299.039"/>
-					<part name="05" x="173.626" y="303.743"/>
-					<part name="06" x="187.876" y="306.013"/>
-					<part name="07" x="204.623" y="305.202"/>
-					<part name="08" x="220.389" y="302.53"/>
-					<part name="09" x="238.384" y="301.593"/>
-					<part name="10" x="256.535" y="297.088"/>
-					<part name="11" x="274.036" y="289.546"/>
-					<part name="12" x="289.64" y="281.531"/>
-					<part name="13" x="301.173" y="264.902"/>
-					<part name="14" x="308.708" y="247.946"/>
-					<part name="15" x="308.526" y="218.991"/>
-					<part name="16" x="308.216" y="190.205"/>
-					<part name="17" x="135.682" y="158.546"/>
-					<part name="18" x="144.623" y="142.435"/>
-					<part name="19" x="158.429" y="134.429"/>
-					<part name="20" x="174.281" y="130.632"/>
-					<part name="21" x="190.622" y="130.484"/>
-					<part name="22" x="189.201" y="138.114"/>
-					<part name="23" x="174.327" y="141.193"/>
-					<part name="24" x="160.621" y="143.384"/>
-					<part name="25" x="148.083" y="150.358"/>
-					<part name="26" x="216.016" y="128.655"/>
-					<part name="27" x="233.813" y="124.382"/>
-					<part name="28" x="251.458" y="122.377"/>
-					<part name="29" x="268.515" y="126.325"/>
-					<part name="30" x="280.562" y="142.317"/>
-					<part name="31" x="268.774" y="136.836"/>
-					<part name="32" x="252.951" y="134.814"/>
-					<part name="33" x="235.527" y="136.681"/>
-					<part name="34" x="218.772" y="141.474"/>
-					<part name="35" x="206.946" y="165.16"/>
-					<part name="36" x="206.942" y="174.854"/>
-					<part name="37" x="208.523" y="184.088"/>
-					<part name="38" x="209.894" y="194.728"/>
-					<part name="39" x="194.454" y="218.13"/>
-					<part name="40" x="202.761" y="215.436"/>
-					<part name="41" x="211.383" y="213.177"/>
-					<part name="42" x="221.348" y="213.071"/>
-					<part name="43" x="229.478" y="213.462"/>
-					<part name="44" x="153.675" y="177.266"/>
-					<part name="45" x="161.878" y="174.128"/>
-					<part name="46" x="169.485" y="172.036"/>
-					<part name="47" x="177.182" y="170.997"/>
-					<part name="48" x="186.877" y="170.419"/>
-					<part name="49" x="176.755" y="171.301"/>
-					<part name="50" x="169.47" y="172.696"/>
-					<part name="51" x="161.324" y="174.981"/>
-					<part name="52" x="234.916" y="162.849"/>
-					<part name="53" x="243.074" y="163.12"/>
-					<part name="54" x="251.292" y="163.359"/>
-					<part name="55" x="259.093" y="164.074"/>
-					<part name="56" x="266.154" y="164.075"/>
-					<part name="57" x="258.915" y="164.289"/>
-					<part name="58" x="251.75" y="163.306"/>
-					<part name="59" x="242.696" y="163.389"/>
-					<part name="60" x="182.651" y="253.722"/>
-					<part name="61" x="193.559" y="240.836"/>
-					<part name="62" x="206.003" y="233.228"/>
-					<part name="63" x="215.333" y="234.793"/>
-					<part name="64" x="226.165" y="231.382"/>
-					<part name="65" x="239.358" y="237.059"/>
-					<part name="66" x="250.131" y="246.017"/>
-					<part name="67" x="239.285" y="251.85"/>
-					<part name="68" x="228.27" y="253.393"/>
-					<part name="69" x="219.085" y="254.287"/>
-					<part name="70" x="208.0" y="255.34"/>
-					<part name="71" x="194.755" y="257.259"/>
-					<part name="72" x="185.388" y="253.186"/>
-					<part name="73" x="207.09" y="244.212"/>
-					<part name="74" x="216.479" y="243.484"/>
-					<part name="75" x="226.889" y="241.466"/>
-					<part name="76" x="248.207" y="245.901"/>
-					<part name="77" x="226.548" y="241.017"/>
-					<part name="78" x="216.898" y="243.479"/>
-					<part name="79" x="207.21" y="243.691"/>
-					<part name="80" x="167.619" y="172.816"/>
-					<part name="81" x="249.735" y="163.148"/>
-				</points>
-			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545101884831251469.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="0.81285" roll="-6.82885" yaw="-13.2702"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="139.111" y="202.861"/>
 					<part name="01" x="141.98" y="232.059"/>
@@ -180,7 +92,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545101889828535432.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="22.2149" roll="36.3962" yaw="-16.7819"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="205.572" y="221.466"/>
 					<part name="01" x="201.923" y="247.34"/>
@@ -268,7 +180,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545101890467265162.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="16.5284" roll="29.6106" yaw="-11.3574"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="195.673" y="232.469"/>
 					<part name="01" x="188.931" y="255.658"/>
@@ -356,7 +268,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545101891467248363.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="7.08061" roll="12.6339" yaw="-2.95353"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="140.326" y="215.261"/>
 					<part name="01" x="139.142" y="247.783"/>
@@ -444,7 +356,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545101892747313247.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="2.38647" roll="19.7152" yaw="-0.822521"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="97.883" y="282.402"/>
 					<part name="01" x="101.603" y="302.041"/>
@@ -532,7 +444,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545101896463265218.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="18.1336" roll="22.3375" yaw="23.9062"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="51.948" y="275.87"/>
 					<part name="01" x="54.625" y="294.212"/>
@@ -620,7 +532,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545101921332490516.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="12.7393" roll="-4.92003" yaw="27.6734"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="116.774" y="195.221"/>
 					<part name="01" x="116.315" y="212.111"/>
@@ -708,7 +620,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545101921412488368.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="12.9597" roll="-4.64951" yaw="27.9402"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="116.944" y="194.8"/>
 					<part name="01" x="117.147" y="208.769"/>
@@ -794,185 +706,9 @@
 					<part name="81" x="185.389" y="154.302"/>
 				</points>
 			</image>
-			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545101922571201244.jpg">
-				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="6.43657" roll="-6.81394" yaw="16.1719"/>
-				<points>
-					<part name="00" x="131.88" y="189.678"/>
-					<part name="01" x="131.399" y="214.87"/>
-					<part name="02" x="135.317" y="242.74"/>
-					<part name="03" x="139.013" y="261.274"/>
-					<part name="04" x="145.722" y="277.144"/>
-					<part name="05" x="153.441" y="290.362"/>
-					<part name="06" x="167.052" y="300.908"/>
-					<part name="07" x="183.182" y="308.123"/>
-					<part name="08" x="206.911" y="305.609"/>
-					<part name="09" x="227.122" y="302.18"/>
-					<part name="10" x="249.975" y="297.036"/>
-					<part name="11" x="273.97" y="286.95"/>
-					<part name="12" x="293.276" y="277.736"/>
-					<part name="13" x="308.391" y="261.811"/>
-					<part name="14" x="319.398" y="239.383"/>
-					<part name="15" x="321.706" y="205.766"/>
-					<part name="16" x="321.053" y="175.45"/>
-					<part name="17" x="133.913" y="155.878"/>
-					<part name="18" x="137.386" y="141.011"/>
-					<part name="19" x="148.812" y="132.198"/>
-					<part name="20" x="159.491" y="128.24"/>
-					<part name="21" x="172.701" y="125.016"/>
-					<part name="22" x="173.991" y="136.05"/>
-					<part name="23" x="162.537" y="139.412"/>
-					<part name="24" x="151.816" y="141.951"/>
-					<part name="25" x="142.688" y="148.136"/>
-					<part name="26" x="201.756" y="120.119"/>
-					<part name="27" x="216.597" y="113.574"/>
-					<part name="28" x="235.988" y="109.797"/>
-					<part name="29" x="254.97" y="112.22"/>
-					<part name="30" x="269.234" y="126.067"/>
-					<part name="31" x="254.366" y="122.658"/>
-					<part name="32" x="237.405" y="123.412"/>
-					<part name="33" x="220.299" y="126.369"/>
-					<part name="34" x="204.111" y="132.865"/>
-					<part name="35" x="187.233" y="155.328"/>
-					<part name="36" x="184.179" y="165.78"/>
-					<part name="37" x="181.072" y="175.564"/>
-					<part name="38" x="178.781" y="185.125"/>
-					<part name="39" x="176.683" y="214.586"/>
-					<part name="40" x="181.859" y="212.35"/>
-					<part name="41" x="187.672" y="210.263"/>
-					<part name="42" x="197.768" y="207.773"/>
-					<part name="43" x="213.998" y="207.923"/>
-					<part name="44" x="147.412" y="173.88"/>
-					<part name="45" x="153.024" y="169.379"/>
-					<part name="46" x="158.736" y="164.343"/>
-					<part name="47" x="167.149" y="162.26"/>
-					<part name="48" x="174.44" y="164.719"/>
-					<part name="49" x="167.523" y="168.871"/>
-					<part name="50" x="160.985" y="172.131"/>
-					<part name="51" x="154.375" y="172.525"/>
-					<part name="52" x="220.341" y="153.576"/>
-					<part name="53" x="226.578" y="147.399"/>
-					<part name="54" x="236.18" y="145.08"/>
-					<part name="55" x="244.611" y="145.743"/>
-					<part name="56" x="255.198" y="150.169"/>
-					<part name="57" x="244.855" y="152.26"/>
-					<part name="58" x="236.399" y="153.006"/>
-					<part name="59" x="228.473" y="153.884"/>
-					<part name="60" x="167.201" y="254.912"/>
-					<part name="61" x="171.941" y="241.073"/>
-					<part name="62" x="181.751" y="231.775"/>
-					<part name="63" x="188.259" y="230.159"/>
-					<part name="64" x="195.888" y="228.348"/>
-					<part name="65" x="214.924" y="233.314"/>
-					<part name="66" x="233.059" y="244.619"/>
-					<part name="67" x="219.959" y="250.894"/>
-					<part name="68" x="206.503" y="254.055"/>
-					<part name="69" x="192.713" y="256.884"/>
-					<part name="70" x="183.248" y="258.797"/>
-					<part name="71" x="174.153" y="257.979"/>
-					<part name="72" x="169.363" y="253.655"/>
-					<part name="73" x="182.183" y="242.297"/>
-					<part name="74" x="190.54" y="238.103"/>
-					<part name="75" x="204.685" y="237.031"/>
-					<part name="76" x="229.636" y="244.556"/>
-					<part name="77" x="203.867" y="244.179"/>
-					<part name="78" x="191.686" y="245.718"/>
-					<part name="79" x="183.682" y="246.943"/>
-					<part name="80" x="164.814" y="166.133"/>
-					<part name="81" x="237.703" y="149.27"/>
-				</points>
-			</image>
-			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545101924008508715.jpg">
-				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="3.32232" roll="-4.58562" yaw="-20.0262"/>
-				<points>
-					<part name="00" x="157.198" y="197.836"/>
-					<part name="01" x="163.744" y="227.749"/>
-					<part name="02" x="172.365" y="260.445"/>
-					<part name="03" x="188.577" y="278.162"/>
-					<part name="04" x="207.404" y="288.766"/>
-					<part name="05" x="233.16" y="295.877"/>
-					<part name="06" x="255.67" y="298.762"/>
-					<part name="07" x="276.94" y="298.821"/>
-					<part name="08" x="298.315" y="298.323"/>
-					<part name="09" x="317.009" y="292.23"/>
-					<part name="10" x="333.251" y="282.202"/>
-					<part name="11" x="343.923" y="265.873"/>
-					<part name="12" x="350.332" y="250.678"/>
-					<part name="13" x="352.725" y="232.693"/>
-					<part name="14" x="354.665" y="210.713"/>
-					<part name="15" x="348.213" y="179.507"/>
-					<part name="16" x="339.818" y="154.453"/>
-					<part name="17" x="196.959" y="142.247"/>
-					<part name="18" x="201.652" y="126.746"/>
-					<part name="19" x="221.24" y="117.436"/>
-					<part name="20" x="241.558" y="113.364"/>
-					<part name="21" x="260.227" y="112.587"/>
-					<part name="22" x="260.999" y="128.22"/>
-					<part name="23" x="244.434" y="129.687"/>
-					<part name="24" x="228.174" y="129.53"/>
-					<part name="25" x="212.754" y="134.865"/>
-					<part name="26" x="285.678" y="117.659"/>
-					<part name="27" x="301.149" y="115.031"/>
-					<part name="28" x="315.967" y="115.87"/>
-					<part name="29" x="325.696" y="118.492"/>
-					<part name="30" x="329.67" y="132.425"/>
-					<part name="31" x="320.484" y="128.594"/>
-					<part name="32" x="310.602" y="127.218"/>
-					<part name="33" x="299.459" y="128.844"/>
-					<part name="34" x="289.205" y="129.428"/>
-					<part name="35" x="281.838" y="148.718"/>
-					<part name="36" x="286.213" y="159.579"/>
-					<part name="37" x="290.726" y="169.498"/>
-					<part name="38" x="294.726" y="179.332"/>
-					<part name="39" x="268.219" y="205.83"/>
-					<part name="40" x="278.928" y="203.356"/>
-					<part name="41" x="291.983" y="201.652"/>
-					<part name="42" x="298.512" y="204.234"/>
-					<part name="43" x="303.555" y="206.798"/>
-					<part name="44" x="218.218" y="158.161"/>
-					<part name="45" x="226.768" y="153.552"/>
-					<part name="46" x="235.461" y="150.744"/>
-					<part name="47" x="245.123" y="150.413"/>
-					<part name="48" x="254.247" y="153.466"/>
-					<part name="49" x="245.144" y="157.279"/>
-					<part name="50" x="236.869" y="159.046"/>
-					<part name="51" x="227.144" y="159.891"/>
-					<part name="52" x="297.629" y="153.27"/>
-					<part name="53" x="305.593" y="150.019"/>
-					<part name="54" x="314.71" y="147.853"/>
-					<part name="55" x="322.258" y="148.62"/>
-					<part name="56" x="327.396" y="155.866"/>
-					<part name="57" x="321.663" y="158.466"/>
-					<part name="58" x="314.855" y="157.046"/>
-					<part name="59" x="306.232" y="156.359"/>
-					<part name="60" x="256.538" y="243.784"/>
-					<part name="61" x="269.837" y="228.994"/>
-					<part name="62" x="287.123" y="220.612"/>
-					<part name="63" x="293.913" y="220.308"/>
-					<part name="64" x="300.653" y="220.366"/>
-					<part name="65" x="313.08" y="227.432"/>
-					<part name="66" x="318.417" y="240.064"/>
-					<part name="67" x="312.971" y="246.453"/>
-					<part name="68" x="304.665" y="250.19"/>
-					<part name="69" x="295.317" y="251.38"/>
-					<part name="70" x="281.931" y="250.368"/>
-					<part name="71" x="268.76" y="247.515"/>
-					<part name="72" x="259.131" y="242.863"/>
-					<part name="73" x="283.5" y="232.517"/>
-					<part name="74" x="295.171" y="230.943"/>
-					<part name="75" x="302.127" y="232.694"/>
-					<part name="76" x="316.508" y="240.117"/>
-					<part name="77" x="301.327" y="237.415"/>
-					<part name="78" x="294.701" y="236.875"/>
-					<part name="79" x="284.406" y="237.446"/>
-					<part name="80" x="238.7" y="152.932"/>
-					<part name="81" x="311.058" y="152.628"/>
-				</points>
-			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545101924448463200.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="0.135645" roll="-3.21372" yaw="-30.4391"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="175.414" y="189.166"/>
 					<part name="01" x="182.07" y="219.122"/>
@@ -1060,7 +796,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545101927768467038.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="36.899" roll="34.9535" yaw="-45.8739"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="266.169" y="184.447"/>
 					<part name="01" x="263.39" y="218.292"/>
@@ -1148,7 +884,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545101931923282726.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="3.88692" roll="14.0964" yaw="-4.01731"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="140.829" y="219.437"/>
 					<part name="01" x="142.071" y="247.288"/>
@@ -1236,7 +972,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545102185055332579.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="5.41927" roll="-6.72754" yaw="-28.3528"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="202.38" y="182.891"/>
 					<part name="01" x="205.933" y="209.509"/>
@@ -1324,7 +1060,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545102185211600549.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="5.66243" roll="-8.114" yaw="-28.0749"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="203.547" y="182.005"/>
 					<part name="01" x="207.33" y="210.105"/>
@@ -1412,7 +1148,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545102186857285495.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="0.559822" roll="-13.5502" yaw="2.61016"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="173.34" y="209.856"/>
 					<part name="01" x="175.638" y="233.207"/>
@@ -1500,7 +1236,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545102187576572007.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="2.14877" roll="-9.25794" yaw="22.5802"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="165.052" y="177.617"/>
 					<part name="01" x="162.118" y="193.783"/>
@@ -1588,7 +1324,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545102188856854012.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="7.30081" roll="-1.91171" yaw="33.5426"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="141.205" y="165.853"/>
 					<part name="01" x="141.924" y="181.34"/>
@@ -1676,7 +1412,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545102190132181764.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="3.32138" roll="-13.4633" yaw="-4.61683"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="163.501" y="206.661"/>
 					<part name="01" x="166.716" y="230.42"/>
@@ -1764,7 +1500,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545102190171358455.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="3.94207" roll="-12.8416" yaw="-6.61491"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="166.178" y="205.449"/>
 					<part name="01" x="169.768" y="231.139"/>
@@ -1852,7 +1588,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545102860396064161.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="11.4635" roll="89.1075" yaw="-20.1954"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="196.48" y="270.916"/>
 					<part name="01" x="201.026" y="286.652"/>
@@ -1940,7 +1676,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545102860423375596.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="11.8682" roll="88.4682" yaw="-20.7137"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="197.299" y="273.375"/>
 					<part name="01" x="203.669" y="289.109"/>
@@ -2028,7 +1764,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545102861851097930.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="15.1299" roll="-12.139" yaw="21.4395"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="185.61" y="243.659"/>
 					<part name="01" x="186.664" y="257.962"/>
@@ -2116,7 +1852,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545102864371068158.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="174.942" roll="14.2464" yaw="30.2206"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="223.946" y="233.535"/>
 					<part name="01" x="228.774" y="256.034"/>
@@ -2204,7 +1940,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545102867047081019.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="5.17888" roll="6.52132" yaw="-38.3407"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="253.098" y="235.599"/>
 					<part name="01" x="257.573" y="259.69"/>
@@ -2292,7 +2028,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545102868687092393.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="3.08183" roll="4.39995" yaw="-9.05448"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="217.703" y="243.212"/>
 					<part name="01" x="221.946" y="266.009"/>
@@ -2378,97 +2114,9 @@
 					<part name="81" x="353.661" y="229.679"/>
 				</points>
 			</image>
-			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545102874163198302.jpg">
-				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="20.3166" roll="7.49308" yaw="30.8894"/>
-				<points>
-					<part name="00" x="168.828" y="242.894"/>
-					<part name="01" x="174.264" y="258.746"/>
-					<part name="02" x="176.465" y="285.329"/>
-					<part name="03" x="180.233" y="299.382"/>
-					<part name="04" x="185.617" y="314.759"/>
-					<part name="05" x="191.791" y="327.607"/>
-					<part name="06" x="200.252" y="339.236"/>
-					<part name="07" x="210.022" y="347.55"/>
-					<part name="08" x="224.734" y="354.985"/>
-					<part name="09" x="242.925" y="350.661"/>
-					<part name="10" x="263.731" y="339.631"/>
-					<part name="11" x="283.774" y="329.369"/>
-					<part name="12" x="302.729" y="312.488"/>
-					<part name="13" x="315.414" y="287.451"/>
-					<part name="14" x="320.965" y="261.051"/>
-					<part name="15" x="317.551" y="232.683"/>
-					<part name="16" x="312.903" y="207.288"/>
-					<part name="17" x="160.848" y="228.865"/>
-					<part name="18" x="162.499" y="222.113"/>
-					<part name="19" x="169.409" y="218.758"/>
-					<part name="20" x="174.724" y="217.475"/>
-					<part name="21" x="179.83" y="217.627"/>
-					<part name="22" x="180.545" y="223.273"/>
-					<part name="23" x="175.448" y="224.339"/>
-					<part name="24" x="171.202" y="225.504"/>
-					<part name="25" x="165.751" y="227.203"/>
-					<part name="26" x="197.167" y="205.424"/>
-					<part name="27" x="207.462" y="199.851"/>
-					<part name="28" x="217.812" y="195.921"/>
-					<part name="29" x="228.268" y="194.883"/>
-					<part name="30" x="241.38" y="201.06"/>
-					<part name="31" x="229.514" y="200.713"/>
-					<part name="32" x="218.812" y="202.82"/>
-					<part name="33" x="208.452" y="206.928"/>
-					<part name="34" x="199.338" y="212.618"/>
-					<part name="35" x="188.725" y="229.766"/>
-					<part name="36" x="185.352" y="241.64"/>
-					<part name="37" x="182.7" y="252.807"/>
-					<part name="38" x="180.621" y="264.154"/>
-					<part name="39" x="188.908" y="278.296"/>
-					<part name="40" x="192.217" y="276.779"/>
-					<part name="41" x="194.981" y="275.319"/>
-					<part name="42" x="202.609" y="271.938"/>
-					<part name="43" x="211.623" y="269.348"/>
-					<part name="44" x="171.599" y="243.47"/>
-					<part name="45" x="171.814" y="239.548"/>
-					<part name="46" x="175.339" y="235.933"/>
-					<part name="47" x="179.492" y="234.905"/>
-					<part name="48" x="183.539" y="235.762"/>
-					<part name="49" x="182.039" y="239.921"/>
-					<part name="50" x="177.832" y="243.052"/>
-					<part name="51" x="174.854" y="244.44"/>
-					<part name="52" x="213.743" y="224.161"/>
-					<part name="53" x="214.889" y="217.617"/>
-					<part name="54" x="220.303" y="213.947"/>
-					<part name="55" x="227.991" y="213.812"/>
-					<part name="56" x="236.004" y="215.696"/>
-					<part name="57" x="229.912" y="219.626"/>
-					<part name="58" x="223.027" y="222.427"/>
-					<part name="59" x="217.805" y="223.706"/>
-					<part name="60" x="195.935" y="309.725"/>
-					<part name="61" x="194.768" y="302.966"/>
-					<part name="62" x="198.069" y="296.06"/>
-					<part name="63" x="201.386" y="293.494"/>
-					<part name="64" x="205.352" y="291.481"/>
-					<part name="65" x="221.733" y="291.985"/>
-					<part name="66" x="237.67" y="296.054"/>
-					<part name="67" x="229.541" y="301.921"/>
-					<part name="68" x="219.9" y="306.659"/>
-					<part name="69" x="209.739" y="310.951"/>
-					<part name="70" x="205.181" y="312.278"/>
-					<part name="71" x="200.23" y="312.282"/>
-					<part name="72" x="197.879" y="309.236"/>
-					<part name="73" x="201.196" y="301.446"/>
-					<part name="74" x="204.038" y="298.909"/>
-					<part name="75" x="213.675" y="297.806"/>
-					<part name="76" x="235.04" y="296.041"/>
-					<part name="77" x="214.705" y="301.88"/>
-					<part name="78" x="206.884" y="304.774"/>
-					<part name="79" x="203.392" y="306.511"/>
-					<part name="80" x="177.326" y="240.159"/>
-					<part name="81" x="221.621" y="218.233"/>
-				</points>
-			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545102921735144902.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="17.1931" roll="-9.88246" yaw="19.6787"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="173.281" y="256.246"/>
 					<part name="01" x="176.518" y="272.01"/>
@@ -2556,7 +2204,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545102921935266429.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="18.0222" roll="-9.69126" yaw="18.4628"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="172.625" y="254.561"/>
 					<part name="01" x="179.367" y="277.064"/>
@@ -2644,7 +2292,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545102921975185060.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="18.6974" roll="-13.2591" yaw="14.2066"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="173.388" y="255.687"/>
 					<part name="01" x="182.137" y="276.115"/>
@@ -2732,7 +2380,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545102923456889908.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="174.674" roll="16.552" yaw="12.9216"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="215.41" y="240.054"/>
 					<part name="01" x="218.589" y="261.054"/>
@@ -2820,7 +2468,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545102927451229747.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="10.9281" roll="15.0294" yaw="-26.6442"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="264.154" y="244.339"/>
 					<part name="01" x="264.084" y="273.358"/>
@@ -2908,7 +2556,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545102927898211336.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="6.15641" roll="14.0856" yaw="-17.4638"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="251.63" y="249.001"/>
 					<part name="01" x="250.449" y="269.48"/>
@@ -2996,7 +2644,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545102931931162556.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="7.26247" roll="-17.8511" yaw="-3.23676"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="213.602" y="245.588"/>
 					<part name="01" x="217.067" y="264.717"/>
@@ -3084,7 +2732,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545102982904718962.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="18.9789" roll="-8.23856" yaw="24.4059"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="160.563" y="238.063"/>
 					<part name="01" x="161.235" y="255.951"/>
@@ -3172,7 +2820,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545102983219540336.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="20.5089" roll="-4.71755" yaw="27.9126"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="162.328" y="250.263"/>
 					<part name="01" x="160.876" y="263.194"/>
@@ -3260,7 +2908,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545102984220512561.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="9.97969" roll="-4.31321" yaw="9.03609"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="188.071" y="253.063"/>
 					<part name="01" x="188.804" y="270.011"/>
@@ -3348,7 +2996,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545102984619187650.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="6.02529" roll="-7.76196" yaw="0.511228"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="200.108" y="246.88"/>
 					<part name="01" x="205.44" y="266.912"/>
@@ -3436,7 +3084,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545102988580443163.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="14.5607" roll="20.9963" yaw="-26.6661"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="276.091" y="245.498"/>
 					<part name="01" x="274.864" y="266.393"/>
@@ -3524,7 +3172,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545102988620474788.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="11.6172" roll="16.415" yaw="-27.6552"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="277.335" y="251.127"/>
 					<part name="01" x="275.607" y="272.236"/>
@@ -3612,7 +3260,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545102988900432558.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="10.1038" roll="15.8322" yaw="-23.3252"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="261.212" y="243.997"/>
 					<part name="01" x="260.606" y="267.614"/>
@@ -3700,7 +3348,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545103014124888147.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="0.691238" roll="5.09793" yaw="-23.1082"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="221.913" y="238.629"/>
 					<part name="01" x="227.069" y="264.459"/>
@@ -3788,7 +3436,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545103015283192729.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="3.9462" roll="2.77144" yaw="-44.8417"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="272.384" y="234.168"/>
 					<part name="01" x="272.121" y="258.529"/>
@@ -3876,7 +3524,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545103017603168652.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="26.8156" roll="37.1443" yaw="-41.7779"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="309.2" y="260.598"/>
 					<part name="01" x="303.843" y="282.917"/>
@@ -3964,7 +3612,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545103020521161292.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="2.3524" roll="10.9037" yaw="-4.01198"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="228.589" y="258.311"/>
 					<part name="01" x="230.942" y="281.457"/>
@@ -4052,7 +3700,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545103020799118802.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="0.846285" roll="7.08575" yaw="1.30299"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="218.224" y="249.866"/>
 					<part name="01" x="221.127" y="274.283"/>
@@ -4140,7 +3788,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545103022480810165.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="13.1474" roll="12.222" yaw="14.0799"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="169.554" y="271.475"/>
 					<part name="01" x="175.45" y="295.806"/>
@@ -4228,7 +3876,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545103023279187295.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="20.5664" roll="2.83263" yaw="16.2505"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="162.144" y="252.501"/>
 					<part name="01" x="168.421" y="275.871"/>
@@ -4316,7 +3964,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120279819703118.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="14.3558" roll="87.5654" yaw="-13.9672"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="200.4" y="191.154"/>
 					<part name="01" x="201.854" y="210.678"/>
@@ -4404,7 +4052,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120285815650086.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="10.2455" roll="-5.26701" yaw="18.4035"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="186.152" y="187.551"/>
 					<part name="01" x="189.518" y="211.543"/>
@@ -4492,7 +4140,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120287535645646.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="2.13699" roll="-8.46779" yaw="-7.92414"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="219.522" y="192.888"/>
 					<part name="01" x="227.315" y="220.71"/>
@@ -4580,7 +4228,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120294893117911.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="10.1545" roll="21.5718" yaw="-3.19329"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="258.127" y="191.299"/>
 					<part name="01" x="255.932" y="221.925"/>
@@ -4668,7 +4316,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120295133171024.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="161.37" roll="-35.0908" yaw="23.5022"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="250.761" y="179.061"/>
 					<part name="01" x="251.149" y="222.87"/>
@@ -4756,7 +4404,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120296013203035.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="4.33839" roll="8.63575" yaw="2.47458"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="212.102" y="209.67"/>
 					<part name="01" x="213.248" y="240.699"/>
@@ -4844,7 +4492,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120298249076666.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="22.9108" roll="23.2561" yaw="25.7706"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="155.48" y="276.814"/>
 					<part name="01" x="159.568" y="291.78"/>
@@ -4932,7 +4580,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120326793126289.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="34.546" roll="39.8589" yaw="-28.7898"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="301.859" y="180.363"/>
 					<part name="01" x="295.571" y="210.985"/>
@@ -5020,7 +4668,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120327793150084.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="10.0461" roll="14.0386" yaw="-4.46232"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="260.779" y="203.67"/>
 					<part name="01" x="258.511" y="228.693"/>
@@ -5108,7 +4756,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120329313326328.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="1.61779" roll="-0.570441" yaw="-2.50793"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="215.089" y="220.854"/>
 					<part name="01" x="215.555" y="253.218"/>
@@ -5196,7 +4844,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120329711753081.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="1.29975" roll="7.40567" yaw="-2.35277"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="199.385" y="225.025"/>
 					<part name="01" x="201.757" y="249.41"/>
@@ -5284,7 +4932,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120330231654712.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="3.38653" roll="10.4737" yaw="-1.61569"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="174.872" y="239.591"/>
 					<part name="01" x="178.713" y="258.181"/>
@@ -5372,7 +5020,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120330351629058.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="4.93153" roll="12.1496" yaw="3.66636"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="170.423" y="242.845"/>
 					<part name="01" x="175.183" y="261.084"/>
@@ -5460,7 +5108,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120332387686526.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="29.4075" roll="26.5238" yaw="21.5084"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="136.586" y="292.533"/>
 					<part name="01" x="143.866" y="306.525"/>
@@ -5548,7 +5196,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120353056500359.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="11.5442" roll="-4.04184" yaw="23.7189"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="185.548" y="196.212"/>
 					<part name="01" x="180.516" y="215.243"/>
@@ -5636,7 +5284,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120355135696463.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="0.505106" roll="-5.87219" yaw="-23.2828"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="228.165" y="185.911"/>
 					<part name="01" x="238.878" y="213.604"/>
@@ -5724,7 +5372,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120359575635489.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="41.3998" roll="40.5694" yaw="-34.0823"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="345.041" y="190.659"/>
 					<part name="01" x="335.277" y="221.992"/>
@@ -5812,7 +5460,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120361253413610.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="13.1693" roll="17.4079" yaw="-3.62513"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="264.981" y="182.483"/>
 					<part name="01" x="260.961" y="216.818"/>
@@ -5900,7 +5548,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120362411657719.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="6.43765" roll="10.6352" yaw="2.25182"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="220.738" y="227.543"/>
 					<part name="01" x="219.532" y="258.228"/>
@@ -5988,7 +5636,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120363331645001.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="1.30273" roll="18.8224" yaw="1.19063"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="176.423" y="242.351"/>
 					<part name="01" x="178.565" y="274.211"/>
@@ -6076,7 +5724,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120366332102706.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="35.1422" roll="41.0359" yaw="36.7817"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="123.765" y="270.146"/>
 					<part name="01" x="127.002" y="281.94"/>
@@ -6164,7 +5812,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120382441262403.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="9.05356" roll="-12.5993" yaw="12.0932"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="199.424" y="210.665"/>
 					<part name="01" x="201.303" y="230.033"/>
@@ -6252,7 +5900,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120383439665947.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="5.78489" roll="-12.2408" yaw="-10.3654"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="213.438" y="204.199"/>
 					<part name="01" x="222.058" y="229.511"/>
@@ -6340,7 +5988,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120383921348548.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="4.87977" roll="-11.9526" yaw="-19.8966"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="225.966" y="202.534"/>
 					<part name="01" x="233.416" y="226.283"/>
@@ -6428,7 +6076,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120390035674183.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="34.6122" roll="39.634" yaw="-31.3215"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="342.199" y="188.361"/>
 					<part name="01" x="328.914" y="222.271"/>
@@ -6516,7 +6164,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120393555627354.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="1.86938" roll="12.1183" yaw="-2.48703"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="177.429" y="252.259"/>
 					<part name="01" x="182.641" y="284.737"/>
@@ -6602,97 +6250,9 @@
 					<part name="81" x="286.531" y="267.711"/>
 				</points>
 			</image>
-			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120393911761489.jpg">
-				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="4.85011" roll="28.1218" yaw="7.17692"/>
-				<points>
-					<part name="00" x="168.55" y="255.083"/>
-					<part name="01" x="172.038" y="280.855"/>
-					<part name="02" x="182.253" y="302.725"/>
-					<part name="03" x="193.936" y="319.813"/>
-					<part name="04" x="204.008" y="334.609"/>
-					<part name="05" x="214.51" y="352.436"/>
-					<part name="06" x="224.327" y="371.39"/>
-					<part name="07" x="237.884" y="386.698"/>
-					<part name="08" x="253.468" y="393.211"/>
-					<part name="09" x="279.749" y="390.116"/>
-					<part name="10" x="305.475" y="377.409"/>
-					<part name="11" x="327.477" y="355.821"/>
-					<part name="12" x="342.917" y="327.446"/>
-					<part name="13" x="353.624" y="300.194"/>
-					<part name="14" x="359.804" y="267.573"/>
-					<part name="15" x="354.143" y="224.025"/>
-					<part name="16" x="352.668" y="182.498"/>
-					<part name="17" x="163.452" y="224.197"/>
-					<part name="18" x="162.348" y="220.023"/>
-					<part name="19" x="174.829" y="222.056"/>
-					<part name="20" x="188.425" y="225.483"/>
-					<part name="21" x="200.949" y="229.279"/>
-					<part name="22" x="198.437" y="236.909"/>
-					<part name="23" x="186.141" y="233.637"/>
-					<part name="24" x="174.62" y="230.252"/>
-					<part name="25" x="163.261" y="227.798"/>
-					<part name="26" x="230.294" y="226.976"/>
-					<part name="27" x="247.487" y="222.637"/>
-					<part name="28" x="264.275" y="219.067"/>
-					<part name="29" x="283.343" y="216.845"/>
-					<part name="30" x="302.257" y="220.989"/>
-					<part name="31" x="283.212" y="225.383"/>
-					<part name="32" x="264.286" y="228.076"/>
-					<part name="33" x="248.284" y="232.386"/>
-					<part name="34" x="228.333" y="236.828"/>
-					<part name="35" x="217.557" y="256.744"/>
-					<part name="36" x="217.759" y="274.463"/>
-					<part name="37" x="217.637" y="291.985"/>
-					<part name="38" x="218.252" y="308.671"/>
-					<part name="39" x="214.114" y="315.727"/>
-					<part name="40" x="221.019" y="315.297"/>
-					<part name="41" x="227.97" y="314.853"/>
-					<part name="42" x="238.446" y="313.706"/>
-					<part name="43" x="250.424" y="310.735"/>
-					<part name="44" x="172.3" y="250.959"/>
-					<part name="45" x="177.675" y="262.421"/>
-					<part name="46" x="187.424" y="263.177"/>
-					<part name="47" x="195.891" y="261.302"/>
-					<part name="48" x="206.753" y="258.066"/>
-					<part name="49" x="196.565" y="261.954"/>
-					<part name="50" x="186.651" y="263.211"/>
-					<part name="51" x="177.541" y="262.673"/>
-					<part name="52" x="247.773" y="261.782"/>
-					<part name="53" x="256.002" y="262.42"/>
-					<part name="54" x="264.316" y="262.233"/>
-					<part name="55" x="272.821" y="259.631"/>
-					<part name="56" x="281.28" y="255.121"/>
-					<part name="57" x="272.362" y="259.128"/>
-					<part name="58" x="263.696" y="262.214"/>
-					<part name="59" x="256.35" y="262.254"/>
-					<part name="60" x="219.364" y="337.739"/>
-					<part name="61" x="225.006" y="333.442"/>
-					<part name="62" x="232.492" y="335.654"/>
-					<part name="63" x="239.629" y="331.794"/>
-					<part name="64" x="250.515" y="335.126"/>
-					<part name="65" x="260.852" y="337.499"/>
-					<part name="66" x="270.557" y="341.354"/>
-					<part name="67" x="265.319" y="358.852"/>
-					<part name="68" x="253.966" y="370.278"/>
-					<part name="69" x="245.006" y="372.622"/>
-					<part name="70" x="235.182" y="369.974"/>
-					<part name="71" x="224.284" y="360.564"/>
-					<part name="72" x="221.951" y="338.479"/>
-					<part name="73" x="231.676" y="336.864"/>
-					<part name="74" x="241.16" y="336.129"/>
-					<part name="75" x="250.32" y="337.858"/>
-					<part name="76" x="269.119" y="342.364"/>
-					<part name="77" x="252.994" y="360.582"/>
-					<part name="78" x="241.599" y="362.222"/>
-					<part name="79" x="231.667" y="357.39"/>
-					<part name="80" x="184.002" y="263.088"/>
-					<part name="81" x="263.486" y="262.058"/>
-				</points>
-			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120395791617456.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="27.7496" roll="34.4103" yaw="27.3976"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="136.736" y="284.903"/>
 					<part name="01" x="143.858" y="297.28"/>
@@ -6780,7 +6340,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120687181876233.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="21.2027" roll="-21.6415" yaw="13.0672"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="172.271" y="324.649"/>
 					<part name="01" x="179.168" y="343.757"/>
@@ -6868,7 +6428,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120687661960504.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="20.7656" roll="-19.4905" yaw="17.3929"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="173.233" y="326.838"/>
 					<part name="01" x="180.503" y="348.168"/>
@@ -6954,97 +6514,9 @@
 					<part name="81" x="260.523" y="257.451"/>
 				</points>
 			</image>
-			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120690983279647.jpg">
-				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="18.2525" roll="-5.56582" yaw="19.2083"/>
-				<points>
-					<part name="00" x="172.402" y="296.793"/>
-					<part name="01" x="177.597" y="334.758"/>
-					<part name="02" x="189.034" y="363.009"/>
-					<part name="03" x="200.697" y="380.257"/>
-					<part name="04" x="210.08" y="394.708"/>
-					<part name="05" x="221.143" y="411.963"/>
-					<part name="06" x="236.189" y="424.377"/>
-					<part name="07" x="253.871" y="433.078"/>
-					<part name="08" x="274.724" y="432.472"/>
-					<part name="09" x="294.42" y="422.877"/>
-					<part name="10" x="310.834" y="409.736"/>
-					<part name="11" x="324.616" y="393.332"/>
-					<part name="12" x="332.818" y="373.93"/>
-					<part name="13" x="336.589" y="351.312"/>
-					<part name="14" x="339.1" y="327.144"/>
-					<part name="15" x="334.994" y="301.756"/>
-					<part name="16" x="331.181" y="279.63"/>
-					<part name="17" x="171.677" y="284.945"/>
-					<part name="18" x="172.526" y="272.137"/>
-					<part name="19" x="180.291" y="271.531"/>
-					<part name="20" x="186.684" y="269.219"/>
-					<part name="21" x="192.167" y="267.937"/>
-					<part name="22" x="196.37" y="276.255"/>
-					<part name="23" x="188.899" y="277.709"/>
-					<part name="24" x="182.265" y="279.206"/>
-					<part name="25" x="175.524" y="282.731"/>
-					<part name="26" x="227.754" y="251.326"/>
-					<part name="27" x="238.245" y="245.225"/>
-					<part name="28" x="250.746" y="238.922"/>
-					<part name="29" x="262.581" y="235.578"/>
-					<part name="30" x="275.394" y="242.592"/>
-					<part name="31" x="264.7" y="244.575"/>
-					<part name="32" x="254.201" y="247.545"/>
-					<part name="33" x="241.245" y="252.66"/>
-					<part name="34" x="230.145" y="257.846"/>
-					<part name="35" x="212.551" y="283.356"/>
-					<part name="36" x="212.953" y="296.826"/>
-					<part name="37" x="213.014" y="308.275"/>
-					<part name="38" x="213.02" y="318.358"/>
-					<part name="39" x="219.063" y="342.452"/>
-					<part name="40" x="222.067" y="340.085"/>
-					<part name="41" x="226.683" y="336.947"/>
-					<part name="42" x="234.124" y="334.177"/>
-					<part name="43" x="245.021" y="333.766"/>
-					<part name="44" x="180.712" y="304.8"/>
-					<part name="45" x="181.027" y="297.912"/>
-					<part name="46" x="184.633" y="292.053"/>
-					<part name="47" x="196.074" y="290.153"/>
-					<part name="48" x="202.651" y="295.974"/>
-					<part name="49" x="196.83" y="301.173"/>
-					<part name="50" x="190.496" y="304.0"/>
-					<part name="51" x="185.273" y="304.798"/>
-					<part name="52" x="244.848" y="277.3"/>
-					<part name="53" x="248.562" y="265.543"/>
-					<part name="54" x="257.457" y="260.634"/>
-					<part name="55" x="265.827" y="261.263"/>
-					<part name="56" x="274.039" y="267.398"/>
-					<part name="57" x="268.562" y="272.388"/>
-					<part name="58" x="259.793" y="274.591"/>
-					<part name="59" x="251.967" y="276.547"/>
-					<part name="60" x="220.457" y="379.053"/>
-					<part name="61" x="215.337" y="368.693"/>
-					<part name="62" x="218.267" y="356.483"/>
-					<part name="63" x="225.641" y="354.707"/>
-					<part name="64" x="234.356" y="347.632"/>
-					<part name="65" x="252.826" y="353.942"/>
-					<part name="66" x="269.878" y="361.776"/>
-					<part name="67" x="264.527" y="376.763"/>
-					<part name="68" x="253.942" y="385.4"/>
-					<part name="69" x="242.35" y="389.553"/>
-					<part name="70" x="232.518" y="390.162"/>
-					<part name="71" x="226.201" y="387.43"/>
-					<part name="72" x="222.731" y="377.212"/>
-					<part name="73" x="223.184" y="365.056"/>
-					<part name="74" x="231.016" y="359.911"/>
-					<part name="75" x="240.729" y="359.125"/>
-					<part name="76" x="266.747" y="362.515"/>
-					<part name="77" x="245.682" y="375.848"/>
-					<part name="78" x="238.782" y="379.559"/>
-					<part name="79" x="230.227" y="382.673"/>
-					<part name="80" x="192.705" y="296.923"/>
-					<part name="81" x="259.895" y="267.42"/>
-				</points>
-			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120692939074272.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="4.41389" roll="-12.7347" yaw="-18.5275"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="219.278" y="308.355"/>
 					<part name="01" x="227.859" y="329.263"/>
@@ -7132,7 +6604,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120696260791909.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="20.5949" roll="15.3216" yaw="-42.7458"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="286.423" y="299.978"/>
 					<part name="01" x="287.534" y="320.381"/>
@@ -7220,7 +6692,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120697738949938.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="1.35486" roll="1.03443" yaw="-17.8607"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="228.363" y="309.019"/>
 					<part name="01" x="235.383" y="332.61"/>
@@ -7308,7 +6780,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120698975174933.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="7.37298" roll="4.77771" yaw="11.0913"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="196.534" y="313.367"/>
 					<part name="01" x="198.402" y="333.354"/>
@@ -7396,7 +6868,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120828343242709.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="11.4484" roll="-33.1226" yaw="-6.21207"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="200.964" y="332.842"/>
 					<part name="01" x="209.204" y="347.152"/>
@@ -7484,7 +6956,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120829623093952.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="8.29908" roll="77.0732" yaw="-19.3504"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="188.901" y="341.325"/>
 					<part name="01" x="196.602" y="360.934"/>
@@ -7572,7 +7044,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120831659338107.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="23.5453" roll="-17.5447" yaw="20.9928"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="154.539" y="323.77"/>
 					<part name="01" x="156.715" y="339.654"/>
@@ -7660,7 +7132,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120833778794089.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="17.0009" roll="-5.74369" yaw="12.1632"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="157.482" y="329.357"/>
 					<part name="01" x="164.472" y="351.181"/>
@@ -7748,7 +7220,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120835819598360.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="2.26964" roll="-6.00435" yaw="-22.0995"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="216.396" y="310.727"/>
 					<part name="01" x="225.87" y="332.528"/>
@@ -7836,7 +7308,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120841975476436.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="8.61269" roll="6.88031" yaw="-30.1601"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="251.28" y="295.814"/>
 					<part name="01" x="256.344" y="328.207"/>
@@ -7922,97 +7394,9 @@
 					<part name="81" x="405.062" y="307.716"/>
 				</points>
 			</image>
-			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120844535307988.jpg">
-				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="5.54027" roll="-1.19222" yaw="-3.56004"/>
-				<points>
-					<part name="00" x="197.209" y="331.493"/>
-					<part name="01" x="203.983" y="356.813"/>
-					<part name="02" x="213.894" y="382.664"/>
-					<part name="03" x="224.402" y="401.003"/>
-					<part name="04" x="235.94" y="417.968"/>
-					<part name="05" x="247.576" y="431.013"/>
-					<part name="06" x="265.267" y="444.216"/>
-					<part name="07" x="283.416" y="450.867"/>
-					<part name="08" x="303.857" y="452.534"/>
-					<part name="09" x="325.069" y="445.298"/>
-					<part name="10" x="342.598" y="432.194"/>
-					<part name="11" x="355.561" y="413.209"/>
-					<part name="12" x="364.016" y="394.053"/>
-					<part name="13" x="370.916" y="372.077"/>
-					<part name="14" x="374.611" y="349.621"/>
-					<part name="15" x="373.134" y="324.661"/>
-					<part name="16" x="372.172" y="301.268"/>
-					<part name="17" x="208.798" y="295.932"/>
-					<part name="18" x="218.366" y="283.633"/>
-					<part name="19" x="229.587" y="280.925"/>
-					<part name="20" x="241.335" y="281.246"/>
-					<part name="21" x="254.739" y="283.01"/>
-					<part name="22" x="253.075" y="290.676"/>
-					<part name="23" x="242.795" y="289.718"/>
-					<part name="24" x="231.538" y="290.261"/>
-					<part name="25" x="219.057" y="292.431"/>
-					<part name="26" x="298.541" y="275.598"/>
-					<part name="27" x="311.562" y="271.033"/>
-					<part name="28" x="323.118" y="268.002"/>
-					<part name="29" x="336.331" y="267.868"/>
-					<part name="30" x="349.678" y="275.746"/>
-					<part name="31" x="337.084" y="274.685"/>
-					<part name="32" x="325.196" y="275.127"/>
-					<part name="33" x="312.126" y="278.085"/>
-					<part name="34" x="299.809" y="281.831"/>
-					<part name="35" x="282.423" y="309.953"/>
-					<part name="36" x="285.774" y="325.847"/>
-					<part name="37" x="288.143" y="342.478"/>
-					<part name="38" x="290.579" y="358.039"/>
-					<part name="39" x="275.81" y="374.286"/>
-					<part name="40" x="282.824" y="372.771"/>
-					<part name="41" x="292.56" y="372.298"/>
-					<part name="42" x="302.599" y="370.971"/>
-					<part name="43" x="310.622" y="369.291"/>
-					<part name="44" x="229.086" y="321.682"/>
-					<part name="45" x="236.311" y="321.52"/>
-					<part name="46" x="243.047" y="319.995"/>
-					<part name="47" x="249.366" y="317.669"/>
-					<part name="48" x="255.659" y="315.184"/>
-					<part name="49" x="249.073" y="317.728"/>
-					<part name="50" x="242.945" y="319.978"/>
-					<part name="51" x="236.407" y="321.612"/>
-					<part name="52" x="314.494" y="308.889"/>
-					<part name="53" x="319.625" y="309.367"/>
-					<part name="54" x="325.742" y="309.29"/>
-					<part name="55" x="332.667" y="307.437"/>
-					<part name="56" x="338.368" y="305.983"/>
-					<part name="57" x="332.42" y="307.751"/>
-					<part name="58" x="325.912" y="308.445"/>
-					<part name="59" x="319.844" y="309.755"/>
-					<part name="60" x="272.269" y="408.935"/>
-					<part name="61" x="278.258" y="400.178"/>
-					<part name="62" x="287.913" y="394.469"/>
-					<part name="63" x="294.669" y="396.067"/>
-					<part name="64" x="301.347" y="394.4"/>
-					<part name="65" x="313.991" y="397.022"/>
-					<part name="66" x="324.594" y="403.571"/>
-					<part name="67" x="318.458" y="411.479"/>
-					<part name="68" x="309.376" y="421.668"/>
-					<part name="69" x="298.847" y="421.667"/>
-					<part name="70" x="286.717" y="423.392"/>
-					<part name="71" x="277.665" y="414.315"/>
-					<part name="72" x="273.575" y="408.416"/>
-					<part name="73" x="288.407" y="407.855"/>
-					<part name="74" x="296.172" y="407.216"/>
-					<part name="75" x="308.108" y="405.647"/>
-					<part name="76" x="323.833" y="403.415"/>
-					<part name="77" x="307.625" y="405.611"/>
-					<part name="78" x="296.949" y="406.916"/>
-					<part name="79" x="287.56" y="407.597"/>
-					<part name="80" x="242.899" y="320.445"/>
-					<part name="81" x="325.614" y="308.909"/>
-				</points>
-			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120872318751818.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="2.28861" roll="-2.25145" yaw="-21.7146"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="221.829" y="297.168"/>
 					<part name="01" x="226.147" y="325.562"/>
@@ -8100,7 +7484,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120873635548570.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="10.2991" roll="-0.957811" yaw="-33.5265"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="257.503" y="290.678"/>
 					<part name="01" x="259.817" y="316.112"/>
@@ -8188,7 +7572,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120876395404139.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="23.0418" roll="18.9605" yaw="-41.2684"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="289.508" y="296.575"/>
 					<part name="01" x="287.017" y="325.236"/>
@@ -8276,7 +7660,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120879555274389.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="1.20762" roll="3.96809" yaw="-2.08905"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="203.661" y="306.55"/>
 					<part name="01" x="205.724" y="336.51"/>
@@ -8364,7 +7748,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120879831299014.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="1.22128" roll="4.46955" yaw="-0.0392436"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="198.372" y="316.788"/>
 					<part name="01" x="200.437" y="345.517"/>
@@ -8452,7 +7836,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120882231441791.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="16.7224" roll="1.5279" yaw="20.5614"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="151.6" y="318.686"/>
 					<part name="01" x="151.236" y="345.018"/>
@@ -8540,7 +7924,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545120882841542729.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="20.3122" roll="4.61239" yaw="20.8024"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="148.141" y="329.996"/>
 					<part name="01" x="150.106" y="354.94"/>
@@ -8626,97 +8010,9 @@
 					<part name="81" x="223.045" y="298.792"/>
 				</points>
 			</image>
-			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545121007120310639.jpg">
-				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="12.8314" roll="-32.1627" yaw="-26.1075"/>
-				<points>
-					<part name="00" x="205.065" y="311.842"/>
-					<part name="01" x="213.937" y="329.321"/>
-					<part name="02" x="221.708" y="349.901"/>
-					<part name="03" x="236.939" y="369.266"/>
-					<part name="04" x="258.77" y="382.471"/>
-					<part name="05" x="280.948" y="395.171"/>
-					<part name="06" x="308.131" y="403.712"/>
-					<part name="07" x="331.906" y="404.11"/>
-					<part name="08" x="347.93" y="394.107"/>
-					<part name="09" x="354.99" y="380.563"/>
-					<part name="10" x="359.835" y="366.421"/>
-					<part name="11" x="364.007" y="351.219"/>
-					<part name="12" x="367.061" y="334.015"/>
-					<part name="13" x="367.311" y="317.762"/>
-					<part name="14" x="367.385" y="301.974"/>
-					<part name="15" x="353.46" y="279.613"/>
-					<part name="16" x="338.85" y="264.438"/>
-					<part name="17" x="231.147" y="238.025"/>
-					<part name="18" x="241.236" y="229.666"/>
-					<part name="19" x="254.282" y="227.654"/>
-					<part name="20" x="266.641" y="228.335"/>
-					<part name="21" x="278.234" y="230.91"/>
-					<part name="22" x="278.494" y="236.705"/>
-					<part name="23" x="267.8" y="234.269"/>
-					<part name="24" x="255.634" y="233.679"/>
-					<part name="25" x="243.819" y="234.889"/>
-					<part name="26" x="311.337" y="233.518"/>
-					<part name="27" x="316.995" y="233.096"/>
-					<part name="28" x="322.051" y="233.619"/>
-					<part name="29" x="326.502" y="235.947"/>
-					<part name="30" x="331.591" y="242.831"/>
-					<part name="31" x="327.842" y="240.448"/>
-					<part name="32" x="322.309" y="239.323"/>
-					<part name="33" x="317.405" y="238.013"/>
-					<part name="34" x="312.709" y="238.36"/>
-					<part name="35" x="302.156" y="245.083"/>
-					<part name="36" x="311.662" y="252.495"/>
-					<part name="37" x="317.284" y="258.412"/>
-					<part name="38" x="321.458" y="264.738"/>
-					<part name="39" x="301.404" y="283.681"/>
-					<part name="40" x="310.132" y="283.461"/>
-					<part name="41" x="318.787" y="282.491"/>
-					<part name="42" x="325.548" y="282.695"/>
-					<part name="43" x="332.386" y="282.5"/>
-					<part name="44" x="246.917" y="253.164"/>
-					<part name="45" x="251.884" y="246.786"/>
-					<part name="46" x="258.81" y="245.049"/>
-					<part name="47" x="265.861" y="244.53"/>
-					<part name="48" x="270.981" y="248.021"/>
-					<part name="49" x="272.46" y="252.894"/>
-					<part name="50" x="263.775" y="255.297"/>
-					<part name="51" x="255.712" y="254.505"/>
-					<part name="52" x="319.81" y="251.788"/>
-					<part name="53" x="323.594" y="247.638"/>
-					<part name="54" x="329.635" y="247.672"/>
-					<part name="55" x="332.822" y="249.492"/>
-					<part name="56" x="336.15" y="256.115"/>
-					<part name="57" x="332.028" y="256.05"/>
-					<part name="58" x="327.951" y="255.576"/>
-					<part name="59" x="323.56" y="253.833"/>
-					<part name="60" x="293.707" y="324.608"/>
-					<part name="61" x="301.744" y="300.987"/>
-					<part name="62" x="315.403" y="288.015"/>
-					<part name="63" x="326.747" y="290.134"/>
-					<part name="64" x="333.224" y="288.479"/>
-					<part name="65" x="345.747" y="300.9"/>
-					<part name="66" x="343.509" y="321.378"/>
-					<part name="67" x="346.011" y="330.694"/>
-					<part name="68" x="346.512" y="341.828"/>
-					<part name="69" x="335.872" y="342.566"/>
-					<part name="70" x="319.348" y="341.679"/>
-					<part name="71" x="304.279" y="336.27"/>
-					<part name="72" x="296.456" y="323.91"/>
-					<part name="73" x="306.427" y="306.906"/>
-					<part name="74" x="319.499" y="301.593"/>
-					<part name="75" x="335.442" y="303.551"/>
-					<part name="76" x="341.77" y="320.639"/>
-					<part name="77" x="341.779" y="329.6"/>
-					<part name="78" x="333.61" y="333.421"/>
-					<part name="79" x="313.417" y="333.465"/>
-					<part name="80" x="262.926" y="249.9"/>
-					<part name="81" x="327.785" y="250.721"/>
-				</points>
-			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545121007360298012.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="10.5653" roll="-39.9466" yaw="-17.5415"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="199.157" y="320.218"/>
 					<part name="01" x="206.509" y="335.061"/>
@@ -8804,7 +8100,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545121015835512897.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="0.756525" roll="-7.80134" yaw="-23.9397"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="216.345" y="305.452"/>
 					<part name="01" x="222.309" y="328.087"/>
@@ -8892,7 +8188,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545121023516580975.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="17.4601" roll="6.07248" yaw="3.64034"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="154.072" y="332.672"/>
 					<part name="01" x="162.581" y="360.877"/>
@@ -8980,7 +8276,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545121023831421026.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="18.1289" roll="2.58902" yaw="7.18821"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="147.595" y="326.061"/>
 					<part name="01" x="154.207" y="354.426"/>
@@ -9068,7 +8364,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545121026747521473.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="27.9384" roll="9.995" yaw="21.7352"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="129.701" y="355.447"/>
 					<part name="01" x="137.836" y="381.845"/>
@@ -9156,7 +8452,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545121027186706608.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="21.1972" roll="7.4008" yaw="14.2371"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="135.447" y="336.723"/>
 					<part name="01" x="142.188" y="358.642"/>
@@ -9244,7 +8540,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545124617333049152.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="0.178768" roll="-5.147" yaw="-0.924435"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="242.109" y="217.827"/>
 					<part name="01" x="246.751" y="241.287"/>
@@ -9332,7 +8628,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545124626280649476.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="6.49036" roll="19.1972" yaw="-3.05099"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="277.558" y="204.267"/>
 					<part name="01" x="279.501" y="234.552"/>
@@ -9420,7 +8716,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545124626763759066.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="4.25573" roll="11.3196" yaw="1.96448"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="264.206" y="205.134"/>
 					<part name="01" x="265.997" y="235.667"/>
@@ -9508,7 +8804,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545124626920709973.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="3.30358" roll="10.7005" yaw="2.90837"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="255.98" y="205.451"/>
 					<part name="01" x="256.942" y="234.944"/>
@@ -9596,7 +8892,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545124627082621620.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="2.90071" roll="8.05655" yaw="2.94546"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="248.038" y="211.183"/>
 					<part name="01" x="248.882" y="239.541"/>
@@ -9682,97 +8978,9 @@
 					<part name="81" x="407.221" y="261.557"/>
 				</points>
 			</image>
-			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545124630543833703.jpg">
-				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="31.3511" roll="24.8262" yaw="41.8785"/>
-				<points>
-					<part name="00" x="204.025" y="271.098"/>
-					<part name="01" x="212.392" y="288.087"/>
-					<part name="02" x="219.639" y="315.761"/>
-					<part name="03" x="223.315" y="332.937"/>
-					<part name="04" x="228.122" y="349.498"/>
-					<part name="05" x="237.219" y="364.528"/>
-					<part name="06" x="250.878" y="378.743"/>
-					<part name="07" x="261.439" y="392.574"/>
-					<part name="08" x="269.777" y="394.486"/>
-					<part name="09" x="281.542" y="393.719"/>
-					<part name="10" x="305.192" y="380.156"/>
-					<part name="11" x="324.792" y="364.288"/>
-					<part name="12" x="342.406" y="343.155"/>
-					<part name="13" x="353.158" y="319.146"/>
-					<part name="14" x="355.935" y="292.201"/>
-					<part name="15" x="350.726" y="250.997"/>
-					<part name="16" x="344.431" y="224.417"/>
-					<part name="17" x="193.474" y="242.767"/>
-					<part name="18" x="192.428" y="232.801"/>
-					<part name="19" x="194.822" y="231.364"/>
-					<part name="20" x="198.273" y="232.058"/>
-					<part name="21" x="201.335" y="233.174"/>
-					<part name="22" x="202.459" y="237.719"/>
-					<part name="23" x="199.771" y="237.265"/>
-					<part name="24" x="197.213" y="237.685"/>
-					<part name="25" x="194.775" y="239.299"/>
-					<part name="26" x="215.01" y="223.564"/>
-					<part name="27" x="224.633" y="216.932"/>
-					<part name="28" x="234.921" y="211.903"/>
-					<part name="29" x="246.944" y="210.771"/>
-					<part name="30" x="260.845" y="217.046"/>
-					<part name="31" x="248.44" y="216.892"/>
-					<part name="32" x="236.699" y="218.633"/>
-					<part name="33" x="226.425" y="224.19"/>
-					<part name="34" x="217.735" y="230.826"/>
-					<part name="35" x="214.093" y="253.908"/>
-					<part name="36" x="210.138" y="270.037"/>
-					<part name="37" x="206.913" y="285.941"/>
-					<part name="38" x="203.831" y="300.428"/>
-					<part name="39" x="216.738" y="310.851"/>
-					<part name="40" x="219.733" y="309.126"/>
-					<part name="41" x="222.842" y="309.206"/>
-					<part name="42" x="229.576" y="305.346"/>
-					<part name="43" x="238.848" y="301.81"/>
-					<part name="44" x="203.062" y="261.138"/>
-					<part name="45" x="202.238" y="256.896"/>
-					<part name="46" x="204.458" y="254.529"/>
-					<part name="47" x="207.8" y="253.965"/>
-					<part name="48" x="209.663" y="257.16"/>
-					<part name="49" x="209.612" y="261.068"/>
-					<part name="50" x="208.686" y="263.468"/>
-					<part name="51" x="205.783" y="263.927"/>
-					<part name="52" x="236.119" y="248.368"/>
-					<part name="53" x="235.931" y="241.646"/>
-					<part name="54" x="239.321" y="236.56"/>
-					<part name="55" x="248.226" y="235.874"/>
-					<part name="56" x="256.793" y="236.984"/>
-					<part name="57" x="251.301" y="243.104"/>
-					<part name="58" x="244.719" y="247.287"/>
-					<part name="59" x="240.17" y="248.592"/>
-					<part name="60" x="227.813" y="346.094"/>
-					<part name="61" x="223.309" y="341.337"/>
-					<part name="62" x="224.614" y="334.391"/>
-					<part name="63" x="226.68" y="332.643"/>
-					<part name="64" x="230.149" y="330.249"/>
-					<part name="65" x="248.436" y="329.685"/>
-					<part name="66" x="264.318" y="335.051"/>
-					<part name="67" x="260.63" y="345.967"/>
-					<part name="68" x="252.893" y="356.285"/>
-					<part name="69" x="242.206" y="362.915"/>
-					<part name="70" x="233.858" y="361.277"/>
-					<part name="71" x="229.539" y="354.148"/>
-					<part name="72" x="227.367" y="346.58"/>
-					<part name="73" x="228.272" y="342.147"/>
-					<part name="74" x="231.42" y="338.717"/>
-					<part name="75" x="246.101" y="333.543"/>
-					<part name="76" x="261.584" y="335.887"/>
-					<part name="77" x="252.014" y="346.723"/>
-					<part name="78" x="238.729" y="354.072"/>
-					<part name="79" x="232.193" y="351.611"/>
-					<part name="80" x="206.889" y="258.968"/>
-					<part name="81" x="241.338" y="243.096"/>
-				</points>
-			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545124631240645249.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="21.2014" roll="9.57851" yaw="34.6828"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="192.311" y="226.127"/>
 					<part name="01" x="194.51" y="245.318"/>
@@ -9860,7 +9068,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545124680863191102.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="4.54514" roll="-7.25854" yaw="9.03595"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="213.888" y="196.466"/>
 					<part name="01" x="220.253" y="221.965"/>
@@ -9948,7 +9156,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545124683635343038.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="4.18687" roll="-3.92766" yaw="-15.4299"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="255.133" y="190.531"/>
 					<part name="01" x="257.311" y="215.903"/>
@@ -10036,7 +9244,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545124690328135428.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="23.1349" roll="32.1969" yaw="-20.0433"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="301.889" y="187.921"/>
 					<part name="01" x="299.991" y="213.732"/>
@@ -10124,7 +9332,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545124690884543903.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="9.85789" roll="23.7551" yaw="-4.5164"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="283.316" y="183.938"/>
 					<part name="01" x="280.865" y="212.459"/>
@@ -10212,7 +9420,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545124691885791593.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="2.0123" roll="4.00195" yaw="5.33962"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="237.548" y="212.168"/>
 					<part name="01" x="240.151" y="239.543"/>
@@ -10300,7 +9508,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545124693165922239.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="8.3458" roll="13.9735" yaw="13.8767"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="195.686" y="218.658"/>
 					<part name="01" x="202.128" y="246.581"/>
@@ -10388,7 +9596,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545124693486205088.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="12.0095" roll="14.0774" yaw="19.5067"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="200.999" y="241.619"/>
 					<part name="01" x="203.724" y="258.052"/>
@@ -10476,7 +9684,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545124723745753237.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="8.25047" roll="-5.44906" yaw="23.203"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="214.719" y="186.99"/>
 					<part name="01" x="211.213" y="213.304"/>
@@ -10564,7 +9772,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545124725986438018.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="0.268298" roll="-4.16108" yaw="-6.18498"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="243.285" y="192.74"/>
 					<part name="01" x="247.417" y="214.7"/>
@@ -10652,7 +9860,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545124726266273461.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="1.25976" roll="-4.61122" yaw="-6.39127"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="245.23" y="175.273"/>
 					<part name="01" x="248.168" y="203.712"/>
@@ -10740,7 +9948,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545124727504625663.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="4.49101" roll="-1.97461" yaw="-19.0091"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="259.55" y="184.392"/>
 					<part name="01" x="266.747" y="208.809"/>
@@ -10828,7 +10036,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545124732300542311.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="27.3682" roll="23.5117" yaw="-42.058"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="341.497" y="173.694"/>
 					<part name="01" x="342.155" y="205.7"/>
@@ -10916,7 +10124,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545124733980548445.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="8.554" roll="16.229" yaw="-9.40038"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="277.69" y="180.688"/>
 					<part name="01" x="278.408" y="211.923"/>
@@ -11004,7 +10212,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545124738977981462.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="23.1403" roll="22.1992" yaw="24.8063"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="173.509" y="218.596"/>
 					<part name="01" x="180.846" y="240.257"/>
@@ -11092,7 +10300,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545124754450221244.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="10.4283" roll="-13.569" yaw="23.0514"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="211.304" y="200.894"/>
 					<part name="01" x="211.907" y="224.801"/>
@@ -11180,7 +10388,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545124755964548914.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="5.88497" roll="-11.3428" yaw="14.1966"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="216.383" y="199.896"/>
 					<part name="01" x="222.4" y="228.432"/>
@@ -11268,7 +10476,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545124756965809165.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="6.33874" roll="-4.58132" yaw="13.4776"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="223.044" y="202.279"/>
 					<part name="01" x="224.554" y="224.744"/>
@@ -11356,7 +10564,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545124761165763316.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="7.23222" roll="0.828623" yaw="-28.457"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="279.573" y="183.155"/>
 					<part name="01" x="282.417" y="208.529"/>
@@ -11444,7 +10652,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545124762524556315.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="14.3769" roll="8.94538" yaw="-40.5049"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="297.795" y="178.56"/>
 					<part name="01" x="301.9" y="202.499"/>
@@ -11530,97 +10738,9 @@
 					<part name="81" x="450.177" y="188.53"/>
 				</points>
 			</image>
-			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545124767800669249.jpg">
-				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="16.5306" roll="18.5558" yaw="-20.4916"/>
-				<points>
-					<part name="00" x="297.576" y="168.775"/>
-					<part name="01" x="296.658" y="201.904"/>
-					<part name="02" x="296.796" y="238.094"/>
-					<part name="03" x="302.386" y="267.577"/>
-					<part name="04" x="309.72" y="291.43"/>
-					<part name="05" x="329.039" y="315.226"/>
-					<part name="06" x="353.863" y="333.631"/>
-					<part name="07" x="380.692" y="345.342"/>
-					<part name="08" x="405.423" y="344.111"/>
-					<part name="09" x="418.775" y="336.439"/>
-					<part name="10" x="428.676" y="323.393"/>
-					<part name="11" x="436.686" y="309.085"/>
-					<part name="12" x="443.493" y="294.462"/>
-					<part name="13" x="450.351" y="282.302"/>
-					<part name="14" x="459.909" y="266.329"/>
-					<part name="15" x="467.613" y="239.391"/>
-					<part name="16" x="470.384" y="214.698"/>
-					<part name="17" x="369.306" y="174.409"/>
-					<part name="18" x="385.197" y="166.421"/>
-					<part name="19" x="400.894" y="167.397"/>
-					<part name="20" x="415.303" y="170.433"/>
-					<part name="21" x="429.136" y="175.437"/>
-					<part name="22" x="428.12" y="185.265"/>
-					<part name="23" x="414.199" y="179.805"/>
-					<part name="24" x="399.114" y="175.539"/>
-					<part name="25" x="383.506" y="172.978"/>
-					<part name="26" x="451.579" y="181.579"/>
-					<part name="27" x="458.591" y="179.648"/>
-					<part name="28" x="467.75" y="178.9"/>
-					<part name="29" x="476.62" y="180.909"/>
-					<part name="30" x="477.309" y="188.565"/>
-					<part name="31" x="470.012" y="187.089"/>
-					<part name="32" x="463.906" y="187.534"/>
-					<part name="33" x="457.622" y="189.212"/>
-					<part name="34" x="450.337" y="190.891"/>
-					<part name="35" x="435.906" y="209.71"/>
-					<part name="36" x="437.236" y="224.664"/>
-					<part name="37" x="439.155" y="238.823"/>
-					<part name="38" x="440.409" y="253.043"/>
-					<part name="39" x="410.337" y="258.467"/>
-					<part name="40" x="419.919" y="260.317"/>
-					<part name="41" x="428.671" y="263.1"/>
-					<part name="42" x="434.296" y="263.087"/>
-					<part name="43" x="437.023" y="264.444"/>
-					<part name="44" x="380.216" y="202.513"/>
-					<part name="45" x="387.716" y="204.996"/>
-					<part name="46" x="396.821" y="207.61"/>
-					<part name="47" x="402.218" y="207.515"/>
-					<part name="48" x="408.983" y="206.538"/>
-					<part name="49" x="402.877" y="207.334"/>
-					<part name="50" x="396.592" y="207.964"/>
-					<part name="51" x="387.481" y="205.33"/>
-					<part name="52" x="447.568" y="211.96"/>
-					<part name="53" x="452.019" y="214.254"/>
-					<part name="54" x="457.901" y="216.403"/>
-					<part name="55" x="461.652" y="217.124"/>
-					<part name="56" x="465.254" y="217.482"/>
-					<part name="57" x="462.695" y="217.348"/>
-					<part name="58" x="457.468" y="216.711"/>
-					<part name="59" x="452.88" y="214.189"/>
-					<part name="60" x="388.77" y="292.481"/>
-					<part name="61" x="404.765" y="286.936"/>
-					<part name="62" x="420.185" y="284.933"/>
-					<part name="63" x="426.128" y="285.893"/>
-					<part name="64" x="430.24" y="287.345"/>
-					<part name="65" x="434.602" y="291.71"/>
-					<part name="66" x="433.652" y="297.702"/>
-					<part name="67" x="429.386" y="304.781"/>
-					<part name="68" x="423.992" y="309.742"/>
-					<part name="69" x="415.913" y="311.299"/>
-					<part name="70" x="405.547" y="308.255"/>
-					<part name="71" x="396.026" y="301.159"/>
-					<part name="72" x="392.089" y="292.742"/>
-					<part name="73" x="412.872" y="288.373"/>
-					<part name="74" x="423.828" y="290.664"/>
-					<part name="75" x="429.135" y="291.184"/>
-					<part name="76" x="431.509" y="297.721"/>
-					<part name="77" x="424.575" y="298.943"/>
-					<part name="78" x="418.604" y="299.25"/>
-					<part name="79" x="409.853" y="298.856"/>
-					<part name="80" x="396.539" y="207.367"/>
-					<part name="81" x="456.92" y="216.585"/>
-				</points>
-			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545124772196563230.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="12.0392" roll="14.8849" yaw="20.1825"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="203.422" y="223.92"/>
 					<part name="01" x="209.234" y="245.741"/>
@@ -11708,7 +10828,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545126295726046157.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="12.4421" roll="-1.34687" yaw="21.524"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="225.157" y="266.359"/>
 					<part name="01" x="224.527" y="281.996"/>
@@ -11796,7 +10916,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545126297046087966.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="5.98657" roll="-1.1252" yaw="-1.2875"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="253.732" y="271.228"/>
 					<part name="01" x="256.434" y="293.949"/>
@@ -11884,7 +11004,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545126297686027621.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="3.01778" roll="-0.59045" yaw="-12.2373"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="265.228" y="250.068"/>
 					<part name="01" x="267.138" y="274.307"/>
@@ -11972,7 +11092,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545126303801935533.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="3.85842" roll="2.94579" yaw="1.44379"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="270.396" y="264.81"/>
 					<part name="01" x="274.169" y="302.216"/>
@@ -12060,7 +11180,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545126304082060643.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="2.19666" roll="5.52383" yaw="4.81348"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="260.931" y="273.107"/>
 					<part name="01" x="261.591" y="291.854"/>
@@ -12148,7 +11268,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545126306841520047.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="15.8039" roll="27.2893" yaw="30.6579"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="219.519" y="284.188"/>
 					<part name="01" x="221.204" y="307.349"/>
@@ -12236,7 +11356,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545126308598161822.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="162.316" roll="-28.9332" yaw="33.2516"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="306.908" y="256.991"/>
 					<part name="01" x="304.124" y="282.53"/>
@@ -12324,7 +11444,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545126429010163738.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="4.18327" roll="-9.90097" yaw="38.7457"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="254.93" y="246.411"/>
 					<part name="01" x="248.691" y="261.76"/>
@@ -12412,7 +11532,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545126433486080458.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="3.13926" roll="5.24966" yaw="-23.6153"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="282.512" y="261.17"/>
 					<part name="01" x="287.038" y="284.092"/>
@@ -12500,7 +11620,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545126434486042199.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="10.2398" roll="6.89618" yaw="-40.9093"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="323.768" y="254.875"/>
 					<part name="01" x="324.697" y="277.531"/>
@@ -12586,97 +11706,9 @@
 					<part name="81" x="444.154" y="241.389"/>
 				</points>
 			</image>
-			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545126434966008234.jpg">
-				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="18.7621" roll="10.9306" yaw="-50.7527"/>
-				<points>
-					<part name="00" x="352.731" y="247.998"/>
-					<part name="01" x="353.139" y="271.342"/>
-					<part name="02" x="354.052" y="297.389"/>
-					<part name="03" x="360.946" y="317.382"/>
-					<part name="04" x="371.88" y="334.714"/>
-					<part name="05" x="385.104" y="350.664"/>
-					<part name="06" x="401.286" y="366.154"/>
-					<part name="07" x="419.996" y="378.685"/>
-					<part name="08" x="442.24" y="383.039"/>
-					<part name="09" x="452.264" y="373.724"/>
-					<part name="10" x="458.33" y="361.623"/>
-					<part name="11" x="460.28" y="345.671"/>
-					<part name="12" x="463.507" y="325.407"/>
-					<part name="13" x="462.786" y="307.144"/>
-					<part name="14" x="465.262" y="293.286"/>
-					<part name="15" x="464.29" y="276.697"/>
-					<part name="16" x="463.904" y="262.473"/>
-					<part name="17" x="410.066" y="217.054"/>
-					<part name="18" x="416.878" y="209.433"/>
-					<part name="19" x="427.988" y="206.01"/>
-					<part name="20" x="438.135" y="205.787"/>
-					<part name="21" x="448.946" y="208.343"/>
-					<part name="22" x="448.502" y="216.293"/>
-					<part name="23" x="437.6" y="216.813"/>
-					<part name="24" x="428.169" y="216.3"/>
-					<part name="25" x="417.047" y="218.019"/>
-					<part name="26" x="457.869" y="225.678"/>
-					<part name="27" x="460.547" y="223.462"/>
-					<part name="28" x="464.082" y="223.893"/>
-					<part name="29" x="465.001" y="228.547"/>
-					<part name="30" x="465.823" y="233.239"/>
-					<part name="31" x="464.236" y="233.356"/>
-					<part name="32" x="461.755" y="233.291"/>
-					<part name="33" x="460.267" y="232.794"/>
-					<part name="34" x="457.988" y="231.837"/>
-					<part name="35" x="454.197" y="248.388"/>
-					<part name="36" x="459.189" y="256.462"/>
-					<part name="37" x="467.332" y="269.521"/>
-					<part name="38" x="472.246" y="283.029"/>
-					<part name="39" x="450.511" y="293.928"/>
-					<part name="40" x="456.922" y="294.249"/>
-					<part name="41" x="463.354" y="294.569"/>
-					<part name="42" x="465.577" y="294.985"/>
-					<part name="43" x="466.997" y="295.187"/>
-					<part name="44" x="423.302" y="241.358"/>
-					<part name="45" x="428.059" y="242.285"/>
-					<part name="46" x="432.418" y="243.02"/>
-					<part name="47" x="436.812" y="243.363"/>
-					<part name="48" x="440.911" y="243.93"/>
-					<part name="49" x="437.059" y="244.206"/>
-					<part name="50" x="432.262" y="243.366"/>
-					<part name="51" x="427.632" y="242.787"/>
-					<part name="52" x="456.287" y="250.422"/>
-					<part name="53" x="457.888" y="252.679"/>
-					<part name="54" x="459.88" y="254.077"/>
-					<part name="55" x="460.869" y="255.088"/>
-					<part name="56" x="462.446" y="257.442"/>
-					<part name="57" x="460.931" y="255.525"/>
-					<part name="58" x="459.877" y="254.563"/>
-					<part name="59" x="457.679" y="252.299"/>
-					<part name="60" x="442.748" y="329.541"/>
-					<part name="61" x="453.342" y="315.608"/>
-					<part name="62" x="464.468" y="306.283"/>
-					<part name="63" x="467.237" y="308.199"/>
-					<part name="64" x="469.202" y="306.42"/>
-					<part name="65" x="471.824" y="320.241"/>
-					<part name="66" x="463.979" y="337.364"/>
-					<part name="67" x="467.921" y="341.337"/>
-					<part name="68" x="467.868" y="346.148"/>
-					<part name="69" x="462.17" y="350.778"/>
-					<part name="70" x="454.664" y="343.99"/>
-					<part name="71" x="448.676" y="338.235"/>
-					<part name="72" x="446.94" y="329.664"/>
-					<part name="73" x="457.532" y="317.922"/>
-					<part name="74" x="464.951" y="316.427"/>
-					<part name="75" x="465.919" y="322.787"/>
-					<part name="76" x="461.967" y="336.336"/>
-					<part name="77" x="460.731" y="337.11"/>
-					<part name="78" x="458.284" y="337.322"/>
-					<part name="79" x="454.034" y="336.479"/>
-					<part name="80" x="431.811" y="243.062"/>
-					<part name="81" x="459.454" y="253.688"/>
-				</points>
-			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545126439322254173.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="3.75218" roll="16.361" yaw="2.20977"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="288.988" y="262.9"/>
 					<part name="01" x="289.025" y="285.611"/>
@@ -12764,7 +11796,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545126439762289342.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="173.628" roll="-32.6072" yaw="8.33552"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="270.447" y="291.964"/>
 					<part name="01" x="271.5" y="317.186"/>
@@ -12852,7 +11884,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545126441202160589.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="15.2877" roll="27.8843" yaw="21.0361"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="219.097" y="303.519"/>
 					<part name="01" x="223.69" y="325.128"/>
@@ -12940,7 +11972,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545126683942286931.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="3.61191" roll="-23.0469" yaw="0.199371"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="278.046" y="281.124"/>
 					<part name="01" x="282.154" y="297.802"/>
@@ -13026,97 +12058,9 @@
 					<part name="81" x="389.878" y="218.897"/>
 				</points>
 			</image>
-			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545126689059993532.jpg">
-				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="6.12695" roll="-7.19085" yaw="-5.41025"/>
-				<points>
-					<part name="00" x="264.359" y="278.744"/>
-					<part name="01" x="269.23" y="297.672"/>
-					<part name="02" x="274.831" y="316.572"/>
-					<part name="03" x="283.17" y="334.866"/>
-					<part name="04" x="295.499" y="349.118"/>
-					<part name="05" x="310.187" y="358.475"/>
-					<part name="06" x="327.279" y="364.607"/>
-					<part name="07" x="348.729" y="366.821"/>
-					<part name="08" x="366.584" y="365.314"/>
-					<part name="09" x="381.431" y="358.085"/>
-					<part name="10" x="390.619" y="347.869"/>
-					<part name="11" x="397.495" y="336.99"/>
-					<part name="12" x="402.697" y="324.182"/>
-					<part name="13" x="405.943" y="308.847"/>
-					<part name="14" x="407.878" y="294.93"/>
-					<part name="15" x="404.67" y="263.741"/>
-					<part name="16" x="397.494" y="245.008"/>
-					<part name="17" x="280.686" y="234.555"/>
-					<part name="18" x="283.453" y="226.339"/>
-					<part name="19" x="292.799" y="219.935"/>
-					<part name="20" x="305.955" y="215.175"/>
-					<part name="21" x="318.028" y="211.482"/>
-					<part name="22" x="319.224" y="218.029"/>
-					<part name="23" x="308.135" y="221.529"/>
-					<part name="24" x="295.47" y="226.227"/>
-					<part name="25" x="285.593" y="231.409"/>
-					<part name="26" x="360.044" y="208.905"/>
-					<part name="27" x="367.349" y="208.558"/>
-					<part name="28" x="374.999" y="207.619"/>
-					<part name="29" x="383.64" y="207.289"/>
-					<part name="30" x="389.784" y="213.503"/>
-					<part name="31" x="383.322" y="214.394"/>
-					<part name="32" x="376.727" y="214.425"/>
-					<part name="33" x="369.037" y="215.982"/>
-					<part name="34" x="360.34" y="215.74"/>
-					<part name="35" x="345.904" y="240.225"/>
-					<part name="36" x="347.629" y="249.894"/>
-					<part name="37" x="349.942" y="259.026"/>
-					<part name="38" x="352.894" y="267.948"/>
-					<part name="39" x="339.277" y="287.837"/>
-					<part name="40" x="346.273" y="286.419"/>
-					<part name="41" x="352.942" y="285.547"/>
-					<part name="42" x="361.745" y="284.2"/>
-					<part name="43" x="367.303" y="284.254"/>
-					<part name="44" x="299.991" y="250.418"/>
-					<part name="45" x="306.669" y="251.09"/>
-					<part name="46" x="312.865" y="251.23"/>
-					<part name="47" x="317.798" y="250.811"/>
-					<part name="48" x="321.621" y="248.576"/>
-					<part name="49" x="317.351" y="250.183"/>
-					<part name="50" x="313.141" y="250.955"/>
-					<part name="51" x="306.711" y="251.119"/>
-					<part name="52" x="366.27" y="242.062"/>
-					<part name="53" x="373.008" y="242.488"/>
-					<part name="54" x="377.63" y="243.0"/>
-					<part name="55" x="382.044" y="242.695"/>
-					<part name="56" x="384.285" y="240.668"/>
-					<part name="57" x="381.743" y="242.18"/>
-					<part name="58" x="377.89" y="242.923"/>
-					<part name="59" x="373.01" y="242.515"/>
-					<part name="60" x="329.998" y="318.876"/>
-					<part name="61" x="339.165" y="307.592"/>
-					<part name="62" x="348.333" y="300.563"/>
-					<part name="63" x="356.042" y="300.672"/>
-					<part name="64" x="361.127" y="297.806"/>
-					<part name="65" x="373.369" y="301.971"/>
-					<part name="66" x="382.034" y="312.389"/>
-					<part name="67" x="375.658" y="314.981"/>
-					<part name="68" x="368.281" y="318.949"/>
-					<part name="69" x="360.411" y="321.583"/>
-					<part name="70" x="348.867" y="322.485"/>
-					<part name="71" x="337.509" y="322.624"/>
-					<part name="72" x="331.381" y="318.541"/>
-					<part name="73" x="342.325" y="308.309"/>
-					<part name="74" x="357.487" y="302.937"/>
-					<part name="75" x="368.99" y="304.282"/>
-					<part name="76" x="380.532" y="311.381"/>
-					<part name="77" x="369.996" y="316.08"/>
-					<part name="78" x="359.639" y="318.064"/>
-					<part name="79" x="345.466" y="319.932"/>
-					<part name="80" x="312.839" y="251.542"/>
-					<part name="81" x="378.348" y="242.874"/>
-				</points>
-			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545126689422196116.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="4.84578" roll="-12.8665" yaw="-10.5926"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="267.312" y="268.554"/>
 					<part name="01" x="272.858" y="289.564"/>
@@ -13204,7 +12148,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545126689782250763.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="2.93429" roll="-8.76813" yaw="-17.6307"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="276.427" y="266.289"/>
 					<part name="01" x="283.17" y="286.593"/>
@@ -13290,97 +12234,9 @@
 					<part name="81" x="409.687" y="243.289"/>
 				</points>
 			</image>
-			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545126696178145270.jpg">
-				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="0.481425" roll="-0.0748139" yaw="6.52473"/>
-				<points>
-					<part name="00" x="276.589" y="265.96"/>
-					<part name="01" x="278.639" y="296.032"/>
-					<part name="02" x="284.581" y="324.6"/>
-					<part name="03" x="290.231" y="343.146"/>
-					<part name="04" x="296.963" y="361.102"/>
-					<part name="05" x="305.939" y="373.783"/>
-					<part name="06" x="316.102" y="389.069"/>
-					<part name="07" x="329.563" y="398.97"/>
-					<part name="08" x="345.874" y="404.346"/>
-					<part name="09" x="367.97" y="399.841"/>
-					<part name="10" x="384.499" y="390.802"/>
-					<part name="11" x="397.509" y="376.906"/>
-					<part name="12" x="411.829" y="356.226"/>
-					<part name="13" x="420.505" y="337.003"/>
-					<part name="14" x="428.061" y="313.338"/>
-					<part name="15" x="430.843" y="284.136"/>
-					<part name="16" x="433.116" y="257.243"/>
-					<part name="17" x="281.808" y="261.725"/>
-					<part name="18" x="291.779" y="253.719"/>
-					<part name="19" x="301.82" y="253.793"/>
-					<part name="20" x="311.982" y="253.573"/>
-					<part name="21" x="321.949" y="256.126"/>
-					<part name="22" x="321.891" y="263.935"/>
-					<part name="23" x="311.505" y="262.815"/>
-					<part name="24" x="301.553" y="261.701"/>
-					<part name="25" x="291.809" y="261.614"/>
-					<part name="26" x="356.024" y="256.673"/>
-					<part name="27" x="368.739" y="253.64"/>
-					<part name="28" x="383.37" y="251.502"/>
-					<part name="29" x="396.807" y="252.109"/>
-					<part name="30" x="407.929" y="261.217"/>
-					<part name="31" x="395.575" y="262.427"/>
-					<part name="32" x="382.071" y="261.637"/>
-					<part name="33" x="369.438" y="262.625"/>
-					<part name="34" x="357.57" y="264.713"/>
-					<part name="35" x="340.225" y="285.405"/>
-					<part name="36" x="340.378" y="299.021"/>
-					<part name="37" x="340.455" y="313.278"/>
-					<part name="38" x="339.951" y="327.143"/>
-					<part name="39" x="326.352" y="334.839"/>
-					<part name="40" x="333.323" y="336.404"/>
-					<part name="41" x="342.083" y="336.582"/>
-					<part name="42" x="351.526" y="335.312"/>
-					<part name="43" x="360.43" y="334.097"/>
-					<part name="44" x="292.979" y="287.036"/>
-					<part name="45" x="299.092" y="289.412"/>
-					<part name="46" x="305.414" y="290.719"/>
-					<part name="47" x="312.14" y="290.826"/>
-					<part name="48" x="319.528" y="288.354"/>
-					<part name="49" x="312.027" y="291.185"/>
-					<part name="50" x="305.029" y="290.983"/>
-					<part name="51" x="299.285" y="289.299"/>
-					<part name="52" x="367.321" y="288.655"/>
-					<part name="53" x="373.12" y="289.637"/>
-					<part name="54" x="379.657" y="289.417"/>
-					<part name="55" x="386.917" y="288.57"/>
-					<part name="56" x="393.475" y="285.805"/>
-					<part name="57" x="387.472" y="288.451"/>
-					<part name="58" x="380.214" y="289.42"/>
-					<part name="59" x="372.565" y="290.169"/>
-					<part name="60" x="316.958" y="357.136"/>
-					<part name="61" x="325.941" y="354.224"/>
-					<part name="62" x="336.468" y="353.362"/>
-					<part name="63" x="341.825" y="353.594"/>
-					<part name="64" x="346.905" y="353.597"/>
-					<part name="65" x="360.62" y="354.706"/>
-					<part name="66" x="372.709" y="358.361"/>
-					<part name="67" x="365.338" y="368.829"/>
-					<part name="68" x="355.619" y="375.785"/>
-					<part name="69" x="343.343" y="377.81"/>
-					<part name="70" x="331.92" y="374.896"/>
-					<part name="71" x="322.994" y="367.631"/>
-					<part name="72" x="318.594" y="358.252"/>
-					<part name="73" x="334.301" y="358.44"/>
-					<part name="74" x="342.037" y="358.175"/>
-					<part name="75" x="351.088" y="357.938"/>
-					<part name="76" x="370.824" y="359.797"/>
-					<part name="77" x="353.202" y="369.013"/>
-					<part name="78" x="342.87" y="369.407"/>
-					<part name="79" x="333.589" y="367.924"/>
-					<part name="80" x="305.224" y="291.132"/>
-					<part name="81" x="380.264" y="289.827"/>
-				</points>
-			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545126697294445034.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="1.4931" roll="5.74044" yaw="8.00258"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="259.577" y="284.561"/>
 					<part name="01" x="261.262" y="309.228"/>
@@ -13468,7 +12324,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545126697734279366.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="2.25005" roll="7.49896" yaw="8.43958"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="252.425" y="292.183"/>
 					<part name="01" x="255.224" y="314.622"/>
@@ -13556,7 +12412,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545126754102386505.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="10.0595" roll="-15.4685" yaw="33.352"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="243.253" y="267.799"/>
 					<part name="01" x="239.851" y="288.477"/>
@@ -13644,7 +12500,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545126755702401346.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="5.2886" roll="-12.677" yaw="5.48885"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="271.027" y="284.274"/>
 					<part name="01" x="273.344" y="300.87"/>
@@ -13732,7 +12588,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545126756945121630.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="2.58787" roll="-10.686" yaw="-10.6734"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="282.098" y="270.252"/>
 					<part name="01" x="285.794" y="292.177"/>
@@ -13820,7 +12676,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545126763338221549.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="13.3788" roll="12.8106" yaw="-18.0501"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="332.997" y="264.255"/>
 					<part name="01" x="329.212" y="285.739"/>
@@ -13908,7 +12764,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545126763874858914.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="9.79368" roll="8.82184" yaw="-12.2299"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="322.149" y="270.11"/>
 					<part name="01" x="321.612" y="288.658"/>
@@ -13996,7 +12852,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545126765497869773.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="0.149163" roll="2.24532" yaw="3.67622"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="291.319" y="280.131"/>
 					<part name="01" x="293.179" y="299.94"/>
@@ -14084,7 +12940,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545126768894156137.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="13.8939" roll="10.7607" yaw="30.5682"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="246.038" y="292.874"/>
 					<part name="01" x="247.865" y="314.071"/>
@@ -14172,7 +13028,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188721280243023.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="12.88" roll="-10.5897" yaw="27.2343"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="178.125" y="226.753"/>
 					<part name="01" x="177.395" y="248.139"/>
@@ -14260,7 +13116,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188722280111779.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="8.45436" roll="-9.1137" yaw="17.2621"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="206.795" y="232.778"/>
 					<part name="01" x="206.004" y="249.545"/>
@@ -14348,7 +13204,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188725676327032.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="0.627688" roll="-8.86428" yaw="-16.0961"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="265.973" y="220.492"/>
 					<part name="01" x="270.567" y="243.713"/>
@@ -14436,7 +13292,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188725996381916.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="3.1701" roll="-1.10446" yaw="-24.7607"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="273.613" y="220.305"/>
 					<part name="01" x="279.541" y="245.252"/>
@@ -14524,7 +13380,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188733712215918.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="0.816574" roll="0.0757356" yaw="-12.4146"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="289.784" y="228.605"/>
 					<part name="01" x="294.141" y="253.994"/>
@@ -14612,7 +13468,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188734952445133.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="2.47425" roll="-4.69572" yaw="6.69178"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="256.295" y="230.331"/>
 					<part name="01" x="257.043" y="252.218"/>
@@ -14700,7 +13556,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188736872211145.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="5.66769" roll="-2.24994" yaw="4.60444"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="227.866" y="235.467"/>
 					<part name="01" x="231.434" y="260.987"/>
@@ -14788,7 +13644,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188752914667748.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="7.63526" roll="-27.0374" yaw="-9.89701"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="202.17" y="234.51"/>
 					<part name="01" x="208.073" y="251.1"/>
@@ -14876,7 +13732,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188757391211899.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="17.473" roll="-2.49119" yaw="32.6576"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="165.409" y="241.105"/>
 					<part name="01" x="163.887" y="255.211"/>
@@ -14962,97 +13818,9 @@
 					<part name="81" x="209.432" y="201.439"/>
 				</points>
 			</image>
-			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188757791238422.jpg">
-				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="12.3087" roll="-7.42609" yaw="28.588"/>
-				<points>
-					<part name="00" x="165.669" y="251.393"/>
-					<part name="01" x="166.31" y="264.895"/>
-					<part name="02" x="171.753" y="280.104"/>
-					<part name="03" x="174.736" y="288.415"/>
-					<part name="04" x="178.788" y="296.949"/>
-					<part name="05" x="184.574" y="306.431"/>
-					<part name="06" x="190.526" y="314.525"/>
-					<part name="07" x="195.598" y="320.813"/>
-					<part name="08" x="206.671" y="327.295"/>
-					<part name="09" x="220.668" y="323.777"/>
-					<part name="10" x="243.318" y="314.019"/>
-					<part name="11" x="267.026" y="298.181"/>
-					<part name="12" x="286.808" y="286.013"/>
-					<part name="13" x="300.62" y="273.406"/>
-					<part name="14" x="305.101" y="256.727"/>
-					<part name="15" x="307.15" y="231.974"/>
-					<part name="16" x="305.184" y="215.298"/>
-					<part name="17" x="173.152" y="201.652"/>
-					<part name="18" x="173.478" y="193.801"/>
-					<part name="19" x="175.816" y="194.295"/>
-					<part name="20" x="177.711" y="193.728"/>
-					<part name="21" x="180.317" y="193.458"/>
-					<part name="22" x="180.506" y="199.866"/>
-					<part name="23" x="178.574" y="199.748"/>
-					<part name="24" x="176.5" y="200.036"/>
-					<part name="25" x="174.218" y="200.543"/>
-					<part name="26" x="204.389" y="177.61"/>
-					<part name="27" x="214.332" y="172.698"/>
-					<part name="28" x="224.273" y="169.425"/>
-					<part name="29" x="233.947" y="166.604"/>
-					<part name="30" x="245.854" y="170.602"/>
-					<part name="31" x="233.662" y="174.467"/>
-					<part name="32" x="224.871" y="177.243"/>
-					<part name="33" x="215.17" y="180.535"/>
-					<part name="34" x="206.283" y="185.556"/>
-					<part name="35" x="194.101" y="214.962"/>
-					<part name="36" x="191.239" y="220.651"/>
-					<part name="37" x="187.405" y="224.656"/>
-					<part name="38" x="183.417" y="231.318"/>
-					<part name="39" x="188.715" y="255.183"/>
-					<part name="40" x="191.649" y="254.221"/>
-					<part name="41" x="194.016" y="252.734"/>
-					<part name="42" x="200.022" y="251.12"/>
-					<part name="43" x="206.284" y="249.388"/>
-					<part name="44" x="169.758" y="229.679"/>
-					<part name="45" x="169.673" y="223.71"/>
-					<part name="46" x="170.321" y="218.458"/>
-					<part name="47" x="175.566" y="216.371"/>
-					<part name="48" x="183.038" y="216.53"/>
-					<part name="49" x="179.198" y="221.598"/>
-					<part name="50" x="175.277" y="225.936"/>
-					<part name="51" x="172.605" y="228.331"/>
-					<part name="52" x="216.886" y="205.299"/>
-					<part name="53" x="219.24" y="196.464"/>
-					<part name="54" x="224.942" y="190.362"/>
-					<part name="55" x="235.544" y="191.985"/>
-					<part name="56" x="243.662" y="197.098"/>
-					<part name="57" x="236.212" y="201.77"/>
-					<part name="58" x="228.254" y="204.504"/>
-					<part name="59" x="222.487" y="205.814"/>
-					<part name="60" x="191.644" y="279.578"/>
-					<part name="61" x="188.834" y="276.875"/>
-					<part name="62" x="189.091" y="274.202"/>
-					<part name="63" x="191.104" y="272.173"/>
-					<part name="64" x="194.653" y="271.359"/>
-					<part name="65" x="211.095" y="267.885"/>
-					<part name="66" x="227.868" y="271.362"/>
-					<part name="67" x="218.094" y="274.471"/>
-					<part name="68" x="207.154" y="277.498"/>
-					<part name="69" x="193.597" y="282.146"/>
-					<part name="70" x="190.292" y="282.004"/>
-					<part name="71" x="189.809" y="280.956"/>
-					<part name="72" x="192.555" y="279.006"/>
-					<part name="73" x="193.795" y="278.365"/>
-					<part name="74" x="193.749" y="277.602"/>
-					<part name="75" x="205.17" y="273.088"/>
-					<part name="76" x="225.438" y="270.754"/>
-					<part name="77" x="205.98" y="274.258"/>
-					<part name="78" x="194.048" y="277.983"/>
-					<part name="79" x="193.254" y="278.865"/>
-					<part name="80" x="173.836" y="221.878"/>
-					<part name="81" x="225.427" y="199.104"/>
-				</points>
-			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188759071409128.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="3.78794" roll="-10.418" yaw="2.34563"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="198.275" y="234.464"/>
 					<part name="01" x="201.514" y="256.47"/>
@@ -15140,7 +13908,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188761031390036.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="5.94022" roll="-10.9222" yaw="-37.3302"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="249.51" y="213.497"/>
 					<part name="01" x="252.888" y="234.937"/>
@@ -15228,7 +13996,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188761776266610.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="8.13309" roll="-22.2629" yaw="-13.3928"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="195.22" y="225.892"/>
 					<part name="01" x="202.186" y="243.86"/>
@@ -15316,7 +14084,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188762056162331.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="8.41476" roll="-23.0808" yaw="-7.6304"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="191.536" y="227.819"/>
 					<part name="01" x="195.877" y="244.926"/>
@@ -15402,9 +14170,97 @@
 					<part name="81" x="303.937" y="178.571"/>
 				</points>
 			</image>
+			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188765986811421.jpg">
+				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
+				<angle pitch="0" roll="0" yaw="0"/>
+				<points>
+					<part name="00" x="347.819" y="234.38"/>
+					<part name="01" x="336.592" y="258.24"/>
+					<part name="02" x="325.79" y="284.963"/>
+					<part name="03" x="326.162" y="307.907"/>
+					<part name="04" x="334.343" y="329.666"/>
+					<part name="05" x="346.743" y="348.555"/>
+					<part name="06" x="362.437" y="364.62"/>
+					<part name="07" x="383.245" y="376.993"/>
+					<part name="08" x="400.382" y="377.387"/>
+					<part name="09" x="409.945" y="365.895"/>
+					<part name="10" x="418.656" y="354.482"/>
+					<part name="11" x="427.661" y="345.153"/>
+					<part name="12" x="436.801" y="335.577"/>
+					<part name="13" x="444.262" y="324.773"/>
+					<part name="14" x="452.166" y="315.502"/>
+					<part name="15" x="457.218" y="291.428"/>
+					<part name="16" x="462.058" y="268.8"/>
+					<part name="17" x="417.492" y="244.672"/>
+					<part name="18" x="428.59" y="241.282"/>
+					<part name="19" x="440.224" y="246.693"/>
+					<part name="20" x="450.419" y="251.394"/>
+					<part name="21" x="458.214" y="258.745"/>
+					<part name="22" x="457.219" y="264.404"/>
+					<part name="23" x="447.877" y="259.499"/>
+					<part name="24" x="438.135" y="254.593"/>
+					<part name="25" x="426.356" y="248.56"/>
+					<part name="26" x="467.341" y="264.648"/>
+					<part name="27" x="470.414" y="263.377"/>
+					<part name="28" x="474.223" y="262.742"/>
+					<part name="29" x="477.344" y="262.776"/>
+					<part name="30" x="479.612" y="264.712"/>
+					<part name="31" x="477.152" y="265.887"/>
+					<part name="32" x="474.112" y="267.144"/>
+					<part name="33" x="471.417" y="267.933"/>
+					<part name="34" x="468.144" y="267.817"/>
+					<part name="35" x="451.678" y="280.765"/>
+					<part name="36" x="453.101" y="290.062"/>
+					<part name="37" x="454.532" y="301.189"/>
+					<part name="38" x="456.385" y="314.245"/>
+					<part name="39" x="425.203" y="321.344"/>
+					<part name="40" x="431.475" y="323.326"/>
+					<part name="41" x="439.368" y="325.541"/>
+					<part name="42" x="440.769" y="327.967"/>
+					<part name="43" x="442.542" y="329.727"/>
+					<part name="44" x="422.835" y="274.354"/>
+					<part name="45" x="427.651" y="272.387"/>
+					<part name="46" x="433.31" y="271.618"/>
+					<part name="47" x="437.937" y="272.967"/>
+					<part name="48" x="439.997" y="276.942"/>
+					<part name="49" x="435.197" y="278.168"/>
+					<part name="50" x="430.618" y="277.583"/>
+					<part name="51" x="426.774" y="276.032"/>
+					<part name="52" x="458.197" y="283.333"/>
+					<part name="53" x="461.406" y="282.128"/>
+					<part name="54" x="465.103" y="282.534"/>
+					<part name="55" x="468.033" y="283.326"/>
+					<part name="56" x="470.265" y="285.618"/>
+					<part name="57" x="466.603" y="286.255"/>
+					<part name="58" x="463.466" y="286.4"/>
+					<part name="59" x="460.197" y="285.628"/>
+					<part name="60" x="394.317" y="336.28"/>
+					<part name="61" x="418.254" y="339.819"/>
+					<part name="62" x="428.219" y="340.9"/>
+					<part name="63" x="430.375" y="343.122"/>
+					<part name="64" x="434.212" y="343.138"/>
+					<part name="65" x="429.951" y="344.385"/>
+					<part name="66" x="422.546" y="347.321"/>
+					<part name="67" x="422.963" y="352.301"/>
+					<part name="68" x="420.821" y="354.893"/>
+					<part name="69" x="419.508" y="355.615"/>
+					<part name="70" x="416.249" y="356.274"/>
+					<part name="71" x="407.29" y="351.981"/>
+					<part name="72" x="395.778" y="337.437"/>
+					<part name="73" x="415.547" y="342.427"/>
+					<part name="74" x="426.281" y="344.01"/>
+					<part name="75" x="423.983" y="344.938"/>
+					<part name="76" x="419.335" y="347.338"/>
+					<part name="77" x="420.02" y="350.237"/>
+					<part name="78" x="420.113" y="352.43"/>
+					<part name="79" x="410.293" y="347.893"/>
+					<part name="80" x="436.495" y="275.842"/>
+					<part name="81" x="463.355" y="285.248"/>
+				</points>
+			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188766547267794.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="15.6438" roll="24.7735" yaw="-16.5484"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="292.499" y="234.317"/>
 					<part name="01" x="287.281" y="254.295"/>
@@ -15492,7 +14348,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188766776056702.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="1.61182" roll="-6.42368" yaw="-10.9769"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="212.649" y="223.268"/>
 					<part name="01" x="214.945" y="251.509"/>
@@ -15580,7 +14436,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188768412456804.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="0.59143" roll="-11.3982" yaw="-22.0756"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="219.757" y="218.865"/>
 					<part name="01" x="227.009" y="242.723"/>
@@ -15668,7 +14524,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188768852342657.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="2.07071" roll="-3.4587" yaw="-24.4737"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="228.991" y="217.266"/>
 					<part name="01" x="233.552" y="244.874"/>
@@ -15756,7 +14612,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188779368221568.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="13.6253" roll="13.2484" yaw="20.1006"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="175.608" y="250.029"/>
 					<part name="01" x="181.707" y="270.229"/>
@@ -15844,7 +14700,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188779568441202.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="15.5989" roll="15.712" yaw="19.5548"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="169.832" y="260.056"/>
 					<part name="01" x="179.739" y="279.72"/>
@@ -15932,7 +14788,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188802032193103.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="8.51323" roll="-13.4864" yaw="19.059"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="178.712" y="209.282"/>
 					<part name="01" x="180.83" y="229.236"/>
@@ -16020,7 +14876,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188802472550495.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="12.0886" roll="-4.19013" yaw="24.1106"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="172.245" y="220.428"/>
 					<part name="01" x="172.814" y="243.119"/>
@@ -16106,97 +14962,97 @@
 					<part name="81" x="234.593" y="189.033"/>
 				</points>
 			</image>
-			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188806352235466.jpg">
+			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188809068371327.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="6.46754" roll="-3.44271" yaw="-0.0965543"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
-					<part name="00" x="199.277" y="225.971"/>
-					<part name="01" x="203.518" y="246.65"/>
-					<part name="02" x="212.796" y="275.334"/>
-					<part name="03" x="219.219" y="292.089"/>
-					<part name="04" x="228.098" y="307.74"/>
-					<part name="05" x="239.79" y="321.656"/>
-					<part name="06" x="257.165" y="332.777"/>
-					<part name="07" x="274.604" y="338.845"/>
-					<part name="08" x="297.822" y="338.296"/>
-					<part name="09" x="315.859" y="331.456"/>
-					<part name="10" x="331.525" y="320.013"/>
-					<part name="11" x="343.689" y="305.109"/>
-					<part name="12" x="351.313" y="288.954"/>
-					<part name="13" x="354.709" y="272.681"/>
-					<part name="14" x="356.753" y="253.479"/>
-					<part name="15" x="355.737" y="228.366"/>
-					<part name="16" x="353.753" y="202.246"/>
-					<part name="17" x="213.708" y="197.548"/>
-					<part name="18" x="219.38" y="184.449"/>
-					<part name="19" x="231.602" y="177.951"/>
-					<part name="20" x="247.467" y="176.729"/>
-					<part name="21" x="262.409" y="181.285"/>
-					<part name="22" x="263.617" y="189.197"/>
-					<part name="23" x="249.452" y="187.441"/>
-					<part name="24" x="236.378" y="187.957"/>
-					<part name="25" x="224.75" y="191.415"/>
-					<part name="26" x="285.605" y="178.402"/>
-					<part name="27" x="298.039" y="172.733"/>
-					<part name="28" x="311.728" y="169.058"/>
-					<part name="29" x="325.631" y="169.728"/>
-					<part name="30" x="337.227" y="180.92"/>
-					<part name="31" x="324.645" y="179.589"/>
-					<part name="32" x="311.835" y="179.478"/>
-					<part name="33" x="299.814" y="183.442"/>
-					<part name="34" x="288.084" y="187.36"/>
-					<part name="35" x="276.853" y="198.546"/>
-					<part name="36" x="278.805" y="208.344"/>
-					<part name="37" x="280.42" y="219.192"/>
-					<part name="38" x="281.883" y="229.371"/>
-					<part name="39" x="267.754" y="247.779"/>
-					<part name="40" x="276.869" y="246.291"/>
-					<part name="41" x="283.961" y="245.329"/>
-					<part name="42" x="291.142" y="243.602"/>
-					<part name="43" x="302.154" y="241.606"/>
-					<part name="44" x="229.481" y="208.426"/>
-					<part name="45" x="235.298" y="201.792"/>
-					<part name="46" x="243.138" y="198.631"/>
-					<part name="47" x="252.792" y="198.934"/>
-					<part name="48" x="260.236" y="204.765"/>
-					<part name="49" x="252.457" y="207.417"/>
-					<part name="50" x="244.026" y="209.919"/>
-					<part name="51" x="237.02" y="209.933"/>
-					<part name="52" x="298.032" y="199.604"/>
-					<part name="53" x="304.382" y="192.748"/>
-					<part name="54" x="313.448" y="189.293"/>
-					<part name="55" x="320.666" y="191.321"/>
-					<part name="56" x="328.362" y="195.576"/>
-					<part name="57" x="321.669" y="199.527"/>
-					<part name="58" x="314.848" y="200.815"/>
-					<part name="59" x="306.638" y="200.474"/>
-					<part name="60" x="266.738" y="284.457"/>
-					<part name="61" x="270.564" y="269.814"/>
-					<part name="62" x="282.234" y="261.134"/>
-					<part name="63" x="287.768" y="260.322"/>
-					<part name="64" x="292.937" y="259.756"/>
-					<part name="65" x="305.354" y="265.014"/>
-					<part name="66" x="312.787" y="277.984"/>
-					<part name="67" x="309.177" y="289.356"/>
-					<part name="68" x="303.286" y="298.665"/>
-					<part name="69" x="293.043" y="302.974"/>
-					<part name="70" x="281.26" y="300.817"/>
-					<part name="71" x="272.348" y="294.299"/>
-					<part name="72" x="268.55" y="284.103"/>
-					<part name="73" x="279.05" y="270.119"/>
-					<part name="74" x="288.27" y="266.65"/>
-					<part name="75" x="298.787" y="267.577"/>
-					<part name="76" x="310.265" y="278.326"/>
-					<part name="77" x="302.205" y="289.487"/>
-					<part name="78" x="291.328" y="294.202"/>
-					<part name="79" x="282.766" y="292.635"/>
-					<part name="80" x="245.466" y="203.336"/>
-					<part name="81" x="312.883" y="195.241"/>
+					<part name="00" x="298.849" y="208.143"/>
+					<part name="01" x="302.802" y="234.969"/>
+					<part name="02" x="305.947" y="262.919"/>
+					<part name="03" x="307.973" y="285.455"/>
+					<part name="04" x="314.262" y="307.479"/>
+					<part name="05" x="334.871" y="323.715"/>
+					<part name="06" x="359.719" y="336.063"/>
+					<part name="07" x="385.295" y="340.238"/>
+					<part name="08" x="409.021" y="338.482"/>
+					<part name="09" x="414.416" y="327.197"/>
+					<part name="10" x="417.682" y="316.083"/>
+					<part name="11" x="417.745" y="305.015"/>
+					<part name="12" x="417.821" y="292.295"/>
+					<part name="13" x="417.028" y="280.008"/>
+					<part name="14" x="415.54" y="269.155"/>
+					<part name="15" x="417.618" y="243.478"/>
+					<part name="16" x="417.545" y="215.91"/>
+					<part name="17" x="375.497" y="199.248"/>
+					<part name="18" x="383.638" y="191.488"/>
+					<part name="19" x="394.163" y="190.155"/>
+					<part name="20" x="402.263" y="193.879"/>
+					<part name="21" x="408.26" y="198.642"/>
+					<part name="22" x="407.364" y="205.991"/>
+					<part name="23" x="400.837" y="202.412"/>
+					<part name="24" x="393.196" y="200.662"/>
+					<part name="25" x="384.309" y="199.256"/>
+					<part name="26" x="412.297" y="207.269"/>
+					<part name="27" x="414.549" y="206.102"/>
+					<part name="28" x="416.338" y="205.322"/>
+					<part name="29" x="418.186" y="205.696"/>
+					<part name="30" x="418.941" y="207.762"/>
+					<part name="31" x="417.997" y="209.057"/>
+					<part name="32" x="416.59" y="209.08"/>
+					<part name="33" x="414.718" y="209.243"/>
+					<part name="34" x="412.315" y="209.792"/>
+					<part name="35" x="410.613" y="224.106"/>
+					<part name="36" x="415.614" y="232.024"/>
+					<part name="37" x="421.824" y="240.009"/>
+					<part name="38" x="428.525" y="249.511"/>
+					<part name="39" x="405.23" y="264.741"/>
+					<part name="40" x="413.347" y="264.294"/>
+					<part name="41" x="420.427" y="263.377"/>
+					<part name="42" x="422.9" y="263.724"/>
+					<part name="43" x="425.386" y="263.693"/>
+					<part name="44" x="383.283" y="216.833"/>
+					<part name="45" x="388.422" y="218.392"/>
+					<part name="46" x="392.307" y="220.576"/>
+					<part name="47" x="395.581" y="222.736"/>
+					<part name="48" x="399.166" y="225.132"/>
+					<part name="49" x="395.125" y="223.476"/>
+					<part name="50" x="391.525" y="221.573"/>
+					<part name="51" x="387.885" y="220.3"/>
+					<part name="52" x="414.809" y="224.45"/>
+					<part name="53" x="415.448" y="224.738"/>
+					<part name="54" x="416.016" y="224.237"/>
+					<part name="55" x="417.434" y="224.999"/>
+					<part name="56" x="418.176" y="223.75"/>
+					<part name="57" x="417.141" y="225.143"/>
+					<part name="58" x="416.146" y="225.261"/>
+					<part name="59" x="415.708" y="224.856"/>
+					<part name="60" x="397.229" y="291.715"/>
+					<part name="61" x="412.432" y="285.815"/>
+					<part name="62" x="419.498" y="283.056"/>
+					<part name="63" x="421.411" y="283.73"/>
+					<part name="64" x="424.301" y="283.697"/>
+					<part name="65" x="421.208" y="286.543"/>
+					<part name="66" x="415.451" y="292.062"/>
+					<part name="67" x="417.968" y="297.134"/>
+					<part name="68" x="419.086" y="300.065"/>
+					<part name="69" x="418.072" y="302.151"/>
+					<part name="70" x="415.647" y="301.722"/>
+					<part name="71" x="408.951" y="298.742"/>
+					<part name="72" x="399.402" y="291.496"/>
+					<part name="73" x="412.626" y="287.917"/>
+					<part name="74" x="418.722" y="286.978"/>
+					<part name="75" x="417.646" y="289.071"/>
+					<part name="76" x="413.52" y="290.975"/>
+					<part name="77" x="415.193" y="294.8"/>
+					<part name="78" x="415.326" y="297.598"/>
+					<part name="79" x="410.777" y="295.349"/>
+					<part name="80" x="395.724" y="223.359"/>
+					<part name="81" x="416.546" y="224.637"/>
 				</points>
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188813748374333.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="22.4925" roll="41.1465" yaw="-26.514"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="375.067" y="266.661"/>
 					<part name="01" x="366.731" y="286.621"/>
@@ -16284,7 +15140,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188813868112343.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="15.9927" roll="34.8782" yaw="-23.7643"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="364.592" y="263.214"/>
 					<part name="01" x="357.151" y="284.256"/>
@@ -16372,7 +15228,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188816744333227.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="5.50116" roll="10.1726" yaw="8.10601"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="174.87" y="269.428"/>
 					<part name="01" x="177.85" y="288.162"/>
@@ -16460,7 +15316,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188819675334371.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="1.95258" roll="94.2638" yaw="-6.81622"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="190.938" y="238.003"/>
 					<part name="01" x="195.853" y="256.016"/>
@@ -16548,7 +15404,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188821195462762.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="10.473" roll="-20.9886" yaw="25.8617"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="177.327" y="220.226"/>
 					<part name="01" x="175.037" y="234.873"/>
@@ -16636,7 +15492,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188823875296638.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="15.722" roll="-7.33578" yaw="17.6254"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="168.473" y="242.26"/>
 					<part name="01" x="169.353" y="255.653"/>
@@ -16724,7 +15580,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188825950551122.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="1.25119" roll="-7.18133" yaw="-27.2675"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="236.417" y="215.707"/>
 					<part name="01" x="238.516" y="236.603"/>
@@ -16812,7 +15668,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188826271165254.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="7.92193" roll="-7.42659" yaw="-27.922"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="252.076" y="204.055"/>
 					<part name="01" x="254.45" y="229.877"/>
@@ -16900,7 +15756,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188831707772397.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="28.0423" roll="39.2239" yaw="-35.0023"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="336.051" y="252.006"/>
 					<part name="01" x="334.236" y="271.478"/>
@@ -16988,7 +15844,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188833427216246.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="15.515" roll="13.7822" yaw="-10.0239"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="136.759" y="282.071"/>
 					<part name="01" x="145.532" y="303.665"/>
@@ -17076,7 +15932,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188841771641830.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="24.3619" roll="22.345" yaw="41.2168"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="118.67" y="240.846"/>
 					<part name="01" x="121.815" y="263.754"/>
@@ -17164,7 +16020,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188844008515932.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="15.6909" roll="0.205609" yaw="15.8345"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="145.488" y="246.446"/>
 					<part name="01" x="150.775" y="272.133"/>
@@ -17252,7 +16108,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188846128491596.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="179.415" roll="-3.54865" yaw="26.4783"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="187.867" y="228.543"/>
 					<part name="01" x="194.877" y="253.712"/>
@@ -17340,7 +16196,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188847208397025.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="7.32319" roll="10.6969" yaw="-44.8305"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="238.763" y="227.265"/>
 					<part name="01" x="240.949" y="252.78"/>
@@ -17428,7 +16284,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188852124269504.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="31.6781" roll="30.5562" yaw="-33.4784"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="394.157" y="240.699"/>
 					<part name="01" x="385.086" y="262.892"/>
@@ -17516,7 +16372,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188856804212091.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="2.86534" roll="6.43272" yaw="13.7168"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="196.635" y="248.569"/>
 					<part name="01" x="201.89" y="278.319"/>
@@ -17604,7 +16460,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188858680164870.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="18.0966" roll="21.893" yaw="28.2297"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="146.109" y="283.067"/>
 					<part name="01" x="155.376" y="303.661"/>
@@ -17692,7 +16548,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188889395000584.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="8.43864" roll="-26.7143" yaw="-19.8263"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="206.601" y="231.051"/>
 					<part name="01" x="213.816" y="247.961"/>
@@ -17780,7 +16636,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188896991787675.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="4.30416" roll="-9.75485" yaw="-36.22"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="256.557" y="208.827"/>
 					<part name="01" x="260.49" y="229.471"/>
@@ -17868,7 +16724,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188900147253447.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="143.781" roll="-51.6733" yaw="32.296"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="302.346" y="242.45"/>
 					<part name="01" x="299.744" y="262.326"/>
@@ -17956,7 +16812,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188900626752337.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="11.9649" roll="30.2969" yaw="-8.07233"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="266.492" y="229.434"/>
 					<part name="01" x="265.292" y="256.058"/>
@@ -18044,7 +16900,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188900746833058.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="8.04893" roll="23.3693" yaw="-5.04211"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="267.755" y="238.122"/>
 					<part name="01" x="263.807" y="260.242"/>
@@ -18132,7 +16988,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188902111216815.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="23.9255" roll="19.0111" yaw="22.1325"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="98.032" y="270.661"/>
 					<part name="01" x="104.236" y="291.636"/>
@@ -18220,7 +17076,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188902426941919.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="33.9898" roll="19.6578" yaw="35.8203"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="96.949" y="274.977"/>
 					<part name="01" x="99.608" y="288.366"/>
@@ -18308,7 +17164,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188949518967601.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="26.6523" roll="-0.898866" yaw="34.5456"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="147.545" y="260.677"/>
 					<part name="01" x="147.855" y="272.738"/>
@@ -18396,7 +17252,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188950558636381.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="5.46128" roll="-10.95" yaw="3.39835"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="187.095" y="218.19"/>
 					<part name="01" x="187.338" y="244.875"/>
@@ -18484,7 +17340,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188955515281570.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="113.006" roll="-69.3968" yaw="47.9842"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="388.661" y="249.202"/>
 					<part name="01" x="377.404" y="270.405"/>
@@ -18572,7 +17428,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188956834852689.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="17.1961" roll="41.5034" yaw="-14.1051"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="305.419" y="242.864"/>
 					<part name="01" x="297.979" y="263.776"/>
@@ -18660,7 +17516,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188957034583458.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="11.8808" roll="44.0442" yaw="-11.2576"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="278.148" y="241.956"/>
 					<part name="01" x="276.01" y="263.255"/>
@@ -18748,7 +17604,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188958275658329.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="13.1236" roll="1.75222" yaw="-8.13223"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="158.812" y="278.829"/>
 					<part name="01" x="170.103" y="315.692"/>
@@ -18836,7 +17692,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545188959515455518.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="39.0684" roll="22.4601" yaw="23.5867"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="86.337" y="302.184"/>
 					<part name="01" x="94.052" y="322.148"/>
@@ -18924,7 +17780,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192525063464185.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="15.8955" roll="-0.374576" yaw="31.3975"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="157.519" y="267.69"/>
 					<part name="01" x="159.132" y="288.341"/>
@@ -19012,7 +17868,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192526023526312.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="1.51763" roll="-7.85751" yaw="-0.568825"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="196.603" y="270.311"/>
 					<part name="01" x="196.849" y="295.688"/>
@@ -19100,7 +17956,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192526543428557.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="3.92543" roll="-8.29059" yaw="-13.0969"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="205.713" y="268.661"/>
 					<part name="01" x="205.945" y="290.313"/>
@@ -19188,7 +18044,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192526863464130.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="5.52961" roll="-8.87623" yaw="-19.0138"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="205.005" y="269.608"/>
 					<part name="01" x="207.362" y="291.543"/>
@@ -19276,7 +18132,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192527183450600.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="174.294" roll="6.6584" yaw="28.1415"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="209.483" y="262.576"/>
 					<part name="01" x="212.164" y="287.828"/>
@@ -19364,7 +18220,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192532059531758.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="10.7152" roll="4.7621" yaw="0.611845"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="218.95" y="262.81"/>
 					<part name="01" x="215.814" y="285.333"/>
@@ -19452,7 +18308,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192533779431977.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="15.6416" roll="11.5568" yaw="34.0954"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="142.311" y="282.314"/>
 					<part name="01" x="145.775" y="315.766"/>
@@ -19540,7 +18396,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192555683573456.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="17.7677" roll="-10.9879" yaw="20.2029"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="168.172" y="282.664"/>
 					<part name="01" x="170.17" y="301.951"/>
@@ -19628,7 +18484,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192558483550354.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="1.68125" roll="-11.6432" yaw="-15.1561"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="199.325" y="275.682"/>
 					<part name="01" x="203.853" y="296.381"/>
@@ -19716,7 +18572,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192559003543416.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="5.20011" roll="-12.6572" yaw="-22.3358"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="211.023" y="268.829"/>
 					<part name="01" x="212.972" y="289.68"/>
@@ -19804,7 +18660,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192559603419698.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="4.40099" roll="-14.111" yaw="-35.2694"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="209.662" y="262.467"/>
 					<part name="01" x="214.535" y="284.987"/>
@@ -19892,7 +18748,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192568835516748.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="2.17205" roll="5.42724" yaw="5.65252"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="196.247" y="259.64"/>
 					<part name="01" x="194.56" y="285.519"/>
@@ -19980,7 +18836,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192569075516416.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="1.78079" roll="4.09123" yaw="10.3331"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="184.285" y="273.841"/>
 					<part name="01" x="184.853" y="299.184"/>
@@ -20068,7 +18924,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192570875469184.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="25.063" roll="12.9866" yaw="32.919"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="133.348" y="289.128"/>
 					<part name="01" x="145.509" y="321.366"/>
@@ -20156,7 +19012,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192593383550146.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="0.812597" roll="-4.32267" yaw="-3.61234"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="195.666" y="273.638"/>
 					<part name="01" x="198.501" y="297.326"/>
@@ -20244,7 +19100,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192595663460568.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="170.956" roll="-0.166408" yaw="46.8631"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="212.689" y="252.427"/>
 					<part name="01" x="218.567" y="271.825"/>
@@ -20332,7 +19188,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192600779576264.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="45.0823" roll="26.5027" yaw="-36.3078"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="311.389" y="246.761"/>
 					<part name="01" x="302.847" y="273.374"/>
@@ -20420,7 +19276,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192601659539827.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="151.271" roll="-24.4233" yaw="34.0813"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="265.146" y="242.403"/>
 					<part name="01" x="265.44" y="270.911"/>
@@ -20508,7 +19364,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192602699469052.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="7.0199" roll="10.5821" yaw="0.739169"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="224.249" y="258.682"/>
 					<part name="01" x="223.05" y="283.42"/>
@@ -20596,7 +19452,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192604815490425.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="26.029" roll="23.9115" yaw="30.6044"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="140.423" y="295.614"/>
 					<part name="01" x="144.98" y="320.739"/>
@@ -20684,7 +19540,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192605175448941.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="31.3526" roll="25.5766" yaw="29.5358"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="128.3" y="307.36"/>
 					<part name="01" x="135.439" y="329.664"/>
@@ -20772,7 +19628,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192616211550547.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="2.1233" roll="-36.4942" yaw="-15.8681"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="192.713" y="286.081"/>
 					<part name="01" x="199.515" y="301.373"/>
@@ -20860,7 +19716,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192624242795375.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="5.35617" roll="-10.1737" yaw="-1.3319"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="183.427" y="284.036"/>
 					<part name="01" x="184.654" y="306.196"/>
@@ -20948,7 +19804,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192627283499722.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="5.77421" roll="-9.9991" yaw="-34.2536"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="205.787" y="254.876"/>
 					<part name="01" x="212.322" y="284.349"/>
@@ -21036,7 +19892,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192637115093315.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="22.5188" roll="20.3201" yaw="-21.6356"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="243.641" y="254.663"/>
 					<part name="01" x="240.385" y="281.527"/>
@@ -21124,7 +19980,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192638115486512.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="9.40983" roll="12.4601" yaw="-5.49377"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="221.015" y="263.197"/>
 					<part name="01" x="221.164" y="287.624"/>
@@ -21212,7 +20068,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192640155477108.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="9.97413" roll="14.9932" yaw="16.0825"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="158.87" y="295.419"/>
 					<part name="01" x="163.443" y="320.393"/>
@@ -21300,7 +20156,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192640275469828.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="9.19873" roll="15.472" yaw="17.6594"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="156.044" y="271.097"/>
 					<part name="01" x="159.786" y="294.816"/>
@@ -21388,7 +20244,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192665360033623.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="14.6864" roll="-26.5487" yaw="-27.2131"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="174.068" y="253.777"/>
 					<part name="01" x="182.462" y="277.26"/>
@@ -21476,7 +20332,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192670079988185.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="14.9999" roll="18.7367" yaw="-25.818"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="219.342" y="251.476"/>
 					<part name="01" x="214.488" y="284.156"/>
@@ -21564,7 +20420,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192670676269375.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="8.50541" roll="13.9634" yaw="-11.8753"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="202.67" y="256.174"/>
 					<part name="01" x="200.438" y="283.027"/>
@@ -21652,7 +20508,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192671756155715.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="9.36167" roll="2.39708" yaw="-1.01195"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="168.586" y="250.508"/>
 					<part name="01" x="164.219" y="274.158"/>
@@ -21740,7 +20596,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192671876217945.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="8.53985" roll="2.09625" yaw="4.67953"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="165.302" y="258.875"/>
 					<part name="01" x="162.895" y="278.666"/>
@@ -21828,7 +20684,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192673116092981.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="1.91807" roll="-6.06169" yaw="13.9002"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="146.028" y="241.729"/>
 					<part name="01" x="144.37" y="262.247"/>
@@ -21914,97 +20770,9 @@
 					<part name="81" x="228.919" y="258.493"/>
 				</points>
 			</image>
-			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192673556091523.jpg">
-				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="1.07627" roll="-5.4525" yaw="17.7467"/>
-				<points>
-					<part name="00" x="136.99" y="247.215"/>
-					<part name="01" x="136.157" y="271.714"/>
-					<part name="02" x="136.833" y="296.459"/>
-					<part name="03" x="138.68" y="313.983"/>
-					<part name="04" x="141.349" y="329.588"/>
-					<part name="05" x="144.129" y="344.221"/>
-					<part name="06" x="152.283" y="358.784"/>
-					<part name="07" x="160.001" y="370.739"/>
-					<part name="08" x="175.204" y="375.427"/>
-					<part name="09" x="201.489" y="374.281"/>
-					<part name="10" x="226.004" y="367.093"/>
-					<part name="11" x="250.094" y="358.556"/>
-					<part name="12" x="270.373" y="343.04"/>
-					<part name="13" x="285.682" y="324.713"/>
-					<part name="14" x="298.303" y="301.322"/>
-					<part name="15" x="302.541" y="272.459"/>
-					<part name="16" x="306.34" y="247.043"/>
-					<part name="17" x="140.855" y="228.85"/>
-					<part name="18" x="143.527" y="219.459"/>
-					<part name="19" x="151.896" y="217.4"/>
-					<part name="20" x="162.759" y="218.087"/>
-					<part name="21" x="171.778" y="221.571"/>
-					<part name="22" x="169.94" y="228.312"/>
-					<part name="23" x="162.238" y="228.065"/>
-					<part name="24" x="154.964" y="228.226"/>
-					<part name="25" x="147.938" y="227.515"/>
-					<part name="26" x="199.279" y="216.111"/>
-					<part name="27" x="210.845" y="212.806"/>
-					<part name="28" x="223.703" y="209.374"/>
-					<part name="29" x="238.458" y="211.901"/>
-					<part name="30" x="249.927" y="222.716"/>
-					<part name="31" x="237.463" y="220.313"/>
-					<part name="32" x="223.643" y="219.743"/>
-					<part name="33" x="211.863" y="221.311"/>
-					<part name="34" x="199.663" y="224.365"/>
-					<part name="35" x="179.73" y="242.941"/>
-					<part name="36" x="174.626" y="254.644"/>
-					<part name="37" x="170.74" y="266.87"/>
-					<part name="38" x="167.124" y="276.632"/>
-					<part name="39" x="165.508" y="295.326"/>
-					<part name="40" x="168.344" y="294.618"/>
-					<part name="41" x="172.419" y="292.367"/>
-					<part name="42" x="182.535" y="292.641"/>
-					<part name="43" x="192.691" y="293.472"/>
-					<part name="44" x="145.519" y="249.589"/>
-					<part name="45" x="149.717" y="244.647"/>
-					<part name="46" x="155.453" y="242.691"/>
-					<part name="47" x="162.348" y="243.567"/>
-					<part name="48" x="167.638" y="248.211"/>
-					<part name="49" x="162.466" y="249.946"/>
-					<part name="50" x="155.772" y="251.048"/>
-					<part name="51" x="150.748" y="250.707"/>
-					<part name="52" x="204.345" y="246.581"/>
-					<part name="53" x="208.288" y="238.666"/>
-					<part name="54" x="216.928" y="236.056"/>
-					<part name="55" x="226.757" y="236.872"/>
-					<part name="56" x="233.63" y="242.419"/>
-					<part name="57" x="226.713" y="246.474"/>
-					<part name="58" x="217.878" y="247.819"/>
-					<part name="59" x="211.327" y="247.95"/>
-					<part name="60" x="160.217" y="323.265"/>
-					<part name="61" x="157.718" y="313.837"/>
-					<part name="62" x="163.464" y="306.017"/>
-					<part name="63" x="169.379" y="305.643"/>
-					<part name="64" x="176.402" y="304.0"/>
-					<part name="65" x="191.082" y="311.649"/>
-					<part name="66" x="204.241" y="321.394"/>
-					<part name="67" x="195.199" y="328.655"/>
-					<part name="68" x="182.73" y="332.939"/>
-					<part name="69" x="170.427" y="334.587"/>
-					<part name="70" x="163.894" y="334.488"/>
-					<part name="71" x="158.45" y="330.198"/>
-					<part name="72" x="162.07" y="323.315"/>
-					<part name="73" x="165.05" y="312.938"/>
-					<part name="74" x="170.615" y="313.747"/>
-					<part name="75" x="182.115" y="314.104"/>
-					<part name="76" x="202.372" y="321.79"/>
-					<part name="77" x="183.007" y="325.935"/>
-					<part name="78" x="173.261" y="326.791"/>
-					<part name="79" x="168.376" y="326.392"/>
-					<part name="80" x="153.665" y="247.403"/>
-					<part name="81" x="215.765" y="242.556"/>
-				</points>
-			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192691744019149.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="15.034" roll="-16.2241" yaw="13.8163"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="122.813" y="275.928"/>
 					<part name="01" x="125.018" y="301.953"/>
@@ -22092,7 +20860,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192692303968628.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="14.794" roll="-18.6218" yaw="0.979964"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="133.718" y="280.16"/>
 					<part name="01" x="140.482" y="301.395"/>
@@ -22180,7 +20948,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192693144114961.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="12.7974" roll="-24.5339" yaw="-21.497"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="151.35" y="259.698"/>
 					<part name="01" x="158.645" y="282.296"/>
@@ -22266,97 +21034,9 @@
 					<part name="81" x="292.366" y="225.242"/>
 				</points>
 			</image>
-			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192697144026916.jpg">
-				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="10.9026" roll="7.45697" yaw="-17.5203"/>
-				<points>
-					<part name="00" x="278.034" y="250.47"/>
-					<part name="01" x="274.599" y="277.03"/>
-					<part name="02" x="269.835" y="315.986"/>
-					<part name="03" x="273.391" y="341.954"/>
-					<part name="04" x="285.385" y="364.783"/>
-					<part name="05" x="303.33" y="383.982"/>
-					<part name="06" x="324.226" y="400.255"/>
-					<part name="07" x="346.351" y="411.119"/>
-					<part name="08" x="358.231" y="411.953"/>
-					<part name="09" x="366.644" y="408.869"/>
-					<part name="10" x="380.188" y="397.24"/>
-					<part name="11" x="395.048" y="384.387"/>
-					<part name="12" x="406.325" y="370.21"/>
-					<part name="13" x="415.539" y="353.562"/>
-					<part name="14" x="421.843" y="335.915"/>
-					<part name="15" x="427.917" y="306.302"/>
-					<part name="16" x="433.865" y="287.044"/>
-					<part name="17" x="349.037" y="292.829"/>
-					<part name="18" x="362.32" y="287.777"/>
-					<part name="19" x="374.848" y="288.722"/>
-					<part name="20" x="388.128" y="292.615"/>
-					<part name="21" x="401.224" y="296.236"/>
-					<part name="22" x="400.202" y="303.627"/>
-					<part name="23" x="387.534" y="299.533"/>
-					<part name="24" x="374.035" y="295.278"/>
-					<part name="25" x="361.079" y="292.903"/>
-					<part name="26" x="410.567" y="298.406"/>
-					<part name="27" x="416.871" y="298.242"/>
-					<part name="28" x="421.363" y="298.237"/>
-					<part name="29" x="426.062" y="298.73"/>
-					<part name="30" x="427.887" y="303.254"/>
-					<part name="31" x="425.108" y="303.621"/>
-					<part name="32" x="421.081" y="302.722"/>
-					<part name="33" x="415.817" y="303.404"/>
-					<part name="34" x="410.277" y="304.785"/>
-					<part name="35" x="403.208" y="314.803"/>
-					<part name="36" x="405.227" y="324.491"/>
-					<part name="37" x="406.454" y="332.913"/>
-					<part name="38" x="406.749" y="341.252"/>
-					<part name="39" x="382.144" y="348.72"/>
-					<part name="40" x="387.604" y="350.884"/>
-					<part name="41" x="395.866" y="350.774"/>
-					<part name="42" x="399.756" y="351.97"/>
-					<part name="43" x="403.577" y="352.073"/>
-					<part name="44" x="355.915" y="311.287"/>
-					<part name="45" x="364.141" y="313.1"/>
-					<part name="46" x="372.085" y="314.297"/>
-					<part name="47" x="376.824" y="316.124"/>
-					<part name="48" x="380.114" y="315.471"/>
-					<part name="49" x="373.937" y="318.81"/>
-					<part name="50" x="367.992" y="318.633"/>
-					<part name="51" x="361.49" y="316.411"/>
-					<part name="52" x="411.885" y="313.346"/>
-					<part name="53" x="416.267" y="314.219"/>
-					<part name="54" x="419.824" y="314.726"/>
-					<part name="55" x="421.863" y="315.454"/>
-					<part name="56" x="422.836" y="316.091"/>
-					<part name="57" x="419.267" y="317.196"/>
-					<part name="58" x="416.236" y="317.36"/>
-					<part name="59" x="412.633" y="315.78"/>
-					<part name="60" x="365.016" y="370.417"/>
-					<part name="61" x="376.901" y="364.037"/>
-					<part name="62" x="390.635" y="361.108"/>
-					<part name="63" x="393.751" y="362.821"/>
-					<part name="64" x="396.642" y="363.405"/>
-					<part name="65" x="399.156" y="369.143"/>
-					<part name="66" x="395.36" y="374.417"/>
-					<part name="67" x="392.381" y="380.699"/>
-					<part name="68" x="387.448" y="385.39"/>
-					<part name="69" x="380.611" y="388.041"/>
-					<part name="70" x="372.147" y="385.429"/>
-					<part name="71" x="368.063" y="377.685"/>
-					<part name="72" x="367.232" y="370.727"/>
-					<part name="73" x="376.603" y="367.145"/>
-					<part name="74" x="390.768" y="366.384"/>
-					<part name="75" x="395.54" y="369.819"/>
-					<part name="76" x="394.427" y="374.607"/>
-					<part name="77" x="390.194" y="380.789"/>
-					<part name="78" x="384.093" y="383.813"/>
-					<part name="79" x="374.36" y="380.089"/>
-					<part name="80" x="371.06" y="318.169"/>
-					<part name="81" x="416.453" y="317.239"/>
-				</points>
-			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192698140228566.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="18.6873" roll="26.7706" yaw="-24.0683"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="239.897" y="269.814"/>
 					<part name="01" x="234.408" y="295.64"/>
@@ -22444,7 +21124,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192699780024263.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="3.53266" roll="0.125195" yaw="1.90921"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="145.303" y="298.568"/>
 					<part name="01" x="146.238" y="316.675"/>
@@ -22532,7 +21212,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192701100203005.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="12.5032" roll="4.28575" yaw="25.7739"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="119.458" y="292.822"/>
 					<part name="01" x="119.069" y="308.714"/>
@@ -22620,7 +21300,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192725727918985.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="8.13022" roll="-21.1258" yaw="24.6505"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="147.968" y="259.477"/>
 					<part name="01" x="143.802" y="276.926"/>
@@ -22708,7 +21388,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192726684245958.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="5.82763" roll="-14.6039" yaw="10.8429"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="154.16" y="268.007"/>
 					<part name="01" x="153.537" y="284.948"/>
@@ -22796,7 +21476,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192732840180166.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="33.0346" roll="28.4538" yaw="-47.8318"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="269.723" y="236.15"/>
 					<part name="01" x="271.142" y="268.031"/>
@@ -22884,7 +21564,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192733760022601.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="17.3223" roll="21.0017" yaw="-26.6091"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="244.01" y="251.432"/>
 					<part name="01" x="240.13" y="286.597"/>
@@ -22972,7 +21652,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192734160224839.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="9.03079" roll="13.9333" yaw="-13.9963"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="212.77" y="254.509"/>
 					<part name="01" x="213.791" y="281.668"/>
@@ -23060,7 +21740,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192734600174118.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="3.48395" roll="2.54423" yaw="0.0562537"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="179.156" y="281.099"/>
 					<part name="01" x="177.763" y="303.918"/>
@@ -23148,7 +21828,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192735960154294.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="11.0047" roll="6.53333" yaw="23.4438"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="118.534" y="288.677"/>
 					<part name="01" x="118.716" y="311.514"/>
@@ -23236,7 +21916,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192749432344082.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="13.6546" roll="-13.6558" yaw="27.0143"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="125.157" y="269.618"/>
 					<part name="01" x="123.15" y="292.657"/>
@@ -23322,9 +22002,97 @@
 					<part name="81" x="193.593" y="236.904"/>
 				</points>
 			</image>
+			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192756509202208.jpg">
+				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
+				<angle pitch="0" roll="0" yaw="0"/>
+				<points>
+					<part name="00" x="286.553" y="267.263"/>
+					<part name="01" x="275.914" y="293.561"/>
+					<part name="02" x="264.964" y="325.212"/>
+					<part name="03" x="270.351" y="359.305"/>
+					<part name="04" x="277.037" y="392.957"/>
+					<part name="05" x="294.142" y="421.584"/>
+					<part name="06" x="322.576" y="442.062"/>
+					<part name="07" x="347.04" y="448.991"/>
+					<part name="08" x="360.127" y="448.452"/>
+					<part name="09" x="370.201" y="440.864"/>
+					<part name="10" x="375.535" y="429.986"/>
+					<part name="11" x="382.816" y="417.077"/>
+					<part name="12" x="397.938" y="405.076"/>
+					<part name="13" x="405.494" y="390.829"/>
+					<part name="14" x="410.739" y="374.235"/>
+					<part name="15" x="416.75" y="356.205"/>
+					<part name="16" x="426.014" y="340.344"/>
+					<part name="17" x="369.383" y="312.027"/>
+					<part name="18" x="383.015" y="307.47"/>
+					<part name="19" x="395.316" y="309.508"/>
+					<part name="20" x="405.193" y="313.488"/>
+					<part name="21" x="415.479" y="317.501"/>
+					<part name="22" x="414.043" y="324.817"/>
+					<part name="23" x="404.017" y="320.353"/>
+					<part name="24" x="393.373" y="316.203"/>
+					<part name="25" x="381.244" y="313.726"/>
+					<part name="26" x="424.493" y="323.164"/>
+					<part name="27" x="427.353" y="321.018"/>
+					<part name="28" x="428.911" y="319.846"/>
+					<part name="29" x="431.467" y="317.464"/>
+					<part name="30" x="432.446" y="320.128"/>
+					<part name="31" x="430.208" y="321.971"/>
+					<part name="32" x="427.974" y="324.958"/>
+					<part name="33" x="425.234" y="326.527"/>
+					<part name="34" x="423.736" y="327.819"/>
+					<part name="35" x="413.221" y="340.278"/>
+					<part name="36" x="414.289" y="355.255"/>
+					<part name="37" x="415.652" y="369.893"/>
+					<part name="38" x="415.078" y="383.648"/>
+					<part name="39" x="385.091" y="383.398"/>
+					<part name="40" x="389.883" y="385.155"/>
+					<part name="41" x="395.438" y="385.97"/>
+					<part name="42" x="398.812" y="387.791"/>
+					<part name="43" x="402.989" y="387.902"/>
+					<part name="44" x="373.775" y="338.092"/>
+					<part name="45" x="378.741" y="339.747"/>
+					<part name="46" x="383.34" y="341.362"/>
+					<part name="47" x="389.144" y="342.464"/>
+					<part name="48" x="393.113" y="342.277"/>
+					<part name="49" x="389.306" y="343.54"/>
+					<part name="50" x="383.282" y="341.903"/>
+					<part name="51" x="378.452" y="339.761"/>
+					<part name="52" x="418.815" y="337.058"/>
+					<part name="53" x="420.748" y="336.865"/>
+					<part name="54" x="422.119" y="336.355"/>
+					<part name="55" x="423.992" y="336.945"/>
+					<part name="56" x="422.206" y="337.646"/>
+					<part name="57" x="420.44" y="338.331"/>
+					<part name="58" x="419.065" y="338.402"/>
+					<part name="59" x="417.281" y="337.804"/>
+					<part name="60" x="354.503" y="414.353"/>
+					<part name="61" x="370.894" y="407.814"/>
+					<part name="62" x="387.624" y="404.063"/>
+					<part name="63" x="390.976" y="405.683"/>
+					<part name="64" x="392.462" y="405.103"/>
+					<part name="65" x="390.133" y="412.488"/>
+					<part name="66" x="381.471" y="417.523"/>
+					<part name="67" x="378.436" y="425.192"/>
+					<part name="68" x="373.715" y="432.077"/>
+					<part name="69" x="367.422" y="436.367"/>
+					<part name="70" x="358.736" y="432.569"/>
+					<part name="71" x="354.055" y="423.86"/>
+					<part name="72" x="355.918" y="414.65"/>
+					<part name="73" x="374.777" y="409.751"/>
+					<part name="74" x="386.799" y="410.944"/>
+					<part name="75" x="386.782" y="413.453"/>
+					<part name="76" x="380.151" y="417.457"/>
+					<part name="77" x="374.907" y="423.621"/>
+					<part name="78" x="369.49" y="427.953"/>
+					<part name="79" x="362.041" y="424.747"/>
+					<part name="80" x="387.367" y="342.286"/>
+					<part name="81" x="420.112" y="337.774"/>
+				</points>
+			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192756628252576.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="35.3925" roll="40.4585" yaw="-36.9541"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="277.485" y="272.542"/>
 					<part name="01" x="273.998" y="300.857"/>
@@ -23412,7 +22180,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192757748432689.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="10.7737" roll="8.37344" yaw="-6.55584"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="225.547" y="254.1"/>
 					<part name="01" x="217.625" y="291.055"/>
@@ -23500,7 +22268,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192758108223992.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="14.0711" roll="3.30041" yaw="4.82973"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="181.589" y="291.856"/>
 					<part name="01" x="179.159" y="316.9"/>
@@ -23588,7 +22356,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192758388106501.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="12.5229" roll="3.41083" yaw="2.63392"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="171.959" y="298.89"/>
 					<part name="01" x="170.452" y="323.962"/>
@@ -23676,7 +22444,7 @@
 			</image>
 			<image path="/home/slam/nfs132_0/landmark/dataset/untouch/untouch_labeled/testset/1545192759828358426.jpg">
 				<classes challengeset="no" commonset="yes" fullset="yes" total="yes" wflw="no"/>
-				<angle pitch="7.50138" roll="4.33006" yaw="28.5299"/>
+				<angle pitch="0" roll="0" yaw="0"/>
 				<points>
 					<part name="00" x="125.968" y="279.635"/>
 					<part name="01" x="132.302" y="304.435"/>

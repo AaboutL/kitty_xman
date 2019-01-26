@@ -150,3 +150,13 @@ def GetHeatMap(Landmark):
         Ret = tf.reshape(tf.reduce_max(Ret,0),[IMGSIZE,IMGSIZE,1])
         return Ret
     return tf.map_fn(Do,Landmark)
+
+def GetBBox(Landmarks, factor):
+    min_xy = tf.reduce_min(Landmarks, axis=1)
+    max_xy = tf.reduce_max(Landmarks, axis=1)
+    wh = tf.subtract(max_xy, min_xy)
+    delta_s = tf.multiply(wh, factor)
+    min_xy = tf.subtract(min_xy, delta_s)
+    max_xy = tf.add(max_xy, delta_s)
+    bboxes = tf.stack([min_xy[:, 1], min_xy[:, 0], max_xy[:, 1], max_xy[:, 0]], axis=1)
+    return bboxes
