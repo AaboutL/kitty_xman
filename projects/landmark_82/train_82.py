@@ -12,26 +12,30 @@ from utilities.data_preparation.save_read_tfrecord import load_tfrecord
 from train import loss_func
 from utilities import model_tool
 
-os.environ['CUDA_VISIBLE_DEVICES'] = '1'
+os.environ['CUDA_VISIBLE_DEVICES'] = ''
 def main(args):
     trainset = args.trainset
     testset = args.testset
+    img_size = args.img_size
 
     meanShape = np.genfromtxt('../../meanshape_untouch.txt')
-    meanShape = np.reshape(meanShape, [164]).astype(np.float32) * 112
+    meanShape = np.reshape(meanShape, [164]).astype(np.float32) * img_size
 
     with tf.Graph().as_default():
         step = 0
-        if args.pretrained_model_dir is not None:
-            step = int(model_tool.load_model(tf.Session(), model_dir=args.pretrained_model_dir))
+        # if args.pretrained_model_dir is not None:
+        #     step = int(model_tool.load_model(tf.Session(), model_dir=args.pretrained_model_dir))
+        # model_tool.show_var_name()
+        # print("********************************************")
+
         global_steps = tf.Variable(step, trainable=False)
         train_queue = tf.train.string_input_producer([trainset])
         test_queue = tf.train.string_input_producer([testset], num_epochs=1)
-        images_train, points_train = load_tfrecord(train_queue, pts_num=82, img_shape=[112, 112, 1], batch_size=args.batch_size, is_shuffle=True)
-        images_test, points_test = load_tfrecord(test_queue, pts_num=82, img_shape=[112, 112, 1], batch_size=128, is_shuffle=False)
+        images_train, points_train = load_tfrecord(train_queue, pts_num=82, img_shape=[img_size, img_size, 1], batch_size=args.batch_size, is_shuffle=True)
+        images_test, points_test = load_tfrecord(test_queue, pts_num=82, img_shape=[img_size, img_size, 1], batch_size=128, is_shuffle=False)
 
         lr_ph = tf.placeholder(tf.float32, name='learning_rate_ph')
-        imgs_ph = tf.placeholder(tf.float32, [None, 112, 112, 1], 'images_ph')
+        imgs_ph = tf.placeholder(tf.float32, [None, img_size, img_size, 1], 'images_ph')
         pts_ph = tf.placeholder(tf.float32, [None, 164], 'points_ph')
         is_train_ph = tf.placeholder(tf.bool, name='is_train')
 
@@ -41,8 +45,13 @@ def main(args):
                                                    staircase=True)
 
         pts_pre = inference(imgs_ph, meanshape=meanShape, pts_num=82, is_training=is_train_ph)
+        model_tool.show_var_name()
+        print("********************************************")
+
         # loss = tf.reduce_mean(loss_func.NormRmse(pts_ph, pts_pre, 82))
         loss = tf.reduce_mean(loss_func.smooth_l1_loss(pts_ph, pts_pre, 82))
+
+        error_test = tf.reduce_mean(loss_func.NormRmse(pts_ph, pts_pre, 82))
         opt = tf.train.AdamOptimizer(learning_rate=learning_rate)
         optimizer = opt.minimize(loss, global_step=global_steps)
         opt.compute_gradients(loss)
@@ -68,14 +77,18 @@ def main(args):
                 sess.run(init_op)
                 coord = tf.train.Coordinator()
                 threads = tf.train.start_queue_runners(coord=coord)
-                # step = 0
-                # if args.pretrained_model_dir is not None:
-                #     step = int(model_tool.load_model(sess, model_dir=args.pretrained_model_dir))
+
+                # load pre_models
+                if args.pretrained_model_dir is not None:
+                    step = int(model_tool.load_model(sess, model_dir=args.pretrained_model_dir))
+                model_tool.show_var_name()
+                print("********************************************")
+                # exit(0)
                 imgs_test, pts_test = sess.run([images_test, points_test])
                 while True:
                     step = sess.run(global_steps, feed_dict=None)
                     if step % 100 == 0:
-                        summary, error = sess.run([merged, loss],
+                        summary, error = sess.run([merged, error_test],
                                                     feed_dict={imgs_ph: imgs_test,
                                                                pts_ph: pts_test,
                                                                is_train_ph: False
@@ -101,17 +114,19 @@ def main(args):
 
 def parse_arguments(argv):
     parser = argparse.ArgumentParser()
-    parser.add_argument('--trainset', type=str, default='/home/public/nfs132_0/landmark/dataset/untouch/untouch_labeled/total/train_112.record')
-    parser.add_argument('--testset', type=str, default='/home/public/nfs132_0/landmark/dataset/untouch/untouch_labeled/total/test_112.record')
-    parser.add_argument('--model_dir', type=str, default='/home/public/nfs71/hanfy/models/landmark_82_alexnet')
-    parser.add_argument('--log_dir', type=str, default='/home/public/nfs71/hanfy/logs/landmark_82_alexnet')
-    parser.add_argument('--mid_result_dir', type=str, default='/home/public/nfs71/hanfy/models/landmark_82_alexnet/results')
+    parser.add_argument('--img_size', type=int, default=116)
+    parser.add_argument('--trainset', type=str, default='/home/slam/nfs132_0/landmark/dataset/untouch/train_116.record')
+    parser.add_argument('--testset', type=str, default='/home/slam/nfs132_0/landmark/dataset/untouch/train_116.record')
+    parser.add_argument('--model_dir', type=str, default='/home/public/nfs71/hanfy/models/landmark_82/tmp')
+    parser.add_argument('--log_dir', type=str, default='/home/public/nfs71/hanfy/logs/landmark_82/tmp')
+    parser.add_argument('--mid_result_dir', type=str, default='/home/public/nfs71/hanfy/models/landmark_82/tmp/results')
     parser.add_argument('--pretrained_model_dir', type=str, help='Directory to the pretrain model'
-                        ,default='/home/hanfy/workspace/DL/alignment/align_untouch/models/lm_82_tf')
+                        , default='../../models/tmp')
+                        # , default='/home/public/nfs71/hanfy/models/landmark_82')
     parser.add_argument('--batch_size', type=int, default=64)
     parser.add_argument('--weight_decay', type=float, default=0.0005)
     parser.add_argument('--learning_rate', type=float, default=0.001)
-    parser.add_argument('--learning_rate_decay_steps', type=int, default=100000)
+    parser.add_argument('--learning_rate_decay_steps', type=int, default=1000000)
     parser.add_argument('--learning_rate_decay_rate', type=float, default=0.1)
     return parser.parse_args(argv)
 

@@ -9,6 +9,8 @@ def prelu(input, name):
         one_tensor = ops.convert_to_tensor(tf.ones(i[0:-1]+[1]))
         output = tf.nn.relu(input) + tf.multiply(one_tensor * alpha, -tf.nn.relu(-input))
     return output
+
+
 def inference(inputs, meanshape, pts_num, is_training=True, dropout_keep_prob=0.5, scope='tiny', global_pool=False):
     meanShape = tf.constant(meanshape)
     net = slim.conv2d(inputs, 8, [5, 5], stride=2, padding='VALID', activation_fn=None, scope='conv1_1')
@@ -21,7 +23,7 @@ def inference(inputs, meanshape, pts_num, is_training=True, dropout_keep_prob=0.
     # net = prelu(net, 'relu_conv2_1')
     net = tf.nn.leaky_relu(net, name='relu_conv2_1')
     print('conv2_1: ', net.shape)
-    net = slim.conv2d(net, 16, [3, 3], stride=1, padding='SAME', activation_fn=None, scope='conv2_2')
+    net = slim.conv2d(net, 16, [3, 3], stride=1, padding='VALID', activation_fn=None, scope='conv2_2')
     # net = prelu(net, 'relu_conv2_2')
     net = tf.nn.leaky_relu(net, name='relu_conv2_2')
     print('conv2_2: ', net.shape)
