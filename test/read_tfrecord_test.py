@@ -33,10 +33,16 @@ def main():
     delta_s = tf.multiply(wh, 0.25)
     xy_min_nose = tf.subtract(nose_min_xy_tf, delta_s)
     xy_max_nose = tf.add(nose_max_xy_tf, delta_s)
-
     nose_bboxes_tf = tf.stack([xy_min_nose[:, 1], xy_min_nose[:, 0], xy_max_nose[:, 1], xy_max_nose[:, 0]], axis=1)/116
     nose_img_crop_tf = tf.image.crop_and_resize(images, nose_bboxes_tf, tf.range(0, 128, 1), [40, 40])
     nose_img_crop_tf = tf.squeeze(nose_img_crop_tf)
+
+    eye_l = labels[:, 44:52]
+    brow_l = labels[:, 17:26]
+    broweye_l = tf.concat([brow_l, eye_l], 1)
+    be_bbox_tf = GetBBox(broweye_l, 0.2) / 116
+    be_img_crop_tf = tf.image.crop_and_resize(images, be_bbox_tf, tf.range(0, 128, 1), [40, 40])
+    be_img_crop_tf = tf.squeeze(be_img_crop_tf)
 
 
     init_op = tf.group(tf.global_variables_initializer(), tf.local_variables_initializer())
@@ -46,13 +52,15 @@ def main():
         threads = tf.train.start_queue_runners(coord=coord)
         for i in range(3):
             # imgs, labs, min_xy_tf_, max_xy_tf_ = sess.run([images, labels, min_xy_tf, max_xy_tf])
-            imgs, labs, bboxes, img_crop, nose = sess.run([images, labels, bboxes_tf, img_crop_tf, nose_img_crop_tf])
+            imgs, labs, bboxes, img_crop, nose, be = sess.run([images, labels, bboxes_tf, img_crop_tf, nose_img_crop_tf, be_img_crop_tf])
             img_crop = np.asarray(img_crop, dtype=np.uint8)
             nose = np.asarray(nose, dtype=np.uint8)
+            be = np.asarray(be, dtype=np.uint8)
             print(img_crop.shape, img_crop.dtype)
             print(bboxes.shape)
             print(labs.shape)
             print(nose.shape)
+            print(be.shape)
 
             for j in range(len(imgs)):
                 lab = labs[j]
@@ -60,6 +68,7 @@ def main():
                 bbox = bboxes[j]
                 cv2.imshow('crop', img_crop[j])
                 cv2.imshow('nose', nose[j])
+                cv2.imshow('be', be[j])
 
                 # print('min max tf: ', min_xy_tf_[j], max_xy_tf_[j])
                 # pts = np.array([[lab[0], lab[2], lab[4]], [lab[1], lab[3], lab[5]]])
